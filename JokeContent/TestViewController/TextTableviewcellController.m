@@ -1,0 +1,105 @@
+//
+//  TextTableviewcellController.m
+//  JokeContent
+//
+//  Created by 南木南木 on 2019/7/1.
+//  Copyright © 2019 南木南木. All rights reserved.
+//
+
+#import "TextTableviewcellController.h"
+#import "ZNTextTableViewCell.h"
+#import "ZNTextTableCellManager.h"
+#import "ZNTextFieldTableViewCell.h"
+
+@interface TextTableviewcellController ()
+<
+UITableViewDelegate,
+UITableViewDataSource,
+ZNTextTableCellManagerDelegate
+>
+
+@property(nonatomic,strong) UITableView * tableview;
+
+@property(nonatomic,strong) NSArray * dataSource;
+
+@property(nonatomic,strong) ZNTextTableCellManager * manager;
+
+@end
+
+@implementation TextTableviewcellController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.tableview];
+    [self setData];
+    // Do any additional setup after loading the view.
+}
+
+- (void)setData{
+    NSArray * array = @[@{@"title":@"谁是傻屌?",
+                          @"content":@"林苏霖",
+                          @"placeStr":@"林苏霖",
+                          @"ableNilOrEmptContent":@"YES",
+                          @"cellType":@"ZNTextTableViewCellTypeTextField"},
+                        @{@"title":@"谁是傻逼?",
+                          @"content":@"林苏霖1"},
+                        @{@"title":@"谁是龟儿子?",
+                          @"content":@"林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2"},
+                        @{@"title":@"谁是渣渣?",
+                          @"content":@"林苏霖3",
+                          @"isShowArrow":@"NO"}
+                        ];
+    
+    self.dataSource = [self.manager dataWithArrDic: array];
+}
+
+#pragma mark - UITableViewDelegate
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZNTextCellModel * model = self.dataSource[indexPath.row];
+    return [self.manager setCellWithTable:tableView model:model];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return [tableView cellHeightForIndexPath:indexPath model:self.dataSource[indexPath.row] keyPath:@"model" cellClass:[ZNTextTableViewCell class] contentViewWidth:screenWidth];
+}
+
+#pragma mark - ZNTextTableCellManagerDelegate
+
+- (NSString *)tipsMessageWithModel:(ZNTextCellModel *)model{
+    return nil;
+}
+
+#pragma mark - get
+
+- (UITableView *)tableview{
+    if (!_tableview) {
+        _tableview = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        [_tableview registerClass:[ZNTextTableViewCell class] forCellReuseIdentifier:[ZNTextTableViewCell idString]];
+        [_tableview registerClass:[ZNTextFieldTableViewCell class] forCellReuseIdentifier:[ZNTextFieldTableViewCell idString]];
+        _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableview.delegate = self;
+        _tableview.dataSource = self;
+    }
+    return _tableview;
+}
+
+- (ZNTextTableCellManager *)manager{
+    if (!_manager) {
+        _manager = [ZNTextTableCellManager new];
+        _manager.znDelegate = self;
+    }
+    return _manager;
+}
+
+@end
