@@ -50,6 +50,7 @@
 
 - (UILabel *)contextLabel{
     if (!_contextLabel) {
+        
         _contextLabel = [UILabel new];
         _contextLabel.textColor = [UIColor whiteColor];
         _contextLabel.font = zn_font(15);

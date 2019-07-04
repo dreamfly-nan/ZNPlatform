@@ -128,4 +128,9 @@ UIKIT_STATIC_INLINE UIImage * zn_ImagePath(NSString * fileNme, NSString* type){
     return [UIImage imageWithContentsOfFile:zn_FilePath(fileNme, type)];
 }
 
+//根据图片名字获取UIImage对象
+UIKIT_STATIC_INLINE UIImage * zn_imageName(NSString * name){
+    return [UIImage imageNamed:name];
+}
+
 #endif /* ZNStateFunction_h */

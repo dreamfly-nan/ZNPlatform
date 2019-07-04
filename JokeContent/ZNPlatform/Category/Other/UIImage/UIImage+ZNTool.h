@@ -12,31 +12,10 @@
 
 /**
  图片放大
- 
  @param size 放大的大小
  @return 放大后的图片
  */
 - (UIImage*)zn_imageZoomSize:(CGSize) size;
-/**
- 根据CIImage对象生成UIImage对象
- 
- @param image ciimage对象
- @param size 生成的图片大小
- @return 生成的图片
- */
-+ (UIImage *)zn_resizeCodeImage:(CIImage *)image withSize:(CGSize)size;
-
-/**
- 根据指定的颜色生成一张指定大小的纯色图片
- 
- @param color 颜色
- @param size 大小
- @return 一张图片
- */
-+ (UIImage *)zn_imageWithColor:(UIColor *)color size:(CGSize)size;
-
-/** 根据颜色生成纯色图片 */
-+ (UIImage *)zn_imageWithColor:(UIColor *)color;
 
 /** 取图片某一像素的颜色 */
 - (UIColor *)zn_colorWithAtPixel:(CGPoint)point;

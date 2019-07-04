@@ -15,13 +15,11 @@
 
 //这个方法转换出来的图片  文字图片会变模糊
 - (UIImage *)zn_convertViewToImageVague{
-    
     UIGraphicsBeginImageContext(self.bounds.size);
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
-    
 }
 
 //使用该方法不会模糊，根据屏幕密度计算

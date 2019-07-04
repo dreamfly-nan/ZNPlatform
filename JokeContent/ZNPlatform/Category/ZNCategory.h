@@ -18,10 +18,15 @@
 #import "UIColor+ZNColor.h"
 #import "UIImage+ZNImage.h"
 #import "UIImage+ZNTool.h"
+#import "UIImage+ZNCreate.h"
 
 //view
 #import "UILabel+ZNLabel.h"
+#import "UILabel+ZNCreate.h"
+#import "UITextField+ZNCreate.h"
 #import "UIView+ZNView.h"
+#import "UIView+ZNCreate.h"
+#import "UIButton+ZNCreate.h"
 #import "UIBarButtonItem+ZN.h"
 #import "MBProgressHUD+ZN.h"
 #import "UITableView+ZNExtendTableView.h"

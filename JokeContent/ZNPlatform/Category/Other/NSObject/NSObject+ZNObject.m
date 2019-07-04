@@ -151,4 +151,13 @@
         return [self zn_getObjectData:obj];
     }
 
+/**
+ 获取类名
+ 
+ @return <#return value description#>
+ */
++ (NSString *)zn_ClassName{
+    return NSStringFromClass([self class]);
+}
+
 @end

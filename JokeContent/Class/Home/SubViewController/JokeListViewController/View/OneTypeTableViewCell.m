@@ -92,9 +92,9 @@
 
 -(UILabel *)titleLab{
     if (_titleLab == nil) {
-        _titleLab = [UILabel new];
-        _titleLab.font = zn_font(15);
-        _titleLab.textColor = [UIColor blackColor];
+        _titleLab = UILabel.zn_create.zn_font(zn_font(15)).zn_textColor([UIColor blackColor]);
+//        _titleLab.font = zn_font(15);
+//        _titleLab.textColor = [UIColor blackColor];
     }
     return _titleLab;
 }
@@ -111,10 +111,14 @@
 
 - (UILabel *)dateLabel{
     if (!_dateLabel) {
-        _dateLabel = [UILabel new];
-        _dateLabel.textAlignment = NSTextAlignmentRight;
-        _dateLabel.font = zn_font(11);
-        _dateLabel.textColor = AuOrDate_Color();
+        _dateLabel = UILabel.zn_create
+        .zn_alignment(NSTextAlignmentRight)
+        .zn_font(zn_font(11))
+        .zn_textColor(AuOrDate_Color());
+        
+//        _dateLabel.textAlignment = NSTextAlignmentRight;
+//        _dateLabel.font = zn_font(11);
+//        _dateLabel.textColor = AuOrDate_Color();
     }
     return _dateLabel;
 }

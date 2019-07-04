@@ -17,8 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)zn_convert:(NSDictionary*)dataSource;
 
 //获取属性列表
-+ (NSArray*)zn_propertyKeys;
++ (NSArray *)zn_propertyKeys;
 
+/**
+ 获取类名
+
+ @return <#return value description#>
+ */
++ (NSString *)zn_ClassName;
 
 @end
 
