@@ -146,4 +146,57 @@
     return view;
 }
 
+/**
+ 设置底部的线条
+ 
+ @param view 要设置的view
+ @param color 线条颜色
+ @param edge 距离
+ */
++ (void)zn_setBottomLineWithView:(UIView *) view
+                           color:(UIColor*) color
+                        distance:(UIEdgeInsets)edge{
+    UIView * lineView = UIView.zn_create.zn_backgroundColor(color);
+    [view addSubview:lineView];
+    
+    lineView.sd_layout
+    .bottomSpaceToView(view, edge.bottom)
+    .leftSpaceToView(view, edge.left)
+    .rightSpaceToView(view, edge.right)
+    .heightIs(1);
+}
+
+/**
+ 设置底部的线条
+ 
+ @param view <#view description#>
+ @param edge <#edge description#>
+ */
++ (void)zn_setBottomLineWithView:(UIView *)view
+                        distance:(UIEdgeInsets)edge{
+    [self zn_setBottomLineWithView:view color:Line_Color() distance:edge];
+}
+
+/**
+ 设置底部的线条
+ 
+ @param view 要设置的view
+ @param color 线条颜色
+ */
++ (void)zn_setBottomLineWithView:(UIView *) view
+                           color:(UIColor*) color{
+    [self zn_setBottomLineWithView:view color:color distance:UIEdgeInsetsMake(0, 0, 0, 0)];
+}
+
+/**
+ 设置底部的线条
+ 
+ @param view <#view description#>
+ @param bottom <#edge description#>
+ */
++ (void)zn_setBottomLineWithView:(UIView *)view
+                          bottom:(CGFloat) bottom{
+    [self zn_setBottomLineWithView:view color:Line_Color() distance:UIEdgeInsetsMake(0, 0, bottom, 0)];
+}
+
 @end

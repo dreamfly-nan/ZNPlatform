@@ -39,6 +39,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self.viewController;
         _tableView.dataSource = self.viewController;
+        
         _tableView.contentInset = UIEdgeInsetsMake(0, 0, zn_AutoHeight(40), 0);
         [_tableView registerClass:[RPCommentTableViewCell class] forCellReuseIdentifier:[RPCommentTableViewCell idString]];
     }

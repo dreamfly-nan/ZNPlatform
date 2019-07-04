@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (ZNCreate)
 
-+ (UIButton * (^)(NSString * title,UIControlState state))zn_create;
++ (UIButton * (^)(NSString * title,UIControlState state))zn_createTitle;
+
+- (UIButton * (^)(NSString * title,UIControlState state))zn_title;
 
 - (UIButton * (^)(UIColor * color,UIControlState state))zn_titleColor;
 

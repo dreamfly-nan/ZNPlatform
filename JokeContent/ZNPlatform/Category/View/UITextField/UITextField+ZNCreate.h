@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (ZNCreate)
 
-+ (UITextField * (^)(UIFont * font,UIColor * color))zn_create;
+- (UITextField * (^)(UIFont * font))zn_font;
+
+- (UITextField * (^)(UIColor * color))zn_textColor;
 
 - (UITextField *(^)(NSString * text))zn_text;
 

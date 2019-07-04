@@ -10,6 +10,17 @@
 
 @implementation UIView (ZNCreate)
 
++ (instancetype)zn_create{
+    return [self new];
+}
+
+- (UIView * (^)(UIColor * color))zn_backgroundColor{
+    return ^(UIColor * color){
+        self.backgroundColor = color;
+        return self;
+    };
+}
+
 /**
  根据颜色生成view
  

@@ -111,6 +111,7 @@
 
 - (UILabel *)dateLabel{
     if (!_dateLabel) {
+        
         _dateLabel = UILabel.zn_create
         .zn_alignment(NSTextAlignmentRight)
         .zn_font(zn_font(11))
@@ -119,6 +120,7 @@
 //        _dateLabel.textAlignment = NSTextAlignmentRight;
 //        _dateLabel.font = zn_font(11);
 //        _dateLabel.textColor = AuOrDate_Color();
+        
     }
     return _dateLabel;
 }

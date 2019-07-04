@@ -13,8 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (ZNCreate)
 
-+ (UILabel * )zn_create;
-
 - (UILabel * (^)(NSTextAlignment alignment))zn_alignment;
 
 - (UILabel * (^)(UIColor * textColor))zn_textColor;

@@ -163,11 +163,18 @@
 
 - (UIButton *)sendCommentBtn{
     if (!_sendCommentBtn) {
-        _sendCommentBtn = [UIButton new];
-        [_sendCommentBtn setTitle:@"发布" forState:UIControlStateNormal];
-        _sendCommentBtn.titleLabel.font = zn_font(12);
-        [_sendCommentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _sendCommentBtn.backgroundColor = Main_Color();
+        
+        _sendCommentBtn = UIButton.zn_create
+        .zn_title(@"发布",UIControlStateNormal)
+        .zn_font(zn_font(12))
+        .zn_titleColor([UIColor whiteColor],UIControlStateNormal)
+        .zn_backgroundColor(Main_Color());
+        
+//        _sendCommentBtn = [UIButton new];
+//        [_sendCommentBtn setTitle:@"发布" forState:UIControlStateNormal];
+//        _sendCommentBtn.titleLabel.font = zn_font(12);
+//        [_sendCommentBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        _sendCommentBtn.backgroundColor = Main_Color();
     }
     return _sendCommentBtn;
 }

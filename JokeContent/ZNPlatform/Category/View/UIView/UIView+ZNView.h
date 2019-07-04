@@ -70,6 +70,42 @@
  */
 + (instancetype)zn_getLineView;
 
+/**
+ 设置底部的线条
+
+ @param view 要设置的view
+ @param color 线条颜色
+ @param edge 距离,只有左，右，下，这三个值有用
+ */
++ (void)zn_setBottomLineWithView:(UIView *) view
+                       color:(UIColor*) color
+                    distance:(UIEdgeInsets)edge;
+
+/**
+ 设置底部的线条
+ 
+ @param view 要设置的view
+ @param color 线条颜色
+ */
++ (void)zn_setBottomLineWithView:(UIView *) view
+                           color:(UIColor*) color;
+
+/**
+ 设置底部的线条
+
+ @param view <#view description#>
+ @param edge <#edge description#>
+ */
++ (void)zn_setBottomLineWithView:(UIView *)view
+                        distance:(UIEdgeInsets)edge;
 
 
+/**
+ 设置底部的线条
+ 
+ @param view <#view description#>
+ @param bottom <#edge description#>
+ */
++ (void)zn_setBottomLineWithView:(UIView *)view
+                        bottom:(CGFloat) bottom;
 @end

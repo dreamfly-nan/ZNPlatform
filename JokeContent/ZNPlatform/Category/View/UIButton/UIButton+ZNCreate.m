@@ -10,9 +10,16 @@
 
 @implementation UIButton (ZNCreate)
 
-+ (UIButton * (^)(NSString * title,UIControlState state))zn_create{
++ (UIButton * (^)(NSString * title,UIControlState state))zn_createTitle{
     return ^(NSString * title,UIControlState state){
         return [UIButton zn_createWithTitle:title state:state];
+    };
+}
+
+- (UIButton * (^)(NSString * title,UIControlState state))zn_title{
+    return ^(NSString * title,UIControlState state){
+        [self setTitle:title forState:state];
+        return self;
     };
 }
 

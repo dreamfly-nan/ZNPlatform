@@ -174,6 +174,7 @@
 		C124280222CDD73F009D874D /* UIView+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C124280122CDD73F009D874D /* UIView+ZNCreate.m */; };
 		C124280622CDD906009D874D /* UIButton+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C124280522CDD906009D874D /* UIButton+ZNCreate.m */; };
 		C124280A22CDE14A009D874D /* UITextField+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C124280922CDE14A009D874D /* UITextField+ZNCreate.m */; };
+		C124280E22CDF0E5009D874D /* UIImageView+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C124280D22CDF0E5009D874D /* UIImageView+ZNCreate.m */; };
 		C12548AF22C0A7AD00AFC5AD /* SelPlaybackControls.m in Sources */ = {isa = PBXBuildFile; fileRef = C12548A422C0A7AD00AFC5AD /* SelPlaybackControls.m */; };
 		C12548B022C0A7AD00AFC5AD /* SelVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C12548A522C0A7AD00AFC5AD /* SelVideoPlayer.m */; };
 		C12548B122C0A7AD00AFC5AD /* UIViewController+PlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C12548A922C0A7AD00AFC5AD /* UIViewController+PlayerRotation.m */; };
@@ -543,6 +544,8 @@
 		C124280522CDD906009D874D /* UIButton+ZNCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZNCreate.m"; sourceTree = "<group>"; };
 		C124280822CDE14A009D874D /* UITextField+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+ZNCreate.h"; sourceTree = "<group>"; };
 		C124280922CDE14A009D874D /* UITextField+ZNCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ZNCreate.m"; sourceTree = "<group>"; };
+		C124280C22CDF0E5009D874D /* UIImageView+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZNCreate.h"; sourceTree = "<group>"; };
+		C124280D22CDF0E5009D874D /* UIImageView+ZNCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZNCreate.m"; sourceTree = "<group>"; };
 		C12548A422C0A7AD00AFC5AD /* SelPlaybackControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelPlaybackControls.m; sourceTree = "<group>"; };
 		C12548A522C0A7AD00AFC5AD /* SelVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelVideoPlayer.m; sourceTree = "<group>"; };
 		C12548A622C0A7AD00AFC5AD /* SelVideoSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelVideoSlider.h; sourceTree = "<group>"; };
@@ -1132,6 +1135,7 @@
 		394B79AE2266D3010030FBB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C124280B22CDF086009D874D /* UIImageView */,
 				C124280722CDE11F009D874D /* UITextField */,
 				C124280322CDD8E4009D874D /* UIButton */,
 				C127B2EE22B0E3620016546C /* UIBarButtonItem */,
@@ -2037,6 +2041,15 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		C124280B22CDF086009D874D /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				C124280C22CDF0E5009D874D /* UIImageView+ZNCreate.h */,
+				C124280D22CDF0E5009D874D /* UIImageView+ZNCreate.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
 		C12548A322C0A7AD00AFC5AD /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -2513,6 +2526,7 @@
 				39C04D7322689FB200EDFC00 /* RPDetailCommentView.m in Sources */,
 				394B79AC2266D2DE0030FBB7 /* RPRfreshHeader.m in Sources */,
 				393ED33C226D9B7900F8F17F /* FeedBackDataModel.m in Sources */,
+				C124280E22CDF0E5009D874D /* UIImageView+ZNCreate.m in Sources */,
 				39C04D7622689FB200EDFC00 /* RPDetailHeadView.m in Sources */,
 				394B794A2266D2000030FBB7 /* UIImage+ZNTool.m in Sources */,
 				C18C9DBD225F15C00088FE13 /* ViewController.m in Sources */,

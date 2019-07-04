@@ -10,10 +10,6 @@
 
 @implementation UILabel (ZNCreate)
 
-+ (UILabel *)zn_create{
-    return [UILabel new];
-}
-
 - (UILabel * (^)(NSTextAlignment alignment))zn_alignment{
     return ^ (NSTextAlignment alignment){
         self.textAlignment = alignment;

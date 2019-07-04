@@ -27,6 +27,7 @@
 #import "UIView+ZNView.h"
 #import "UIView+ZNCreate.h"
 #import "UIButton+ZNCreate.h"
+#import "UIImageView+ZNCreate.h"
 #import "UIBarButtonItem+ZN.h"
 #import "MBProgressHUD+ZN.h"
 #import "UITableView+ZNExtendTableView.h"

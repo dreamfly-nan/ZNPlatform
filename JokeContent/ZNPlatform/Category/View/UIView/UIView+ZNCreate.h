@@ -12,6 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (ZNCreate)
 
++ (instancetype)zn_create;
+
+- (UIView * (^)(UIColor * color))zn_backgroundColor;
+
 /**
  根据颜色生成view
 

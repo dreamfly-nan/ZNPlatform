@@ -10,9 +10,17 @@
 
 @implementation UITextField (ZNCreate)
 
-+ (UITextField * (^)(UIFont * font,UIColor * color))zn_create{
-    return ^(UIFont * font,UIColor * color){
-        return [UITextField zn_createWithFont:font textColor:color];
+- (UITextField * (^)(UIFont * font))zn_font{
+    return ^(UIFont * font){
+        self.font = font;
+        return self;
+    };
+}
+
+- (UITextField * (^)(UIColor * color))zn_textColor{
+    return ^(UIColor * color){
+        self.textColor = color;
+        return self;
     };
 }
 
