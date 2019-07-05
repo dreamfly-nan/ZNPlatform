@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImageView (ZNCreate)
 
-+ (UIImageView *)zn_create;
-
 - (UIImageView * (^)(NSString * imageName))zn_imageName;
 
 - (UIImageView * (^)(UIImage * image))zn_image;

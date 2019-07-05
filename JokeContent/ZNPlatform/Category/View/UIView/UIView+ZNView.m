@@ -13,6 +13,15 @@
 
 #pragma mark - public
 
+/**
+ 获取类名
+ 
+ @return <#return value description#>
+ */
+- (NSString *)zn_getClassName{
+    return NSStringFromClass([self class]);
+}
+
 //这个方法转换出来的图片  文字图片会变模糊
 - (UIImage *)zn_convertViewToImageVague{
     UIGraphicsBeginImageContext(self.bounds.size);
@@ -97,26 +106,6 @@
 
 #pragma mark ------设置边框颜色，大小，视图背景，圆角--------
 
-- (instancetype)zn_boradWidth:(CGFloat)width{
-    [self.layer setBorderWidth:width];
-    return self;
-}
-
-- (instancetype)zn_boradColor:(UIColor *)color{
-    [self.layer setBorderColor:color.CGColor];
-    return self;
-}
-
-- (instancetype)zn_boradCornerRadius:(CGFloat)cornerRadius{
-    [self.layer setCornerRadius:cornerRadius];
-    return self;
-}
-
-- (instancetype)zn_BackgroundColor:(UIColor *)color{
-    [self setBackgroundColor:color];
-    return self;
-}
-
 - (instancetype)zn_BezierRoundWithR:(CGFloat) r{
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:r];
     CAShapeLayer *layer = [CAShapeLayer new];
@@ -140,63 +129,55 @@
     return nil;
 }
 
-+ (instancetype)zn_getLineView{
++ (instancetype)zn_getLineViewWithColor:(UIColor *) color{
     UIView *view = [UIView new];
-    view.backgroundColor = Line_Color();
+    view.backgroundColor = color;
     return view;
 }
 
 /**
  设置底部的线条
- 
- @param view 要设置的view
+
  @param color 线条颜色
  @param edge 距离
  */
-+ (void)zn_setBottomLineWithView:(UIView *) view
-                           color:(UIColor*) color
+- (void)zn_setBottomLineWithColor:(UIColor*) color
                         distance:(UIEdgeInsets)edge{
     UIView * lineView = UIView.zn_create.zn_backgroundColor(color);
-    [view addSubview:lineView];
+    [self addSubview:lineView];
     
     lineView.sd_layout
-    .bottomSpaceToView(view, edge.bottom)
-    .leftSpaceToView(view, edge.left)
-    .rightSpaceToView(view, edge.right)
+    .bottomSpaceToView(self, edge.bottom)
+    .leftSpaceToView(self, edge.left)
+    .rightSpaceToView(self, edge.right)
     .heightIs(1);
 }
 
 /**
  设置底部的线条
  
- @param view <#view description#>
  @param edge <#edge description#>
  */
-+ (void)zn_setBottomLineWithView:(UIView *)view
-                        distance:(UIEdgeInsets)edge{
-    [self zn_setBottomLineWithView:view color:Line_Color() distance:edge];
+- (void)zn_setBottomLineWithDistance:(UIEdgeInsets)edge{
+    [self zn_setBottomLineWithColor:Line_Color() distance:edge];
 }
 
 /**
  设置底部的线条
  
- @param view 要设置的view
  @param color 线条颜色
  */
-+ (void)zn_setBottomLineWithView:(UIView *) view
-                           color:(UIColor*) color{
-    [self zn_setBottomLineWithView:view color:color distance:UIEdgeInsetsMake(0, 0, 0, 0)];
+- (void)zn_setBottomLineWithColor:(UIColor*) color{
+    [self zn_setBottomLineWithColor:color distance:UIEdgeInsetsMake(0, 0, 0, 0)];
 }
 
 /**
  设置底部的线条
  
- @param view <#view description#>
  @param bottom <#edge description#>
  */
-+ (void)zn_setBottomLineWithView:(UIView *)view
-                          bottom:(CGFloat) bottom{
-    [self zn_setBottomLineWithView:view color:Line_Color() distance:UIEdgeInsetsMake(0, 0, bottom, 0)];
+- (void)zn_setBottomLineWithBottom:(CGFloat) bottom{
+    [self zn_setBottomLineWithColor:Line_Color() distance:UIEdgeInsetsMake(0, 0, bottom, 0)];
 }
 
 @end

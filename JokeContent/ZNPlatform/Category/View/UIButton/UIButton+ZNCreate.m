@@ -10,7 +10,7 @@
 
 @implementation UIButton (ZNCreate)
 
-+ (UIButton * (^)(NSString * title,UIControlState state))zn_createTitle{
++ (UIButton * _Nonnull (^)(NSString * title,UIControlState state))zn_createTitle{
     return ^(NSString * title,UIControlState state){
         return [UIButton zn_createWithTitle:title state:state];
     };
@@ -40,13 +40,6 @@
 - (UIButton * (^)(UIImage * image,UIControlState state))zn_backgroundImage{
     return ^(UIImage * image,UIControlState state){
         [self setBackgroundImage:image forState:state];
-        return self;
-    };
-}
-
-- (UIButton * (^)(UIColor * color))zn_backgroundColor{
-    return ^(UIColor * color){
-        self.backgroundColor = color;
         return self;
     };
 }

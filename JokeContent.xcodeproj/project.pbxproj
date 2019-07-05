@@ -187,6 +187,9 @@
 		C127B2ED22B0A6AD0016546C /* ZNImageLookViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C127B2EC22B0A6AD0016546C /* ZNImageLookViewManager.m */; };
 		C127B2F422B0E38C0016546C /* UIBarButtonItem+ZN.m in Sources */ = {isa = PBXBuildFile; fileRef = C127B2F322B0E38C0016546C /* UIBarButtonItem+ZN.m */; };
 		C12F684F22B7306D0083FDA1 /* ZNJSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C12F684E22B7306D0083FDA1 /* ZNJSManager.m */; };
+		C1310AD422CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C1310AD322CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m */; };
+		C1310AD822CEE9BF0047247B /* UITextView+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1310AD722CEE9BF0047247B /* UITextView+ZNCreate.m */; };
+		C1310ADE22CF4ED90047247B /* ZNTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = C1310ADD22CF4ED90047247B /* ZNTextField.m */; };
 		C137EF1522CC4ACF00954453 /* NSObject+ZNSql.m in Sources */ = {isa = PBXBuildFile; fileRef = C137EF1422CC4ACF00954453 /* NSObject+ZNSql.m */; };
 		C140158F22B9DA7A00C4A0E1 /* ZNBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C140158E22B9DA7A00C4A0E1 /* ZNBaseTabBarController.m */; };
 		C14323C822C34CEC00FD0992 /* ZNAlertDialogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C14323C722C34CEC00FD0992 /* ZNAlertDialogTool.m */; };
@@ -570,6 +573,12 @@
 		C127B2F322B0E38C0016546C /* UIBarButtonItem+ZN.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+ZN.m"; sourceTree = "<group>"; };
 		C12F684D22B7306D0083FDA1 /* ZNJSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNJSManager.h; sourceTree = "<group>"; };
 		C12F684E22B7306D0083FDA1 /* ZNJSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNJSManager.m; sourceTree = "<group>"; };
+		C1310AD222CEE3BD0047247B /* NSMutableAttributedString+ZNTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+ZNTool.h"; sourceTree = "<group>"; };
+		C1310AD322CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+ZNTool.m"; sourceTree = "<group>"; };
+		C1310AD622CEE9BF0047247B /* UITextView+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextView+ZNCreate.h"; sourceTree = "<group>"; };
+		C1310AD722CEE9BF0047247B /* UITextView+ZNCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+ZNCreate.m"; sourceTree = "<group>"; };
+		C1310ADC22CF4ED90047247B /* ZNTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNTextField.h; sourceTree = "<group>"; };
+		C1310ADD22CF4ED90047247B /* ZNTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNTextField.m; sourceTree = "<group>"; };
 		C137EF1322CC4ACF00954453 /* NSObject+ZNSql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZNSql.h"; sourceTree = "<group>"; };
 		C137EF1422CC4ACF00954453 /* NSObject+ZNSql.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZNSql.m"; sourceTree = "<group>"; };
 		C140158D22B9DA7A00C4A0E1 /* ZNBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNBaseTabBarController.h; sourceTree = "<group>"; };
@@ -912,6 +921,7 @@
 		394B79282266B8AE0030FBB7 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				C1310AD122CEE3970047247B /* NSMutableAttributedString */,
 				39D299DE226AC59100FEB844 /* BmobObject */,
 				394B793F2266D1FF0030FBB7 /* NSString */,
 				394B79462266D2000030FBB7 /* UIColor */,
@@ -1135,6 +1145,7 @@
 		394B79AE2266D3010030FBB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C1310AD522CEE9AC0047247B /* UITextView */,
 				C124280B22CDF086009D874D /* UIImageView */,
 				C124280722CDE11F009D874D /* UITextField */,
 				C124280322CDD8E4009D874D /* UIButton */,
@@ -1547,6 +1558,8 @@
 			children = (
 				39D8B1212268B97200BF1A77 /* RPSearchTextField.h */,
 				39D8B1222268B97300BF1A77 /* RPSearchTextField.m */,
+				C1310ADC22CF4ED90047247B /* ZNTextField.h */,
+				C1310ADD22CF4ED90047247B /* ZNTextField.m */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -2148,6 +2161,24 @@
 			path = ZNJSManager;
 			sourceTree = "<group>";
 		};
+		C1310AD122CEE3970047247B /* NSMutableAttributedString */ = {
+			isa = PBXGroup;
+			children = (
+				C1310AD222CEE3BD0047247B /* NSMutableAttributedString+ZNTool.h */,
+				C1310AD322CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m */,
+			);
+			path = NSMutableAttributedString;
+			sourceTree = "<group>";
+		};
+		C1310AD522CEE9AC0047247B /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				C1310AD622CEE9BF0047247B /* UITextView+ZNCreate.h */,
+				C1310AD722CEE9BF0047247B /* UITextView+ZNCreate.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
 		C140158C22B9DA3E00C4A0E1 /* ZNBaseTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2519,6 +2550,7 @@
 				39C04D7822689FB200EDFC00 /* RPInformationDetailViewController.m in Sources */,
 				39D299E1226AC5A900FEB844 /* BmobObject+ZNObject.m in Sources */,
 				3986EDB3226EEE8900CAE082 /* InformationItemModel.m in Sources */,
+				C1310AD422CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m in Sources */,
 				C11B43CB22A76DFE00DB5A57 /* WSLScanView.m in Sources */,
 				C17DA238228A6EA80091C23C /* RPMyCommentDataModel.m in Sources */,
 				C1111AC5228D024A00389F17 /* CXCustomTextView.m in Sources */,
@@ -2539,6 +2571,7 @@
 				39127AE82268581500686F0E /* RPForgetPassworldDataModel.m in Sources */,
 				394B79AB2266D2DE0030FBB7 /* RPRefreshFooter.m in Sources */,
 				C11E210522C21C2900163C03 /* ZNBaseTableViewCell.m in Sources */,
+				C1310ADE22CF4ED90047247B /* ZNTextField.m in Sources */,
 				39ADD9102267227200484D10 /* RPHobbyKindsViewModel.m in Sources */,
 				39E4AE8022705AD7006D89EB /* CommentUserModel.m in Sources */,
 				394B79BD2266D3010030FBB7 /* UIView+ZNView.m in Sources */,
@@ -2651,6 +2684,7 @@
 				39C04D512268951E00EDFC00 /* OneTypeTableViewCell.m in Sources */,
 				394B79272266B8160030FBB7 /* BaseObject.m in Sources */,
 				C11B43CC22A76DFE00DB5A57 /* WSLNativeScanTool.m in Sources */,
+				C1310AD822CEE9BF0047247B /* UITextView+ZNCreate.m in Sources */,
 				C1180A3D22AF4098005ED2FD /* ZNBaseCollectionViewCell.m in Sources */,
 				C124275722CD9453009D874D /* ZNSystemTool.m in Sources */,
 				394B7A052266F9840030FBB7 /* JokeListViewController.m in Sources */,

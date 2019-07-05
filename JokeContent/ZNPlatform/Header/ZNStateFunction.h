@@ -11,10 +11,20 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 屏幕宽度
+
+ @return <#return value description#>
+ */
 UIKIT_STATIC_INLINE CGFloat zn_screenWidth(){
     return [UIScreen mainScreen].bounds.size.width;
 }
 
+/**
+ 屏幕高度
+
+ @return <#return value description#>
+ */
 UIKIT_STATIC_INLINE CGFloat zn_screenHeight(){
     return [UIScreen mainScreen].bounds.size.height;
 }
@@ -116,6 +126,16 @@ UIKIT_STATIC_INLINE NSString * zn_obtainHTMLWithIframe(NSString* iframe){
                        "<body id=\"page\" style=\"text-align:center;width:100%;height:100%; padding：0 10px;\">"
                        ,iframe,@"</body></html>"];
     return html;
+}
+
+/**
+ NSString转NSURL对象
+
+ @param url <#url description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE NSURL * zn_url(NSString * url){
+    return [NSURL URLWithString:url];
 }
 
 //获取文件路径

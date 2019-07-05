@@ -16,6 +16,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIView * (^)(UIColor * color))zn_backgroundColor;
 
+- (UIView * (^)(UIColor * color))zn_layerColor;
+
+- (UIView * (^)(UIColor * color))zn_borderColor;
+
+- (UIView * (^)(CGFloat width))zn_borderWidth;
+
+- (UIView * (^)(CGFloat cornerRadius))zn_cornerRadius;
+
 /**
  根据颜色生成view
 

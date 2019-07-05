@@ -23,11 +23,27 @@
 
 @property (assign , nonatomic) CGPoint zn_ponit;
 
-//视图边框,背景设置
-- (instancetype)zn_boradWidth:(CGFloat)width;
-- (instancetype)zn_boradColor:(UIColor *)color;
-- (instancetype)zn_boradCornerRadius:(CGFloat)cornerRadius;
-- (instancetype)zn_BackgroundColor:(UIColor *)color;
+/**
+ 获取分割线
+ @param color 分割线的颜色
+ @return <#return value description#>
+ */
++ (instancetype)zn_getLineViewWithColor:(UIColor *) color;
+
+/**
+ 使用贝塞尔曲线进行裁剪出圆形角
+ 
+ @param r 圆的半径
+ @return <#return value description#>
+ */
+- (instancetype)zn_BezierRoundWithR:(CGFloat) r;
+
+/**
+ 获取类名
+
+ @return <#return value description#>
+ */
+- (NSString *)zn_getClassName;
 
 /**
  使用这个方法获取到的截图，图片文字都会变模糊
@@ -49,63 +65,41 @@
 - (CGRect)zn_screenRect;
 
 /**
- 使用贝塞尔曲线进行裁剪出圆形角
-
- @param r 圆的半径
- @return <#return value description#>
- */
-- (instancetype)zn_BezierRoundWithR:(CGFloat) r;
-
-/**
  获取当前控制器
 
  @return <#return value description#>
  */
 - (UIViewController *)zn_obtainController;
 
-/**
- 获取分割线
 
- @return <#return value description#>
- */
-+ (instancetype)zn_getLineView;
 
 /**
  设置底部的线条
 
- @param view 要设置的view
  @param color 线条颜色
  @param edge 距离,只有左，右，下，这三个值有用
  */
-+ (void)zn_setBottomLineWithView:(UIView *) view
-                       color:(UIColor*) color
+- (void)zn_setBottomLineWithColor:(UIColor*) color
                     distance:(UIEdgeInsets)edge;
 
 /**
  设置底部的线条
  
- @param view 要设置的view
  @param color 线条颜色
  */
-+ (void)zn_setBottomLineWithView:(UIView *) view
-                           color:(UIColor*) color;
+- (void)zn_setBottomLineWithColor:(UIColor*) color;
 
 /**
  设置底部的线条
 
- @param view <#view description#>
  @param edge <#edge description#>
  */
-+ (void)zn_setBottomLineWithView:(UIView *)view
-                        distance:(UIEdgeInsets)edge;
-
+- (void)zn_setBottomLineWithDistance:(UIEdgeInsets)edge;
 
 /**
  设置底部的线条
  
- @param view <#view description#>
  @param bottom <#edge description#>
  */
-+ (void)zn_setBottomLineWithView:(UIView *)view
-                        bottom:(CGFloat) bottom;
+- (void)zn_setBottomLineWithBottom:(CGFloat) bottom;
 @end

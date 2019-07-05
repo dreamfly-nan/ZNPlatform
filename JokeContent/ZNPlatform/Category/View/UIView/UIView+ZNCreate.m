@@ -21,6 +21,34 @@
     };
 }
 
+- (UIView * (^)(UIColor * color))zn_layerColor{
+    return ^(UIColor * color){
+        self.layer.backgroundColor = color.CGColor;
+        return self;
+    };
+}
+
+- (UIView * (^)(UIColor * color))zn_borderColor{
+    return ^(UIColor * color){
+        self.layer.borderColor = color.CGColor;
+        return self;
+    };
+}
+
+- (UIView * (^)(CGFloat width))zn_borderWidth{
+    return ^(CGFloat width){
+        self.layer.borderWidth = width;
+        return self;
+    };
+}
+
+- (UIView * (^)(CGFloat cornerRadius))zn_cornerRadius{
+    return ^(CGFloat cornerRadius){
+        self.layer.cornerRadius = cornerRadius;
+        return self;
+    };
+}
+
 /**
  根据颜色生成view
  

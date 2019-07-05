@@ -33,7 +33,7 @@
 }
 
 - (void)setupInitUI{
-    CGFloat imageWidth = (screenWidth - zn_AutoWidth(30)) / 2;
+    CGFloat imageWidth = (screenWidth - zn_AutoWidth(30)) / 2 - zn_AutoWidth(2);
     [self.contentView addSubview:self.titleLab];
     [self.contentView addSubview:self.leftImageView];
     [self.contentView addSubview:self.rightImageView];
@@ -54,10 +54,10 @@
     .heightIs(zn_AutoWidth(80));
     
     self.rightImageView.sd_layout
-    .leftSpaceToView(self.leftImageView, 0)
     .rightEqualToView(self.titleLab)
     .topSpaceToView(self.titleLab, zn_AutoHeight(10))
-    .heightIs(zn_AutoWidth(80));
+    .heightIs(zn_AutoWidth(80))
+    .widthIs(imageWidth);
     
     self.authorLabel.sd_layout
     .rightEqualToView(self.rightImageView)

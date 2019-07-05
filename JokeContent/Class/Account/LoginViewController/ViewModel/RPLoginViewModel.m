@@ -21,10 +21,10 @@
 - (void)setupInitUI{
     [self.controller.view addSubview:self.titleLabel];
     [self.controller.view addSubview:self.accountText];
-    UIView *accountLine = [UIView zn_getLineView];
+    UIView *accountLine = [UIView zn_getLineViewWithColor:Line_Color()];
     [self.controller.view addSubview:accountLine];
     [self.controller.view addSubview:self.passworldText];
-    UIView *passworldLine = [UIView zn_getLineView];
+    UIView *passworldLine = [UIView zn_getLineViewWithColor:Line_Color()];
     [self.controller.view addSubview:passworldLine];
     [self.controller.view addSubview:self.loginBtn];
     [self.controller.view addSubview:self.registerBtn];

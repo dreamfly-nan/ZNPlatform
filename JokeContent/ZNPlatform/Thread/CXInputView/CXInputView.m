@@ -184,7 +184,6 @@
         //最大字数回调
         _textView.textLengthDidMaxHandlerBlock = ^(UITextView * _Nonnull textView) {
             [MBProgressHUD zn_showError:@"评论最多100个字!"];
-            
         };
     }
     return _textView;

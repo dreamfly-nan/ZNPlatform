@@ -10,10 +10,6 @@
 
 @implementation UIImageView (ZNCreate)
 
-+ (UIImageView *)zn_create{
-    return [UIImageView new];
-}
-
 - (UIImageView * (^)(NSString * imageName))zn_imageName{
     return ^(NSString * imageName){
         self.image = [UIImage imageNamed:imageName];

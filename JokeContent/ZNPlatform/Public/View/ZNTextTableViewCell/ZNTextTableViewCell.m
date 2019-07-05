@@ -134,8 +134,7 @@
 
 - (UIView *)lineView{
     if (!_lineView) {
-        _lineView = [UIView zn_getLineView];
-        _lineView.backgroundColor = Line_Color();
+        _lineView = [UIView zn_getLineViewWithColor:Line_Color()];
     }
     return _lineView;
 }

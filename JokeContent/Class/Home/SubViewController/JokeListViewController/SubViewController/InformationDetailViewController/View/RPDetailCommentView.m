@@ -127,6 +127,7 @@
 - (UITextView *)commentTextView{
     if (!_commentTextView) {
         _commentTextView = [UITextView new];
+        
         _commentTextView.userInteractionEnabled = NO;
         [_commentTextView setContentInset: UIEdgeInsetsMake(3, 3, 3, 3)];
         _commentTextView.font = zn_font(12);
@@ -155,17 +156,14 @@
 
 - (UIView *)lineView{
     if (!_lineView) {
-        _lineView = [UIView zn_getLineView];
-        _lineView.backgroundColor = Big_background_Color();
+        _lineView = [UIView zn_getLineViewWithColor:Big_background_Color()];
     }
     return _lineView;
 }
 
 - (UIButton *)sendCommentBtn{
     if (!_sendCommentBtn) {
-        
-        _sendCommentBtn = UIButton.zn_create
-        .zn_title(@"发布",UIControlStateNormal)
+        _sendCommentBtn = UIButton.zn_createTitle(@"发布",UIControlStateNormal)
         .zn_font(zn_font(12))
         .zn_titleColor([UIColor whiteColor],UIControlStateNormal)
         .zn_backgroundColor(Main_Color());
