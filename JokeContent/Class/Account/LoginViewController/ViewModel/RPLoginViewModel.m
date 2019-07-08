@@ -85,12 +85,12 @@
 //绑定界面的相关操作
 - (void)setBingding{
     znWeakSelf(self)
-    [[self.accountText rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+    [[self.accountText.textField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
         znStrongSelf
         [weakSelf isEnableBtn];
     }];
     
-    [[self.passworldText rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+    [[self.passworldText.textField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
         znStrongSelf
         [weakSelf isEnableBtn];
     }];
@@ -100,8 +100,8 @@
  判断是否具备登录的条件
  */
 - (void)isEnableBtn{
-    NSString * account = self.accountText.text;
-    NSString * password = self.passworldText.text;
+    NSString * account = self.accountText.textField.text;
+    NSString * password = self.passworldText.textField.text;
     if (account == nil || password == nil || [account isEqualToString:@""] || [password isEqualToString:@""]) {
         self.loginBtn.alpha = 0.6;
         self.loginBtn.enabled = NO;
@@ -139,33 +139,35 @@
     return _titleLabel;
 }
 
-- (RPSearchTextField *)accountText{
+- (ZNTextField *)accountText{
     if (!_accountText) {
-        _accountText = [RPSearchTextField new];
-        _accountText.left_distance = zn_AutoWidth(10);
-        _accountText.font = zn_font(15);
-        _accountText.placeholder = @"请输入账号";
-        _accountText.text = @"15005934304";
-        _accountText.textColor = Content_Color();
-        _accountText.leftView = self.accountImage;
-        _accountText.leftViewMode = UITextFieldViewModeAlways;
-        _accountText.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _accountText = [ZNTextField new];
+        _accountText.inset = UIEdgeInsetsMake(0, zn_AutoWidth(5), 0, 0);
+        _accountText.textField.font = zn_font(15);
+        _accountText.textField.placeholder = @"请输入账号";
+        _accountText.textField.text = @"15005934304";
+        _accountText.textField.textColor = Content_Color();
+        _accountText.isLeftView = YES;
+        _accountText.imageSpace = zn_AutoWidth(5);
+        _accountText.leftImage = [UIImage imageNamed:@"account_select"];
+        _accountText.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
     }
     return _accountText;
 }
 
-- (RPSearchTextField *)passworldText{
+- (ZNTextField *)passworldText{
     if (!_passworldText) {
-        _passworldText = [RPSearchTextField new];
-        _passworldText.left_distance = zn_AutoWidth(10);
-        _passworldText.font = zn_font(15);
-        _passworldText.textColor = Content_Color();
-        _passworldText.placeholder = @"请输入密码";
-        _passworldText.text = @"123456";
-        _passworldText.secureTextEntry = YES;
-        _passworldText.leftView = self.passworldImage;
-        _passworldText.clearButtonMode = UITextFieldViewModeWhileEditing;
-        _passworldText.leftViewMode = UITextFieldViewModeAlways;
+        _passworldText = [ZNTextField new];
+        _passworldText.inset = UIEdgeInsetsMake(0, zn_AutoWidth(5), 0, 0);
+        _passworldText.textField.font = zn_font(15);
+        _passworldText.textField.textColor = Content_Color();
+        _passworldText.textField.placeholder = @"请输入密码";
+        _passworldText.textField.text = @"123456";
+        _passworldText.textField.secureTextEntry = YES;
+        _passworldText.isLeftView = YES;
+        _passworldText.imageSpace = zn_AutoWidth(5);
+        _passworldText.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        _passworldText.leftImage = [UIImage imageNamed:@"passworld_select"];
     }
     return _passworldText;
 }

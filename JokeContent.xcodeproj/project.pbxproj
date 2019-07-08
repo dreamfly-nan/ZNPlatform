@@ -168,6 +168,7 @@
 		C11E20FF22C218EB00163C03 /* RPBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E20FE22C218EA00163C03 /* RPBaseCollectionViewCell.m */; };
 		C11E210222C21A2600163C03 /* RPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E210122C21A2600163C03 /* RPBaseViewController.m */; };
 		C11E210522C21C2900163C03 /* ZNBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E210422C21C2900163C03 /* ZNBaseTableViewCell.m */; };
+		C12033C422D2E2DE00479A25 /* ZNMenuCollectViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C12033C322D2E2DE00479A25 /* ZNMenuCollectViewCell.m */; };
 		C124275722CD9453009D874D /* ZNSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C124275622CD9453009D874D /* ZNSystemTool.m */; };
 		C12427FC22CDC9D8009D874D /* UIImage+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12427FB22CDC9D8009D874D /* UIImage+ZNCreate.m */; };
 		C12427FF22CDCDC6009D874D /* UILabel+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12427FE22CDCDC6009D874D /* UILabel+ZNCreate.m */; };
@@ -205,6 +206,7 @@
 		C18C9DD5225F188F0088FE13 /* AppDelegate+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C9DD4225F188F0088FE13 /* AppDelegate+Push.m */; };
 		C18C9DD8225F189D0088FE13 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C9DD7225F189D0088FE13 /* AppDelegate+UI.m */; };
 		C18C9DED225F1A770088FE13 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C9DEC225F1A770088FE13 /* HomeViewController.m */; };
+		C1D6104222D2EB6200889956 /* ZNMentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D6104122D2EB6200889956 /* ZNMentItemModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -535,6 +537,8 @@
 		C11E210322C21C2900163C03 /* ZNBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNBaseTableViewCell.h; sourceTree = "<group>"; };
 		C11E210422C21C2900163C03 /* ZNBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNBaseTableViewCell.m; sourceTree = "<group>"; };
 		C11FC89122C5E1970052EEC8 /* threeKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threeKey.h; sourceTree = "<group>"; };
+		C12033C222D2E2DE00479A25 /* ZNMenuCollectViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNMenuCollectViewCell.h; sourceTree = "<group>"; };
+		C12033C322D2E2DE00479A25 /* ZNMenuCollectViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNMenuCollectViewCell.m; sourceTree = "<group>"; };
 		C124275522CD9453009D874D /* ZNSystemTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSystemTool.h; sourceTree = "<group>"; };
 		C124275622CD9453009D874D /* ZNSystemTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSystemTool.m; sourceTree = "<group>"; };
 		C12427FA22CDC9D8009D874D /* UIImage+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZNCreate.h"; sourceTree = "<group>"; };
@@ -608,6 +612,8 @@
 		C18C9DEB225F1A770088FE13 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C18C9DEC225F1A770088FE13 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C18C9DF2225F1AE90088FE13 /* JokeContent.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokeContent.pch; sourceTree = "<group>"; };
+		C1D6104022D2EB6200889956 /* ZNMentItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNMentItemModel.h; sourceTree = "<group>"; };
+		C1D6104122D2EB6200889956 /* ZNMentItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNMentItemModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1023,6 +1029,7 @@
 		394B795A2266D2910030FBB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C12033BE22D2E13900479A25 /* ZNMenuCollectViewCell */,
 				C11DCA5622C99302009E454F /* ZNTextTableViewCell */,
 				394B79722266D2910030FBB7 /* ZNTabBarContentView */,
 				394B79752266D2910030FBB7 /* ZNTextTabBarView */,
@@ -2027,6 +2034,16 @@
 			path = ZNWebController;
 			sourceTree = "<group>";
 		};
+		C12033BE22D2E13900479A25 /* ZNMenuCollectViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C1D6103F22D2E82800889956 /* Model */,
+				C12033C222D2E2DE00479A25 /* ZNMenuCollectViewCell.h */,
+				C12033C322D2E2DE00479A25 /* ZNMenuCollectViewCell.m */,
+			);
+			path = ZNMenuCollectViewCell;
+			sourceTree = "<group>";
+		};
 		C124275422CD9439009D874D /* SystemTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -2404,6 +2421,15 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		C1D6103F22D2E82800889956 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C1D6104022D2EB6200889956 /* ZNMentItemModel.h */,
+				C1D6104122D2EB6200889956 /* ZNMentItemModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2564,6 +2590,7 @@
 				C18C9DBD225F15C00088FE13 /* ViewController.m in Sources */,
 				C11DCA5D22C99302009E454F /* ZNTextCellModel.m in Sources */,
 				C117E791228EAC0E00BB79DD /* ZNDialogPage.m in Sources */,
+				C12033C422D2E2DE00479A25 /* ZNMenuCollectViewCell.m in Sources */,
 				393ED323226D92BF00F8F17F /* RPMyselfViewController.m in Sources */,
 				393ED342226EB24E00F8F17F /* ImageModel.m in Sources */,
 				39127AE92268581500686F0E /* RPForgetPassworldViewModel.m in Sources */,
@@ -2657,6 +2684,7 @@
 				39C04D522268951E00EDFC00 /* ImageCollectionViewCell.m in Sources */,
 				39C04D542268951E00EDFC00 /* TwoTypeTableViewCell.m in Sources */,
 				39CC545822697255003B5672 /* NewsKindsChooseController.m in Sources */,
+				C1D6104222D2EB6200889956 /* ZNMentItemModel.m in Sources */,
 				C12548B222C0A7AD00AFC5AD /* SelPlayerConfiguration.m in Sources */,
 				393ED330226D92BF00F8F17F /* RPMyItemModel.m in Sources */,
 				39E4AE5D22700FA6006D89EB /* SearchCollectionViewCell.m in Sources */,

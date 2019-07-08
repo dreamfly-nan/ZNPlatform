@@ -9,14 +9,15 @@
 #import "RPBaseViewController.h"
 #import "RPLoginViewController.h"
 #import "RPSearchTextField.h"
+#import "ZNTextField.h"
 
 @interface RPLoginViewModel : RPBaseObject
 
 @property (nonatomic , weak) RPLoginViewController *controller;
 
-@property (nonatomic , strong) RPSearchTextField * accountText;
+@property (nonatomic , strong) ZNTextField * accountText;
 
-@property (nonatomic , strong) RPSearchTextField * passworldText;
+@property (nonatomic , strong) ZNTextField * passworldText;
 
 @property (nonatomic , strong) UILabel * titleLabel;
 

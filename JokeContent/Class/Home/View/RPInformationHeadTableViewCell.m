@@ -107,5 +107,4 @@
     return _searchTextField;
 }
 
-
 @end

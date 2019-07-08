@@ -34,8 +34,8 @@
 //    }
     
     if ([RPConfig sharedInstance].userData) {
-        self.viewmodel.accountText.text = [RPConfig sharedInstance].userData.mobilePhoneNum;
-        self.viewmodel.passworldText.text = [RPConfig sharedInstance].userData.password;
+        self.viewmodel.accountText.textField.text = [RPConfig sharedInstance].userData.mobilePhoneNum;
+        self.viewmodel.passworldText.textField.text = [RPConfig sharedInstance].userData.password;
         [self.viewmodel.loginBtn sendActionsForControlEvents:UIControlEventTouchUpInside];
     }
     // Do any additional setup after loading the view.
@@ -46,8 +46,8 @@
     //登录
     [[self.viewmodel.loginBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         znStrongSelf
-        NSString * username = weakSelf.viewmodel.accountText.text;
-        NSString * password = weakSelf.viewmodel.passworldText.text;
+        NSString * username = weakSelf.viewmodel.accountText.textField.text;
+        NSString * password = weakSelf.viewmodel.passworldText.textField.text;
         [weakSelf showLoading];
         [weakSelf.datamodel.loginCommand execute:@{@"username":username,@"password":password}];
     }];
