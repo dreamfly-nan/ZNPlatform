@@ -62,6 +62,7 @@ UIImagePickerControllerDelegate>
 }
 
 - (void)setConfig{
+    self.manager.onlyLook = NO;
     self.leftSpace = zn_AutoWidth(30);
     self.rightSpace = zn_AutoWidth(30);
     self.topSpace = zn_AutoWidth(15);
@@ -84,6 +85,13 @@ UIImagePickerControllerDelegate>
 }
 
 #pragma mark - public
+
+/**
+ 重新加载数据
+ */
+- (void)reload{
+    [self.imageCollectView reloadData];
+}
 
 - (void)setCollectViewBackColor:(UIColor *)collectViewBackColor{
     _collectViewBackColor = collectViewBackColor;
@@ -144,6 +152,9 @@ UIImagePickerControllerDelegate>
 #pragma mark - ZNCImageCollectionViewCellDelegate
 
 - (void)longTouchAction:(ZNBaseCollectionViewCell *)cell model:(ZNCommentImageModel *)model longPress:(nonnull UILongPressGestureRecognizer *)longPress{
+    if (self.manager.onlyLook) {
+        return;
+    }
     self.moveCollectionCell = cell;
     self.cellFrom = [cell zn_screenRect];
     self.chooseModel = model;
@@ -178,6 +189,9 @@ UIImagePickerControllerDelegate>
 }
 
 - (void)touchMoveAction:(UILongPressGestureRecognizer *)longPress{
+    if (self.manager.onlyLook) {
+        return;
+    }
     //计算移动距离
     CGFloat tranX = [longPress locationOfTouch:0 inView:longPress.view].x - self.lastPoint.x;
     CGFloat tranY = [longPress locationOfTouch:0 inView:longPress.view].y - self.lastPoint.y;
@@ -187,6 +201,10 @@ UIImagePickerControllerDelegate>
 }
 
 - (void)touchMoveEndAction:(UILongPressGestureRecognizer *)longPress{
+    if (self.manager.onlyLook) {
+        return;
+    }
+    
     if (CGRectIntersectsRect(self.deleteBtn.frame, self.moveCell.frame)) {
         self.moveCollectionCell.hidden = NO;
         //交叉
@@ -218,6 +236,10 @@ UIImagePickerControllerDelegate>
 }
 
 - (void)touchMoveCancelAction:(UILongPressGestureRecognizer *)longPress{
+    if (self.manager.onlyLook) {
+        return;
+    }
+    
     self.moveCollectionCell.hidden = NO;
     [self.deleteBtn removeFromSuperview];
     [self.moveCell removeFromSuperview];
@@ -328,6 +350,13 @@ UIImagePickerControllerDelegate>
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return self.itemSize;
+}
+
+#pragma mark - set
+
+- (void)setOnlyLook:(BOOL)onlyLook{
+    _onlyLook = onlyLook;
+    self.manager.onlyLook = onlyLook;
 }
 
 #pragma mark - get

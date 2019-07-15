@@ -20,8 +20,8 @@
 - (void)zn_setFontAndColorWithRanage:(NSRange) range
                              font:(UIFont *)font
                             color:(UIColor *)color{
-    NSString *text = self.text;
-    NSMutableAttributedString *strArr = [[NSMutableAttributedString alloc] initWithString:text];
+    NSAttributedString *text = self.attributedText;
+    NSMutableAttributedString *strArr = [[NSMutableAttributedString alloc] initWithAttributedString:text];
     [strArr addAttribute:NSForegroundColorAttributeName value:color range:range];
     [strArr addAttribute:NSFontAttributeName value:font range:range];
     self.attributedText = strArr;

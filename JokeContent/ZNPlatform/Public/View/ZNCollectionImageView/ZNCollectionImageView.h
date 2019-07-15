@@ -49,6 +49,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) CGSize itemSize;
 
+/**
+ 查看模式
+ */
+@property(nonatomic,assign) BOOL onlyLook;
+
 - (void)setImageUrls:(NSArray<NSString*> *) urls;
 
 - (void)setImages:(NSArray<UIImage*> *) images;
@@ -64,6 +69,11 @@ NS_ASSUME_NONNULL_BEGIN
  @return <#return value description#>
  */
 - (CGFloat)obtainDataHeight;
+
+/**
+ 重新加载数据
+ */
+- (void)reload;
 
 @end
 

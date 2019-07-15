@@ -35,7 +35,7 @@
     self.rpImageView.sd_layout
     .centerXEqualToView(self)
     .centerYEqualToView(self)
-    .widthIs(zn_AutoWidth(300))
+    .widthIs(zn_AutoWidth(200))
     .heightEqualToWidth();
     
     UITapGestureRecognizer * recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(recognizerAction)];

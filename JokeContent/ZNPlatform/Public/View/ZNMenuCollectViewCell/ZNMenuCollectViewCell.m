@@ -29,12 +29,13 @@
     [self.contentView addSubview:self.iconImage];
     [self.contentView addSubview:self.titleLabel];
     
-    CGFloat height = self.height * 0.7;
+    CGFloat topSpace = (self.width - zn_AutoWidth(35))/2;
+    
     self.iconImage.sd_layout
-    .topEqualToView(self.contentView)
-    .leftEqualToView(self.contentView)
-    .rightEqualToView(self.contentView)
-    .heightIs(height);
+    .topSpaceToView(self.contentView, topSpace)
+    .centerXEqualToView(self.contentView)
+    .widthIs(zn_AutoWidth(35))
+    .heightEqualToWidth();
     
     self.titleLabel.sd_layout
     .leftEqualToView(self.contentView)
@@ -47,7 +48,12 @@
 
 - (void)setModel:(ZNMentItemModel *)model{
     _model = model;
-    self.iconImage.image = [UIImage imageNamed:model.imageName];
+    if (model.isUrl) {
+        [self.iconImage sd_setImageWithURL:[NSURL URLWithString:model.imageUrl]];
+    }else{
+        self.iconImage.image = [UIImage imageNamed:model.imageName];
+    }
+    
     self.titleLabel.text = model.title;
 }
 

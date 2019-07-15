@@ -15,7 +15,7 @@
     if (self = [super init]) {
         self.titleFont = [UIFont systemFontOfSize:13];
         self.titleColor = [UIColor blackColor];
-        self.subTitleFont = self.titleFont;
+        self.subTitleFont = [UIFont systemFontOfSize:10];
         self.subTitleColor = self.titleColor;
         self.selectColor = [UIColor redColor];
         self.selectFontChanage = 2;
@@ -33,8 +33,9 @@
     CGFloat subTitleWidth = [self.subTitle zn_obtainWidthWithHeight:height font:self.subTitleFont];
     if (subTitleWidth > 0) {
         _width = titleWidth + subTitleWidth;
+    }else{
+        _width = titleWidth;
     }
-    _width = titleWidth;
     return _width;
 }
 

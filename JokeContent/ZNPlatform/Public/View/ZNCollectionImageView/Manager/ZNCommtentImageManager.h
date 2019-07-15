@@ -11,13 +11,16 @@
 #import "ZNCImageCollectionViewCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZNCommtentImageManager : NSObject <ZNCImageCollectionViewCellDelegate>
+@interface ZNCommtentImageManager : NSObject
 
 @property(nonatomic,strong) NSMutableArray<ZNCommentImageModel*> * imageModels;
 
 @property(nonatomic,strong) NSMutableArray<UIImage*> * newAddImages;
 
 @property(nonatomic,strong) ZNCommentImageModel * addModel;
+
+//只能查看
+@property(nonatomic,assign) BOOL onlyLook;
 
 - (void)setImageUrls:(NSArray<NSString*> *) urls;
 

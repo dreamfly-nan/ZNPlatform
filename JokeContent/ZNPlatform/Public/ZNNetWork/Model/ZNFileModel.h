@@ -12,7 +12,8 @@
 #define DataModelTimeIntervalSince1970 [NSString stringWithFormat:@"%lld",(long long)([[NSDate date] timeIntervalSince1970] * 1000)]
 
 typedef enum : NSUInteger {
-    ZNFileTypeImage             //图片文件
+    ZNFileTypeImage,             //图片文件
+    ZNFileVideo                  //视频文件
 } ZNFileType;
 
 @interface ZNFileModel : NSObject
@@ -32,9 +33,13 @@ typedef enum : NSUInteger {
 //上传文件的名字，由时间戳字符串加文件名
 @property (nonatomic , copy)        NSString    *    _Nullable  upDownFileName;
 
-+ (instancetype _Nullable )initWithDataModelWithImage:(UIImage * _Nonnull) image
++ (instancetype _Nonnull )initWithDataModelWithImage:(UIImage * _Nonnull) image
                                       type:(ZNFileType) type
                                   fileName:(NSString * _Nonnull)fileName;
+
++ (instancetype _Nonnull)initWithData:(NSData * _Nonnull) data
+                                  type:(ZNFileType) type
+                              fileName:(NSString * _Nonnull) fileName;
 
 - (void)setDataModelWithImage:(UIImage * _Nonnull) image
                          type:(ZNFileType) type

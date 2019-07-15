@@ -16,6 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy , nonatomic) NSString * imageName;
 
+@property (copy , nonatomic) NSString * imageUrl;
+
+//是否是url
+@property(nonatomic,assign) BOOL isUrl;
+
++ (instancetype)initWithTitle:(NSString*) title image:(NSString*) name;
+
++ (instancetype)initWithTitle:(NSString*) title url:(NSString*) url;
+
 @end
 
 NS_ASSUME_NONNULL_END

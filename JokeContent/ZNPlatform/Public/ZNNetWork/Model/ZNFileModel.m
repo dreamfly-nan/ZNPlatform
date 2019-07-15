@@ -22,6 +22,16 @@
     return model;
 }
 
++ (instancetype _Nonnull)initWithData:(NSData * _Nonnull) data
+                                 type:(ZNFileType) type
+                             fileName:(NSString * _Nonnull) fileName{
+    ZNFileModel * model = [ZNFileModel new];
+    model.fileData = data;
+    model.type = type;
+    model.fileName = fileName;
+    return model;
+}
+
 - (void)setDataModelWithImage:(UIImage * _Nonnull) image
                          type:(ZNFileType) type
                      fileName:(NSString * _Nonnull)fileName{

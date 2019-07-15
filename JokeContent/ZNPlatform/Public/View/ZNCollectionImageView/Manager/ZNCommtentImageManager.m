@@ -42,7 +42,11 @@
         ZNCommentImageModel * model = [ZNCommentImageModel initWithImageUrl:url];
         [self.imageModels addObject:model];
     }
-    [self.imageModels addObject:self.addModel];
+    
+    if (!self.onlyLook) {
+        [self.imageModels addObject:self.addModel];
+    }
+    
 }
 
 - (void)setImages:(NSArray<UIImage*> *) images{
@@ -51,7 +55,24 @@
         ZNCommentImageModel * model = [ZNCommentImageModel initWithImage:image];
         [self.imageModels addObject:model];
     }
-    [self.imageModels addObject:self.addModel];
+    if (!self.onlyLook) {
+        [self.imageModels addObject:self.addModel];
+    }
+}
+
+#pragma mark - set
+
+- (void)setOnlyLook:(BOOL)onlyLook{
+    _onlyLook = onlyLook;
+    if ([self.imageModels containsObject:self.addModel]) {
+        if (onlyLook) {
+            [self.imageModels removeObject:self.addModel];
+        }
+    }else{
+        if (!onlyLook) {
+            [self.imageModels addObject:self.addModel];
+        }
+    }
 }
 
 #pragma mark - get

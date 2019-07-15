@@ -17,7 +17,8 @@
 #import "AdDialogView.h"
 #import "ZNDialogPage.h"
 
-#import "TextTableviewcellController.h"
+#import "ViewController.h"
+#import "CollectionViewController.h"
 
 @interface HomeViewController ()
 <SearchViewControllerDelegate,
@@ -55,11 +56,9 @@ NewsKindsChooseControllerDelegate>
     
     [[self.viewModel.searchBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         znStrongSelf
-        TextTableviewcellController * controller = [TextTableviewcellController new];
+        SearchViewController * controller = [SearchViewController new];
+        controller.znDelegate = weakSelf;
         [weakSelf.navigationController pushViewController:controller animated:YES];
-//        SearchViewController * controller = [SearchViewController new];
-//        controller.znDelegate = weakSelf;
-//        [weakSelf.navigationController pushViewController:controller animated:YES];
     }];
     
     [[self.viewModel.accountBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -130,6 +129,9 @@ NewsKindsChooseControllerDelegate>
         ZNTitleModel * title = [ZNTitleModel initWithTitle:model.name subTitle:nil];
         title.selectColor = Main_Color();
         title.titleColor = Content_Color();
+        title.titleFont = zn_font(13);
+        title.subTitleFont = zn_font(10);
+        title.subTitle = @"(99+)";
         title.selectFontChanage = 1;
         [titles addObject:title];
         

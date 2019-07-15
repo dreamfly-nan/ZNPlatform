@@ -194,6 +194,7 @@
 		C137EF1522CC4ACF00954453 /* NSObject+ZNSql.m in Sources */ = {isa = PBXBuildFile; fileRef = C137EF1422CC4ACF00954453 /* NSObject+ZNSql.m */; };
 		C140158F22B9DA7A00C4A0E1 /* ZNBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C140158E22B9DA7A00C4A0E1 /* ZNBaseTabBarController.m */; };
 		C14323C822C34CEC00FD0992 /* ZNAlertDialogTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C14323C722C34CEC00FD0992 /* ZNAlertDialogTool.m */; };
+		C14D1DF022D837100005FB2E /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = C14D1DEF22D837100005FB2E /* test.html */; };
 		C1784D8A22B8BC8700428385 /* ZNCollectionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1784D8922B8BC8700428385 /* ZNCollectionImageView.m */; };
 		C17DA235228A6D900091C23C /* ZNTimeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C17DA234228A6D900091C23C /* ZNTimeTool.m */; };
 		C17DA238228A6EA80091C23C /* RPMyCommentDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C17DA237228A6EA80091C23C /* RPMyCommentDataModel.m */; };
@@ -207,6 +208,7 @@
 		C18C9DD8225F189D0088FE13 /* AppDelegate+UI.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C9DD7225F189D0088FE13 /* AppDelegate+UI.m */; };
 		C18C9DED225F1A770088FE13 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C18C9DEC225F1A770088FE13 /* HomeViewController.m */; };
 		C1D6104222D2EB6200889956 /* ZNMentItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D6104122D2EB6200889956 /* ZNMentItemModel.m */; };
+		C1D6104522D3136100889956 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1D6104422D3136100889956 /* CollectionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -589,6 +591,7 @@
 		C140158E22B9DA7A00C4A0E1 /* ZNBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNBaseTabBarController.m; sourceTree = "<group>"; };
 		C14323C622C34CEC00FD0992 /* ZNAlertDialogTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNAlertDialogTool.h; sourceTree = "<group>"; };
 		C14323C722C34CEC00FD0992 /* ZNAlertDialogTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNAlertDialogTool.m; sourceTree = "<group>"; };
+		C14D1DEF22D837100005FB2E /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
 		C1784D8822B8BC8700428385 /* ZNCollectionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCollectionImageView.h; sourceTree = "<group>"; };
 		C1784D8922B8BC8700428385 /* ZNCollectionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCollectionImageView.m; sourceTree = "<group>"; };
 		C17DA233228A6D900091C23C /* ZNTimeTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNTimeTool.h; sourceTree = "<group>"; };
@@ -614,6 +617,8 @@
 		C18C9DF2225F1AE90088FE13 /* JokeContent.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JokeContent.pch; sourceTree = "<group>"; };
 		C1D6104022D2EB6200889956 /* ZNMentItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNMentItemModel.h; sourceTree = "<group>"; };
 		C1D6104122D2EB6200889956 /* ZNMentItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNMentItemModel.m; sourceTree = "<group>"; };
+		C1D6104322D3136100889956 /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		C1D6104422D3136100889956 /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2117,6 +2122,9 @@
 				C11DED2022C46FFC00B42FED /* TestWebControllerViewController.m */,
 				C11DCA6222C9AF94009E454F /* TextTableviewcellController.h */,
 				C11DCA6322C9AF94009E454F /* TextTableviewcellController.m */,
+				C1D6104322D3136100889956 /* CollectionViewController.h */,
+				C1D6104422D3136100889956 /* CollectionViewController.m */,
+				C14D1DEF22D837100005FB2E /* test.html */,
 			);
 			path = TestViewController;
 			sourceTree = "<group>";
@@ -2502,6 +2510,7 @@
 				C18C9DC2225F15C10088FE13 /* Assets.xcassets in Resources */,
 				C11DED2322C4961300B42FED /* index.html in Resources */,
 				39127AED2268753100686F0E /* loading.gif in Resources */,
+				C14D1DF022D837100005FB2E /* test.html in Resources */,
 				39E4AE6222702E03006D89EB /* Search-Waste.png in Resources */,
 				C1180A2A22AF3914005ED2FD /* znImageAdd.png in Resources */,
 				C18C9DC0225F15C00088FE13 /* Main.storyboard in Resources */,
@@ -2639,6 +2648,7 @@
 				394B7A32226702620030FBB7 /* RPLoginViewModel.m in Sources */,
 				C1111AC9228D027800389F17 /* CXToolBarView.m in Sources */,
 				394B798F2266D2920030FBB7 /* ZNResponseMessage.m in Sources */,
+				C1D6104522D3136100889956 /* CollectionViewController.m in Sources */,
 				394B794B2266D2000030FBB7 /* NSString+ZNRule.m in Sources */,
 				394B799E2266D2920030FBB7 /* GTMBase64.m in Sources */,
 				C12548B022C0A7AD00AFC5AD /* SelVideoPlayer.m in Sources */,
@@ -2908,6 +2918,56 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AvoidCrash\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"Popover.OC\"",
+					"-l\"RTRootNavigationController\"",
+					"-l\"ReactiveObjC\"",
+					"-l\"SDAutoLayout\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"TZImagePickerController\"",
+					"-l\"YLGIFImage\"",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = none.JokeContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2928,6 +2988,56 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"AFNetworking\"",
+					"-l\"AvoidCrash\"",
+					"-l\"IQKeyboardManager\"",
+					"-l\"MBProgressHUD\"",
+					"-l\"MJExtension\"",
+					"-l\"MJRefresh\"",
+					"-l\"Masonry\"",
+					"-l\"Popover.OC\"",
+					"-l\"RTRootNavigationController\"",
+					"-l\"ReactiveObjC\"",
+					"-l\"SDAutoLayout\"",
+					"-l\"SDCycleScrollView\"",
+					"-l\"SDWebImage\"",
+					"-l\"SVProgressHUD\"",
+					"-l\"TZImagePickerController\"",
+					"-l\"YLGIFImage\"",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z.1.2.5\"",
+					"-framework",
+					"\"BmobSDK\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Photos\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = none.JokeContent;
 				PRODUCT_NAME = "$(TARGET_NAME)";

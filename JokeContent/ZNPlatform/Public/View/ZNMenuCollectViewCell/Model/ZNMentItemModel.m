@@ -10,4 +10,20 @@
 
 @implementation ZNMentItemModel
 
++ (instancetype)initWithTitle:(NSString*) title image:(NSString*) name{
+    ZNMentItemModel * model = [ZNMentItemModel new];
+    model.title = title;
+    model.imageName = name;
+    model.isUrl = NO;
+    return model;
+}
+
++ (instancetype)initWithTitle:(NSString*) title url:(NSString*) url{
+    ZNMentItemModel * model = [ZNMentItemModel new];
+    model.title = title;
+    model.imageUrl = url;
+    model.isUrl = YES;
+    return model;
+}
+
 @end
