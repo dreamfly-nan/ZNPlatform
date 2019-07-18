@@ -20,6 +20,8 @@
 #import "ViewController.h"
 #import "CollectionViewController.h"
 
+#import "ZNSearchViewController.h"
+
 @interface HomeViewController ()
 <SearchViewControllerDelegate,
 NewsKindsChooseControllerDelegate>
@@ -56,8 +58,10 @@ NewsKindsChooseControllerDelegate>
     
     [[self.viewModel.searchBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         znStrongSelf
-        SearchViewController * controller = [SearchViewController new];
-        controller.znDelegate = weakSelf;
+//        SearchViewController * controller = [SearchViewController new];
+//        controller.znDelegate = weakSelf;
+//        [weakSelf.navigationController pushViewController:controller animated:YES];
+        ZNSearchViewController * controller = [ZNSearchViewController new];
         [weakSelf.navigationController pushViewController:controller animated:YES];
     }];
     

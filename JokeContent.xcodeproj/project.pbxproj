@@ -169,6 +169,15 @@
 		C11E210222C21A2600163C03 /* RPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E210122C21A2600163C03 /* RPBaseViewController.m */; };
 		C11E210522C21C2900163C03 /* ZNBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C11E210422C21C2900163C03 /* ZNBaseTableViewCell.m */; };
 		C12033C422D2E2DE00479A25 /* ZNMenuCollectViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C12033C322D2E2DE00479A25 /* ZNMenuCollectViewCell.m */; };
+		C121035D22E005C7003A6C84 /* ZNSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C121035C22E005C7003A6C84 /* ZNSearchViewController.m */; };
+		C121036122E008FB003A6C84 /* ZNSearchBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C121036022E008FB003A6C84 /* ZNSearchBarView.m */; };
+		C121036522E00FF1003A6C84 /* ZNSearchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C121036422E00FF1003A6C84 /* ZNSearchViewModel.m */; };
+		C121036822E01C81003A6C84 /* ZNSearchHistoryItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C121036722E01C81003A6C84 /* ZNSearchHistoryItemCell.m */; };
+		C121036B22E05EE9003A6C84 /* ZNSearchDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C121036A22E05EE9003A6C84 /* ZNSearchDataModel.m */; };
+		C121036F22E063DB003A6C84 /* UIButton+ZNButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C121036E22E063DB003A6C84 /* UIButton+ZNButton.m */; };
+		C121037322E06886003A6C84 /* magnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = C121037222E06886003A6C84 /* magnifier.png */; };
+		C121037722E06C3D003A6C84 /* FileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C121037622E06C3D003A6C84 /* FileTool.m */; };
+		C121037B22E070E0003A6C84 /* ZNTextField+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C121037A22E070E0003A6C84 /* ZNTextField+ZNCreate.m */; };
 		C124275722CD9453009D874D /* ZNSystemTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C124275622CD9453009D874D /* ZNSystemTool.m */; };
 		C12427FC22CDC9D8009D874D /* UIImage+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12427FB22CDC9D8009D874D /* UIImage+ZNCreate.m */; };
 		C12427FF22CDCDC6009D874D /* UILabel+ZNCreate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12427FE22CDCDC6009D874D /* UILabel+ZNCreate.m */; };
@@ -541,6 +550,23 @@
 		C11FC89122C5E1970052EEC8 /* threeKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = threeKey.h; sourceTree = "<group>"; };
 		C12033C222D2E2DE00479A25 /* ZNMenuCollectViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNMenuCollectViewCell.h; sourceTree = "<group>"; };
 		C12033C322D2E2DE00479A25 /* ZNMenuCollectViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNMenuCollectViewCell.m; sourceTree = "<group>"; };
+		C121035B22E005C7003A6C84 /* ZNSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSearchViewController.h; sourceTree = "<group>"; };
+		C121035C22E005C7003A6C84 /* ZNSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSearchViewController.m; sourceTree = "<group>"; };
+		C121035F22E008FB003A6C84 /* ZNSearchBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSearchBarView.h; sourceTree = "<group>"; };
+		C121036022E008FB003A6C84 /* ZNSearchBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSearchBarView.m; sourceTree = "<group>"; };
+		C121036322E00FF1003A6C84 /* ZNSearchViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSearchViewModel.h; sourceTree = "<group>"; };
+		C121036422E00FF1003A6C84 /* ZNSearchViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSearchViewModel.m; sourceTree = "<group>"; };
+		C121036622E01C81003A6C84 /* ZNSearchHistoryItemCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSearchHistoryItemCell.h; sourceTree = "<group>"; };
+		C121036722E01C81003A6C84 /* ZNSearchHistoryItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSearchHistoryItemCell.m; sourceTree = "<group>"; };
+		C121036922E05EE9003A6C84 /* ZNSearchDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSearchDataModel.h; sourceTree = "<group>"; };
+		C121036A22E05EE9003A6C84 /* ZNSearchDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSearchDataModel.m; sourceTree = "<group>"; };
+		C121036D22E063DB003A6C84 /* UIButton+ZNButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ZNButton.h"; sourceTree = "<group>"; };
+		C121036E22E063DB003A6C84 /* UIButton+ZNButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ZNButton.m"; sourceTree = "<group>"; };
+		C121037222E06886003A6C84 /* magnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnifier.png; sourceTree = "<group>"; };
+		C121037522E06C3D003A6C84 /* FileTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileTool.h; sourceTree = "<group>"; };
+		C121037622E06C3D003A6C84 /* FileTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileTool.m; sourceTree = "<group>"; };
+		C121037922E070E0003A6C84 /* ZNTextField+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZNTextField+ZNCreate.h"; sourceTree = "<group>"; };
+		C121037A22E070E0003A6C84 /* ZNTextField+ZNCreate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ZNTextField+ZNCreate.m"; sourceTree = "<group>"; };
 		C124275522CD9453009D874D /* ZNSystemTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNSystemTool.h; sourceTree = "<group>"; };
 		C124275622CD9453009D874D /* ZNSystemTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNSystemTool.m; sourceTree = "<group>"; };
 		C12427FA22CDC9D8009D874D /* UIImage+ZNCreate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ZNCreate.h"; sourceTree = "<group>"; };
@@ -1000,6 +1026,7 @@
 		394B794F2266D2910030FBB7 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				C121035A22E005A2003A6C84 /* ZNSearchViewController */,
 				C11E20F622C1B52300163C03 /* ZNWebController */,
 				394B79502266D2910030FBB7 /* ZNNetWork */,
 				394B795A2266D2910030FBB7 /* View */,
@@ -1098,6 +1125,7 @@
 		394B79802266D2910030FBB7 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				C121037422E06C25003A6C84 /* FileTool */,
 				C124275422CD9439009D874D /* SystemTool */,
 				C14323C522C34CCE00FD0992 /* AlertDialogTool */,
 				39F0DE2E22BF661900CBD452 /* VersionTool */,
@@ -1157,6 +1185,7 @@
 		394B79AE2266D3010030FBB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C121037822E070BF003A6C84 /* ZNTextField */,
 				C1310AD522CEE9AC0047247B /* UITextView */,
 				C124280B22CDF086009D874D /* UIImageView */,
 				C124280722CDE11F009D874D /* UITextField */,
@@ -2049,6 +2078,66 @@
 			path = ZNMenuCollectViewCell;
 			sourceTree = "<group>";
 		};
+		C121035A22E005A2003A6C84 /* ZNSearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C121036C22E0637E003A6C84 /* Image */,
+				C121036222E00FDA003A6C84 /* ViewModel */,
+				C121035E22E0085E003A6C84 /* View */,
+				C121035B22E005C7003A6C84 /* ZNSearchViewController.h */,
+				C121035C22E005C7003A6C84 /* ZNSearchViewController.m */,
+			);
+			path = ZNSearchViewController;
+			sourceTree = "<group>";
+		};
+		C121035E22E0085E003A6C84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C121035F22E008FB003A6C84 /* ZNSearchBarView.h */,
+				C121036022E008FB003A6C84 /* ZNSearchBarView.m */,
+				C121036622E01C81003A6C84 /* ZNSearchHistoryItemCell.h */,
+				C121036722E01C81003A6C84 /* ZNSearchHistoryItemCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C121036222E00FDA003A6C84 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C121036322E00FF1003A6C84 /* ZNSearchViewModel.h */,
+				C121036422E00FF1003A6C84 /* ZNSearchViewModel.m */,
+				C121036922E05EE9003A6C84 /* ZNSearchDataModel.h */,
+				C121036A22E05EE9003A6C84 /* ZNSearchDataModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C121036C22E0637E003A6C84 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				C121037222E06886003A6C84 /* magnifier.png */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		C121037422E06C25003A6C84 /* FileTool */ = {
+			isa = PBXGroup;
+			children = (
+				C121037522E06C3D003A6C84 /* FileTool.h */,
+				C121037622E06C3D003A6C84 /* FileTool.m */,
+			);
+			path = FileTool;
+			sourceTree = "<group>";
+		};
+		C121037822E070BF003A6C84 /* ZNTextField */ = {
+			isa = PBXGroup;
+			children = (
+				C121037922E070E0003A6C84 /* ZNTextField+ZNCreate.h */,
+				C121037A22E070E0003A6C84 /* ZNTextField+ZNCreate.m */,
+			);
+			path = ZNTextField;
+			sourceTree = "<group>";
+		};
 		C124275422CD9439009D874D /* SystemTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -2063,6 +2152,8 @@
 			children = (
 				C124280422CDD906009D874D /* UIButton+ZNCreate.h */,
 				C124280522CDD906009D874D /* UIButton+ZNCreate.m */,
+				C121036D22E063DB003A6C84 /* UIButton+ZNButton.h */,
+				C121036E22E063DB003A6C84 /* UIButton+ZNButton.m */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -2507,6 +2598,7 @@
 				C11DCA6C22C9E014009E454F /* zn_cell_arrow.png in Resources */,
 				C18C9DC5225F15C10088FE13 /* LaunchScreen.storyboard in Resources */,
 				C1180A3022AF3CE5005ED2FD /* znImageloadFail.png in Resources */,
+				C121037322E06886003A6C84 /* magnifier.png in Resources */,
 				C18C9DC2225F15C10088FE13 /* Assets.xcassets in Resources */,
 				C11DED2322C4961300B42FED /* index.html in Resources */,
 				39127AED2268753100686F0E /* loading.gif in Resources */,
@@ -2594,6 +2686,7 @@
 				394B79AC2266D2DE0030FBB7 /* RPRfreshHeader.m in Sources */,
 				393ED33C226D9B7900F8F17F /* FeedBackDataModel.m in Sources */,
 				C124280E22CDF0E5009D874D /* UIImageView+ZNCreate.m in Sources */,
+				C121036B22E05EE9003A6C84 /* ZNSearchDataModel.m in Sources */,
 				39C04D7622689FB200EDFC00 /* RPDetailHeadView.m in Sources */,
 				394B794A2266D2000030FBB7 /* UIImage+ZNTool.m in Sources */,
 				C18C9DBD225F15C00088FE13 /* ViewController.m in Sources */,
@@ -2633,11 +2726,14 @@
 				39DF998D227A7FFC0003A6C2 /* IntroductionCollectionViewCell.m in Sources */,
 				394B79D02266D3A40030FBB7 /* RPNoNetView.m in Sources */,
 				394B79AA2266D2DE0030FBB7 /* RPBaseTableViewCell.m in Sources */,
+				C121036522E00FF1003A6C84 /* ZNSearchViewModel.m in Sources */,
 				C11AE66F22A4CCF600289610 /* CommentUserHeadView.m in Sources */,
 				394B79FA2266D5760030FBB7 /* USerData.m in Sources */,
+				C121035D22E005C7003A6C84 /* ZNSearchViewController.m in Sources */,
 				394B799C2266D2920030FBB7 /* ZNTitleLabel.m in Sources */,
 				394B79F72266D5210030FBB7 /* RPTimeButton.m in Sources */,
 				C11DC60522C3213600FA4453 /* ZNNoNetWorkView.m in Sources */,
+				C121036822E01C81003A6C84 /* ZNSearchHistoryItemCell.m in Sources */,
 				C124280A22CDE14A009D874D /* UITextField+ZNCreate.m in Sources */,
 				C11DCA6122C9A55A009E454F /* ZNTextTableViewCell.m in Sources */,
 				394B79D32266D3A40030FBB7 /* RPBaceTabBarController.m in Sources */,
@@ -2649,9 +2745,11 @@
 				C1111AC9228D027800389F17 /* CXToolBarView.m in Sources */,
 				394B798F2266D2920030FBB7 /* ZNResponseMessage.m in Sources */,
 				C1D6104522D3136100889956 /* CollectionViewController.m in Sources */,
+				C121037B22E070E0003A6C84 /* ZNTextField+ZNCreate.m in Sources */,
 				394B794B2266D2000030FBB7 /* NSString+ZNRule.m in Sources */,
 				394B799E2266D2920030FBB7 /* GTMBase64.m in Sources */,
 				C12548B022C0A7AD00AFC5AD /* SelVideoPlayer.m in Sources */,
+				C121036122E008FB003A6C84 /* ZNSearchBarView.m in Sources */,
 				39E4AE6F22702E85006D89EB /* SearchCollectionView.m in Sources */,
 				394B79F12266D5210030FBB7 /* RPRegisterDataModel.m in Sources */,
 				C11B174B229FD5F5003D3720 /* AppDelegate+Notification.m in Sources */,
@@ -2681,6 +2779,7 @@
 				39D8B1232268B97300BF1A77 /* RPSearchTextField.m in Sources */,
 				C11AE67522A4F90200289610 /* CommentUserTableViewCell.m in Sources */,
 				394B7A092266F9AA0030FBB7 /* JokeListDataModel.m in Sources */,
+				C121036F22E063DB003A6C84 /* UIButton+ZNButton.m in Sources */,
 				C127B2ED22B0A6AD0016546C /* ZNImageLookViewManager.m in Sources */,
 				C1111AC4228D024A00389F17 /* CXTextView.m in Sources */,
 				39E4AE6722702E41006D89EB /* SearchViewController.m in Sources */,
@@ -2734,6 +2833,7 @@
 				C1111AD7228D46F200389F17 /* CommentUserDataModel.m in Sources */,
 				394B79BC2266D3010030FBB7 /* UILabel+ZNLabel.m in Sources */,
 				39127AEA2268581500686F0E /* RPForgetPassworldViewController.m in Sources */,
+				C121037722E06C3D003A6C84 /* FileTool.m in Sources */,
 				39C04D7422689FB200EDFC00 /* RPCommentTableViewCell.m in Sources */,
 				394B79FD2266D70E0030FBB7 /* RPBaseObject.m in Sources */,
 				39C04D3E22688F0400EDFC00 /* NewsDetailModel.m in Sources */,

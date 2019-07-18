@@ -19,6 +19,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UILabel* (^)(UIFont * font))zn_font;
 
+- (UILabel * (^)(NSString * text))zn_text;
+
 
 + (UILabel *) zn_createWithText:(NSString *) text
                            font:(UIFont *) font

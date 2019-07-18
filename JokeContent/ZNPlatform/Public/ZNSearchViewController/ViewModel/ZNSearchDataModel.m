@@ -1,14 +1,21 @@
 //
-//  SearchViewModel.m
-//  准到-ipad
+//  ZNSearchDataModel.m
+//  JokeContent
 //
-//  Created by zhundao on 2017/9/11.
-//  Copyright © 2017年 zhundao. All rights reserved.
+//  Created by 南木南木 on 2019/7/18.
+//  Copyright © 2019 南木南木. All rights reserved.
 //
 
-#import "SearchViewModel.h"
+#import "ZNSearchDataModel.h"
 
-@implementation SearchViewModel
+@implementation ZNSearchDataModel
+
+- (instancetype)init{
+    if (self = [super init]) {
+        [self.history addObjectsFromArray:[self readHistory]];
+    }
+    return self;
+}
 
 /*! 保存历史搜索 */
 - (void)saveHistory :(NSString *)text{
@@ -31,6 +38,7 @@
     NSArray *array  = [NSArray arrayWithContentsOfFile:historyPath];
     return array;
 }
+
 /*! 删除历史搜索 */
 - (void)deleteHistory:(NSString *)text{
     NSString *historyPath = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject stringByAppendingPathComponent:@"history.plist"];
@@ -59,6 +67,15 @@
         }
     }
     return row>4?4:row;
+}
+
+#pragma mark - get
+
+- (NSMutableArray *)history{
+    if (!_history) {
+        _history = [NSMutableArray new];
+    }
+    return _history;
 }
 
 @end

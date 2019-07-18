@@ -150,7 +150,7 @@
         make.centerX.mas_equalTo(self.textField).offset(-self.space-self.size.width/2);
     }];
     [UIView animateWithDuration:0.25 animations:^{
-        //        执行更新
+        //执行更新
         [self.textField layoutIfNeeded];
     }];
 }
@@ -172,8 +172,8 @@
 //        执行更新
         [self layoutIfNeeded];
     }];
-    
 }
+
 /*! 输入框结束编辑 */
 - (void)textFieldDidEndEditing:(UITextField *)textField{
     if (textField.text.length>0) {

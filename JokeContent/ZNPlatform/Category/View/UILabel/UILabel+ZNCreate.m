@@ -31,6 +31,13 @@
     };
 }
 
+- (UILabel * (^)(NSString * text))zn_text{
+    return ^(NSString * text){
+        self.text = text;
+        return self;
+    };
+}
+
 + (UILabel *) zn_createWithText:(NSString *) text{
     UILabel * label = [UILabel new];
     label.text = text;
