@@ -16,12 +16,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,assign) CGFloat rightSpace;
 
+@property(nonatomic,strong) UIButton * backBtn;
+
 @property(nonatomic,strong) ZNTextField * searchText;
 
 /**
- 点击取消按键的时候执行
+ 点击返回按键的时候执行
  */
 @property (copy , nonatomic) void (^backBlock)(void);
+
+/**
+ 检索执行
+ */
+@property (copy , nonatomic) void (^searchBlock)(NSString * searchText);
 
 @end
 

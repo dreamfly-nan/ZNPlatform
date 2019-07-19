@@ -28,6 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (ZNTextField * (^)(BOOL isLeftView))zn_isLeftView;
 
+- (ZNTextField * (^)(UIEdgeInsets insets))zn_inset;
+
+- (ZNTextField * (^)(CGSize size))zn_imageSize;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -17,11 +17,15 @@ ZNTabBarContentViewDelegate>
 @implementation HomeViewModel
 
 - (void) setUpInitUI{
+    
     self.controller.view.backgroundColor = [UIColor whiteColor];
     [self.controller.view addSubview:self.tableViewHeadView];
     [self.controller.view addSubview:self.textBarView];
     [self.controller.view addSubview:self.contentView];
     [self.controller.view addSubview:self.moreFunctionBtn];
+    
+    [self.controller.view addSubview:self.moveImageView];
+    self.moveImageView.center = self.controller.view.center;
     
     self.tableViewHeadView.sd_layout
     .topSpaceToView(self.controller.view, znStateHeight)
@@ -79,6 +83,15 @@ ZNTabBarContentViewDelegate>
 }
 
 #pragma mark ----------get-----------
+
+- (ZNMoveImageView *)moveImageView{
+    if (!_moveImageView) {
+        _moveImageView = [ZNMoveImageView new];
+        _moveImageView.frame = CGRectMake(200, 200, 100, 100);
+        _moveImageView.backgroundColor = Title_Color();
+    }
+    return _moveImageView;
+}
 
 - (UIButton *)searchBtn{
     if (!_searchBtn) {

@@ -21,7 +21,7 @@
  @param str 按键的文字
  */
 + (void)zn_showController:(UIViewController*) controller
-                 title:(NSString*)title
+                 title:(NSString* __nullable)title
                message:(NSString*)message
                sureStr:(NSString*)str
                     block:(void (^)(void)) block{
@@ -49,7 +49,7 @@
  @param block <#block description#>
  */
 + (void)zn_showController:(UIViewController*) controller
-                 title:(NSString*)title
+                 title:(NSString* __nullable)title
                message:(NSString*)message
              sureTitle:(NSString*) sureTitle
            cancelTitle:(NSString*) cancelTitle

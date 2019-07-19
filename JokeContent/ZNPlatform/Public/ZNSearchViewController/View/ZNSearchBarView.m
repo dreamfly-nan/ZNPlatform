@@ -8,10 +8,7 @@
 
 #import "ZNSearchBarView.h"
 
-
-@interface ZNSearchBarView()
-
-@property(nonatomic,strong) UIButton * backBtn;
+@interface ZNSearchBarView() <UITextFieldDelegate>
 
 @end
 
@@ -36,10 +33,10 @@
 
 - (void)setInitUI{
     self.backBtn.sd_layout
-    .topSpaceToView(self, zn_AutoWidth(5))
-    .bottomSpaceToView(self, zn_AutoWidth(5))
+    .centerYEqualToView(self)
     .leftSpaceToView(self,0)
-    .widthIs(zn_AutoWidth(60));
+    .heightIs(zn_AutoWidth(20))
+    .widthIs(zn_AutoWidth(40));
     
     self.searchText.sd_layout
     .centerYEqualToView(self)
@@ -50,9 +47,26 @@
 
 #pragma mark - get
 
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    if (textField.text.length > 0) {
+        if(self.searchBlock){
+            self.searchBlock(textField.text);
+        }
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - get
+
 - (ZNTextField *)searchText{
     if (!_searchText) {
         _searchText = [[ZNTextField alloc] init];
+        _searchText.textField.delegate = self;
+        _searchText.zn_font(zn_font(13));
     }
     return _searchText;
 }
@@ -60,9 +74,10 @@
 - (UIButton *)backBtn{
     if (!_backBtn) {
         _backBtn = UIButton.zn_create
-        .zn_title(@"返回",UIControlStateNormal)
         .zn_titleColor(Title_Color(),UIControlStateNormal)
-        .zn_font(zn_font(13));
+        .zn_font(zn_font(13))
+        .zn_image(zn_ImagePath(@"zn_search_back", @".png"),UIControlStateNormal)
+        .zn_ImageContentMode(UIViewContentModeScaleAspectFit);
         znWeakSelf(self)
        [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
            znStrongSelf

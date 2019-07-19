@@ -16,8 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong) UIImageView * moveImageView;
 
-@property (copy , nonatomic) void (^endBlock)(CGPoint point);
-
 @end
 
 NS_ASSUME_NONNULL_END

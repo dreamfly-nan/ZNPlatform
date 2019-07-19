@@ -11,11 +11,14 @@
 #import "ZNTextTabBarView.h"
 #import "ZNTabBarContentView.h"
 #import "HomeViewController.h"
+#import "ZNMoveImageView.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HomeViewModel : NSObject
 
 @property (nonatomic , weak) HomeViewController * controller;
+
+@property(nonatomic,strong) ZNMoveImageView * moveImageView;
 
 @property (nonatomic , strong) UIImageView * logoImageView;
 

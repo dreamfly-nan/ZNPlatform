@@ -17,6 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,assign)CGFloat expandWidth;
 
+/**
+ 扩展的点击宽度
+ */
+- (UIButton * (^)(CGFloat expandWidth))zn_expandWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END

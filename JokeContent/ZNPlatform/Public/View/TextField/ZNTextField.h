@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ZNTextField : UIView
 
-@property(nonatomic,strong) UITextField * textField;
+@property(nonatomic,strong,readonly) UITextField * textField;
 
 /**
  内容与视图的边距

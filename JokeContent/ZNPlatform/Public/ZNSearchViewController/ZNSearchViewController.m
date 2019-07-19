@@ -30,6 +30,11 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.viewModel.searchBarView.searchText.textField becomeFirstResponder];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
@@ -50,12 +55,23 @@
         [weakSelf signOut];
     };
     
+    self.viewModel.searchBarView.searchBlock = ^(NSString * _Nonnull searchText) {
+      znStrongSelf
+        [weakSelf searchText:searchText];
+    };
+    
     [[self.viewModel.deleteBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
        znStrongSelf
-        [self.dataModel deleteHistory:@""];
-        if (weakSelf.znDelegate && [weakSelf.znDelegate respondsToSelector:@selector(deleteHistory:)]) {
-            [self.znDelegate deleteHistory:weakSelf.dataModel.history];
-        }
+        [ZNAlertDialogTool zn_showController:weakSelf title:nil message:@"确定删除记录？" sureTitle:@"确定" cancelTitle:@"取消" block:^(BOOL sure) {
+            if (sure) {
+                [weakSelf.dataModel deleteHistory:@""];
+                [weakSelf.dataModel.history removeAllObjects];
+                [weakSelf.viewModel.historyCollectionView reloadData];
+                if (weakSelf.znDelegate && [weakSelf.znDelegate respondsToSelector:@selector(deleteHistory:)]) {
+                    [weakSelf.znDelegate deleteHistory:weakSelf.dataModel.history];
+                }
+            }
+        }];
     }];
 }
 
@@ -63,10 +79,10 @@
     [self.dataModel saveHistory:text];
     [self.dataModel.history addObject:text];
     [self.viewModel.historyCollectionView reloadData];
-    if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(searchWithStr:)]) {
-        [self.znDelegate searchWithStr:text];
+    if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(searchWithStr:controller:)]) {
+        [self.znDelegate searchWithStr:text controller:self];
     }
-    [self signOut];
+    
 }
 
 - (void)signOut{
@@ -102,7 +118,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     NSString * text = self.dataModel.history[indexPath.row];
     CGFloat width = [text zn_obtainWidthWithHeight:zn_AutoWidth(20) font:zn_font(12)];
-    CGSize size = CGSizeMake(width + zn_AutoWidth(20), zn_AutoWidth(20));
+    CGSize size = CGSizeMake(width + zn_AutoWidth(10), zn_AutoWidth(20));
     return size;
 }
 

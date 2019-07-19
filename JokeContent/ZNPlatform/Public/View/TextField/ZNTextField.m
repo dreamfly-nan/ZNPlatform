@@ -20,6 +20,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        [self onlyRead];
         [self addView];
         [self config];
     }
@@ -36,6 +37,12 @@
 }
 
 #pragma mark - private
+
+- (void)onlyRead{
+    if (!self.textField) {
+        _textField = [UITextField new];
+    }
+}
 
 - (void)config{
     self.inset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -88,13 +95,6 @@
         _imageView.image = self.leftImage;
     }
     return _imageView;
-}
-
-- (UITextField *)textField{
-    if (!_textField) {
-        _textField = [UITextField new];
-    }
-    return _textField;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZNSearchViewController;
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ZNSearchViewDelegate <NSObject>
@@ -16,12 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
  开始检索
 
  @param text 检索的内容
+ @param controller 检索的控制器
  */
-- (void)searchWithStr:(NSString *) text;
+- (void)searchWithStr:(NSString *) text controller:(ZNSearchViewController *) controller;
 
 /**
  删除查找历史
- @param history
+ @param history 历史记录
  */
 - (void)deleteHistory:(NSArray *) history;
 

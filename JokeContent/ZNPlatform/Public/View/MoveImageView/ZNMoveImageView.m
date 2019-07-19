@@ -10,6 +10,8 @@
 
 @interface ZNMoveImageView()
 
+@property(nonatomic,assign) CGFloat znScreentWidth;
+
 @end
 
 @implementation ZNMoveImageView
@@ -22,6 +24,7 @@
 }
 
 - (void)setInitUI{
+    self.znScreentWidth = screenWidth;
     [self addSubview:self.moveImageView];
     self.moveImageView.sd_layout
     .topEqualToView(self)
@@ -46,17 +49,17 @@
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self];
-    if (self.endBlock) {
-        self.endBlock(currentPoint);
-    }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self];
-    if (self.endBlock) {
-        self.endBlock(currentPoint);
-    }
+    
+//    if (currentPoint.x > self.znScreentWidth / 2) {
+//        self.zn_x = self.znScreentWidth - self.width/2;
+//    }else{
+//        self.zn_x = - self.width/2;
+//    }
 }
 
 #pragma mark - set

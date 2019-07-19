@@ -27,7 +27,7 @@
     .heightIs(zn_AutoWidth(45));
     
     self.historyLabel.sd_layout
-    .topSpaceToView(self.searchBarView, zn_AutoWidth(40))
+    .topSpaceToView(self.searchBarView, zn_AutoWidth(20))
     .leftSpaceToView(view, zn_AutoWidth(15))
     .widthIs(zn_AutoWidth(60))
     .heightIs(zn_AutoWidth(20));
@@ -35,7 +35,7 @@
     self.deleteBtn.sd_layout
     .centerYEqualToView(self.historyLabel)
     .rightSpaceToView(view, zn_AutoWidth(15))
-    .widthIs(zn_AutoWidth(60))
+    .widthIs(zn_AutoWidth(30))
     .heightIs(zn_AutoWidth(20));
     
     self.historyCollectionView.sd_layout
@@ -81,9 +81,18 @@
     return _searchBarView;
 }
 
+- (ZNCollectionViewFlowlayout *)flowLayout{
+    if (!_flowLayout) {
+        _flowLayout = [ZNCollectionViewFlowlayout new];
+        _flowLayout.minimumInteritemSpacing = zn_AutoWidth(10);
+        _flowLayout.leftLayout = YES;
+    }
+    return _flowLayout;
+}
+
 - (UICollectionView *)historyCollectionView{
     if (!_historyCollectionView) {
-        _historyCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:[UICollectionViewFlowLayout new]];
+        _historyCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:self.flowLayout];
         _historyCollectionView.backgroundColor = [UIColor clearColor];
         [_historyCollectionView registerClass:[ZNSearchHistoryItemCell class] forCellWithReuseIdentifier:[ZNSearchHistoryItemCell idString]];
         _historyCollectionView.delegate = self.controller;

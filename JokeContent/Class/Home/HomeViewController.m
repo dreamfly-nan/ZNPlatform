@@ -23,7 +23,7 @@
 #import "ZNSearchViewController.h"
 
 @interface HomeViewController ()
-<SearchViewControllerDelegate,
+<ZNSearchViewDelegate,
 NewsKindsChooseControllerDelegate>
 
 @property (nonatomic , strong) HomeViewModel * viewModel;
@@ -58,10 +58,8 @@ NewsKindsChooseControllerDelegate>
     
     [[self.viewModel.searchBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         znStrongSelf
-//        SearchViewController * controller = [SearchViewController new];
-//        controller.znDelegate = weakSelf;
-//        [weakSelf.navigationController pushViewController:controller animated:YES];
         ZNSearchViewController * controller = [ZNSearchViewController new];
+        controller.znDelegate = weakSelf;
         [weakSelf.navigationController pushViewController:controller animated:YES];
     }];
     
@@ -153,12 +151,16 @@ NewsKindsChooseControllerDelegate>
     [self setKinds];
 }
 
-#pragma mark - SearchViewControllerDelegate
+#pragma mark - ZNSearchViewDelegate
 
-- (void)searchText:(NSString *)searchText{
-    JokeListViewController * controller = [JokeListViewController new];
-    controller.searchText = searchText;
-    [self.navigationController pushViewController:controller animated:YES];
+- (void)searchWithStr:(NSString *)text controller:(ZNSearchViewController *)controller{
+    JokeListViewController * viewcontroller = [JokeListViewController new];
+    viewcontroller.searchText = text;
+    [self.navigationController pushViewController:viewcontroller animated:YES];
+}
+
+- (void)deleteHistory:(NSArray *)history{
+    
 }
 
 #pragma mark - get

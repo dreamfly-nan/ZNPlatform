@@ -55,13 +55,27 @@
 - (ZNTextField * (^)(UIImage * image))zn_leftImage{
     return ^(UIImage * image){
         self.leftImage = image;
-        return self
+        return self;
     };
 }
 
 - (ZNTextField * (^)(BOOL isLeftView))zn_isLeftView{
     return ^(BOOL isLeftView){
         self.isLeftView = isLeftView;
+        return self;
+    };
+}
+
+- (ZNTextField * (^)(UIEdgeInsets insets))zn_inset{
+    return ^(UIEdgeInsets insets){
+        self.inset = insets;
+        return self;
+    };
+}
+
+- (ZNTextField * (^)(CGSize size))zn_imageSize{
+    return ^(CGSize size){
+        self.imageSize = size;
         return self;
     };
 }

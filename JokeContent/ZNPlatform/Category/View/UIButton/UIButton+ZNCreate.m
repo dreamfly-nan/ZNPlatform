@@ -44,6 +44,20 @@
     };
 }
 
+- (UIButton * (^)(UIImage * image,UIControlState state))zn_image{
+    return ^(UIImage * image,UIControlState state){
+        [self setImage:image forState:state];
+        return self;
+    };
+}
+
+- (UIButton * (^)(UIViewContentMode mode))zn_ImageContentMode{
+    return ^(UIViewContentMode mode){
+        self.imageView.contentMode = mode;
+        return self;
+    };
+}
+
 /**
  根据标题,状态初始化
  

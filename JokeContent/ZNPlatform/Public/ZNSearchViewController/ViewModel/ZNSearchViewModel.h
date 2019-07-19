@@ -10,11 +10,14 @@
 #import "ZNSearchBarView.h"
 #import "ZNSearchViewController.h"
 #import "ZNSearchHistoryItemCell.h"
+#import "ZNCollectionViewFlowlayout.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZNSearchViewModel : NSObject
 
 @property(nonatomic,weak) ZNSearchViewController * controller;
+
+@property(nonatomic,strong) ZNCollectionViewFlowlayout * flowLayout;
 
 /**
  历史记录的标题

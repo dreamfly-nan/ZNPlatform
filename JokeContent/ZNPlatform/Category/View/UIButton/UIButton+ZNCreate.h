@@ -22,6 +22,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIButton * (^)(UIImage * image,UIControlState state))zn_backgroundImage;
 
+- (UIButton * (^)(UIImage * image,UIControlState state))zn_image;
+
+- (UIButton * (^)(UIViewContentMode mode))zn_ImageContentMode;
+
 /**
  根据标题初始化,默认为UIControlStateNormal状态
 

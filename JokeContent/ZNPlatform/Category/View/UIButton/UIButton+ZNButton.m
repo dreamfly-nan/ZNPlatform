@@ -19,6 +19,16 @@
     return CGRectContainsPoint(btnBounds, point);
 }
 
+/**
+ 扩展的点击宽度
+ */
+- (UIButton * (^)(CGFloat expandWidth))zn_expandWidth{
+    return ^(CGFloat expandWidth){
+        self.expandWidth = expandWidth;
+        return self;
+    };
+}
+
 - (CGFloat)expandWidth{
    NSString * expand = objc_getAssociatedObject(self, _cmd);
     if (expand) {

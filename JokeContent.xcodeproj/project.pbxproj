@@ -145,6 +145,8 @@
 		C1180A3D22AF4098005ED2FD /* ZNBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1180A3C22AF4098005ED2FD /* ZNBaseCollectionViewCell.m */; };
 		C1180A4122AF41E2005ED2FD /* ZNCommtentImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C1180A4022AF41E2005ED2FD /* ZNCommtentImageManager.m */; };
 		C1180A4A22AFA830005ED2FD /* ZNMoveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1180A4922AFA830005ED2FD /* ZNMoveImageView.m */; };
+		C11867EE22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */; };
+		C11867F222E16E26009C3A32 /* zn_search_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C11867F122E16E26009C3A32 /* zn_search_back.png */; };
 		C11A2DCD22BCA3DD00F3282A /* AppDelegate+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = C11A2DCC22BCA3DD00F3282A /* AppDelegate+Crash.m */; };
 		C11AE66F22A4CCF600289610 /* CommentUserHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C11AE66E22A4CCF600289610 /* CommentUserHeadView.m */; };
 		C11AE67222A4D08C00289610 /* CommentUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11AE67122A4D08C00289610 /* CommentUserViewModel.m */; };
@@ -501,6 +503,9 @@
 		C1180A4022AF41E2005ED2FD /* ZNCommtentImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNCommtentImageManager.m; sourceTree = "<group>"; };
 		C1180A4822AFA830005ED2FD /* ZNMoveImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNMoveImageView.h; sourceTree = "<group>"; };
 		C1180A4922AFA830005ED2FD /* ZNMoveImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNMoveImageView.m; sourceTree = "<group>"; };
+		C11867EC22E15E28009C3A32 /* ZNCollectionViewFlowlayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNCollectionViewFlowlayout.h; sourceTree = "<group>"; };
+		C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNCollectionViewFlowlayout.m; sourceTree = "<group>"; };
+		C11867F122E16E26009C3A32 /* zn_search_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zn_search_back.png; sourceTree = "<group>"; };
 		C11A2DCB22BCA3DD00F3282A /* AppDelegate+Crash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Crash.h"; sourceTree = "<group>"; };
 		C11A2DCC22BCA3DD00F3282A /* AppDelegate+Crash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Crash.m"; sourceTree = "<group>"; };
 		C11AE66D22A4CCF600289610 /* CommentUserHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentUserHeadView.h; sourceTree = "<group>"; };
@@ -1061,6 +1066,7 @@
 		394B795A2266D2910030FBB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C11867EB22E15DE3009C3A32 /* ZNCollectionViewFlowlayout */,
 				C12033BE22D2E13900479A25 /* ZNMenuCollectViewCell */,
 				C11DCA5622C99302009E454F /* ZNTextTableViewCell */,
 				394B79722266D2910030FBB7 /* ZNTabBarContentView */,
@@ -1934,6 +1940,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C11867EB22E15DE3009C3A32 /* ZNCollectionViewFlowlayout */ = {
+			isa = PBXGroup;
+			children = (
+				C11867EC22E15E28009C3A32 /* ZNCollectionViewFlowlayout.h */,
+				C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */,
+			);
+			path = ZNCollectionViewFlowlayout;
+			sourceTree = "<group>";
+		};
 		C11B1745229FAA8C003D3720 /* ZNPlatform */ = {
 			isa = PBXGroup;
 			children = (
@@ -2115,6 +2130,7 @@
 		C121036C22E0637E003A6C84 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				C11867F122E16E26009C3A32 /* zn_search_back.png */,
 				C121037222E06886003A6C84 /* magnifier.png */,
 			);
 			path = Image;
@@ -2603,6 +2619,7 @@
 				C11DED2322C4961300B42FED /* index.html in Resources */,
 				39127AED2268753100686F0E /* loading.gif in Resources */,
 				C14D1DF022D837100005FB2E /* test.html in Resources */,
+				C11867F222E16E26009C3A32 /* zn_search_back.png in Resources */,
 				39E4AE6222702E03006D89EB /* Search-Waste.png in Resources */,
 				C1180A2A22AF3914005ED2FD /* znImageAdd.png in Resources */,
 				C18C9DC0225F15C00088FE13 /* Main.storyboard in Resources */,
@@ -2823,6 +2840,7 @@
 				C11B43CC22A76DFE00DB5A57 /* WSLNativeScanTool.m in Sources */,
 				C1310AD822CEE9BF0047247B /* UITextView+ZNCreate.m in Sources */,
 				C1180A3D22AF4098005ED2FD /* ZNBaseCollectionViewCell.m in Sources */,
+				C11867EE22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m in Sources */,
 				C124275722CD9453009D874D /* ZNSystemTool.m in Sources */,
 				394B7A052266F9840030FBB7 /* JokeListViewController.m in Sources */,
 				C11DC5FE22C31CA500FA4453 /* ZNBaseViewController.m in Sources */,
