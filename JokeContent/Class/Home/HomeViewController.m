@@ -22,6 +22,8 @@
 
 #import "ZNSearchViewController.h"
 
+#import "TextTableviewcellController.h"
+
 @interface HomeViewController ()
 <ZNSearchViewDelegate,
 NewsKindsChooseControllerDelegate>
@@ -58,9 +60,11 @@ NewsKindsChooseControllerDelegate>
     
     [[self.viewModel.searchBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         znStrongSelf
-        ZNSearchViewController * controller = [ZNSearchViewController new];
-        controller.znDelegate = weakSelf;
+        TextTableviewcellController * controller = [TextTableviewcellController new];
         [weakSelf.navigationController pushViewController:controller animated:YES];
+//        ZNSearchViewController * controller = [ZNSearchViewController new];
+//        controller.znDelegate = weakSelf;
+//        [weakSelf.navigationController pushViewController:controller animated:YES];
     }];
     
     [[self.viewModel.accountBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {

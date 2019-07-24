@@ -13,24 +13,58 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UILabel (ZNCreate)
 
+/**
+ 设置文本显示模式
+ */
 - (UILabel * (^)(NSTextAlignment alignment))zn_alignment;
 
+/**
+ 设置文本颜色
+ */
 - (UILabel * (^)(UIColor * textColor))zn_textColor;
 
+/**
+ 设置文本字体
+ */
 - (UILabel* (^)(UIFont * font))zn_font;
 
+/**
+ 设置文本
+ */
 - (UILabel * (^)(NSString * text))zn_text;
 
 
+/**
+ 便捷构造器
+
+ @param text 文本
+ @param font 文本字体
+ @param textColor 文本颜色
+ @param backgroundColor 背景颜色
+ @return 实例
+ */
 + (UILabel *) zn_createWithText:(NSString *) text
                            font:(UIFont *) font
                       textColor:(UIColor *) textColor
                 backgroundColor:(UIColor* ) backgroundColor;
 
+/**
+ 便捷构造器
+
+ @param text 文本
+ @param font 文本字体
+ @param textColor 文本颜色
+ @return 实例
+ */
 + (UILabel *) zn_createWithText:(NSString *) text
                            font:(UIFont *) font
                       textColor:(UIColor *) textColor;
 
+/**
+ 便捷构造器
+ @param text 文本
+ @return 实例
+ */
 + (UILabel *) zn_createWithText:(NSString *) text;
 
 @end

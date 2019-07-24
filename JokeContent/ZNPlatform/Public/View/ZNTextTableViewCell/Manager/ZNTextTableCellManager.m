@@ -66,13 +66,28 @@
         model.isShowArrow = self.isShowArrow;
         model.cellType = self.cellType;
         model.lineType = self.lineType;
+        model.contentType = self.contentType;
         NSArray * allKeys = [dic allKeys];
         if ([allKeys containsObject:@"title"]) {
             model.title = dic[@"title"];
         }
         
         if([allKeys containsObject:@"content"]){
-            model.content = dic[@"content"];
+            NSObject * content = dic[@"content"];
+            if ([content isKindOfClass:[NSArray class]] || [content isKindOfClass:[NSMutableArray class]]) {
+                NSArray * contentArr = (NSArray *)content;
+                NSMutableString * contentStr = [NSMutableString new];
+                for (int i = 0 ; i < contentArr.count ; i ++) {
+                    if (i == contentArr.count - 1 ) {
+                        [contentStr appendString:[NSString stringWithFormat:@"%@",contentArr[i]]];
+                    }else{
+                        [contentStr appendString:[NSString stringWithFormat:@"%@\n",contentArr[i]]];
+                    }
+                }
+                model.content = contentStr;
+            }else{
+                model.content = dic[@"content"];
+            }
         }
         
         if([allKeys containsObject:@"isShowArrow"]){
@@ -115,7 +130,15 @@
                 
             }else if([cellType isEqualToString:@"ZNTextTableViewCellTypeChoose"]){
                 model.cellType = ZNTextTableViewCellTypeChoose;
-                
+            }
+        }
+        
+        if ([allKeys containsObject:@"contentType"]) {
+            NSString * type = dic[@"contentType"];
+            if ([type isEqualToString:@"ZNTextTableViewCellContentRightSpaceWithArrow"]) {
+                model.contentType = ZNTextTableViewCellContentRightSpaceWithArrow;
+            }else if([type isEqualToString:@"ZNTextTableViewCellContentRightSpaceWithSuperView"]){
+                model.contentType = ZNTextTableViewCellContentRightSpaceWithSuperView;
             }
         }
         

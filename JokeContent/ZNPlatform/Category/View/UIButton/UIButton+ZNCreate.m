@@ -58,6 +58,27 @@
     };
 }
 
+- (UIButton * (^)(BOOL autoImageTinkColor))zn_autoImageTinkColor{
+    return ^(BOOL autoImageTinkColor){
+        self.autoImageTinkColor = autoImageTinkColor;
+        return self;
+    };
+}
+
+- (UIButton * (^)(CGFloat expandWidth))zn_expandWidth{
+    return ^(CGFloat expandWidth){
+        self.expandWidth = expandWidth;
+        return self;
+    };
+}
+
+- (UIButton * (^)(UIColor *tintColor))zn_tintColor{
+    return ^(UIColor *tintColor){
+        self.tintColor = tintColor;
+        return self;
+    };
+}
+
 /**
  根据标题,状态初始化
  

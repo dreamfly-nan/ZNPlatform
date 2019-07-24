@@ -14,14 +14,29 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)zn_create;
 
+/**
+ 设置背景色
+ */
 - (UIView * (^)(UIColor * color))zn_backgroundColor;
 
+/**
+ 设置layer颜色
+ */
 - (UIView * (^)(UIColor * color))zn_layerColor;
 
+/**
+ 设置边框颜色
+ */
 - (UIView * (^)(UIColor * color))zn_borderColor;
 
+/**
+ 设置边框宽度
+ */
 - (UIView * (^)(CGFloat width))zn_borderWidth;
 
+/**
+ 设置圆角大小
+ */
 - (UIView * (^)(CGFloat cornerRadius))zn_cornerRadius;
 
 /**

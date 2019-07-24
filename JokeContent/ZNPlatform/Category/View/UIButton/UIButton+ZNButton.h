@@ -18,6 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign)CGFloat expandWidth;
 
 /**
+ 设置按钮上的图片是否自动跟随按键主题色
+ */
+@property(nonatomic,assign) BOOL autoImageTinkColor;
+
+/**
  扩展的点击宽度
  */
 - (UIButton * (^)(CGFloat expandWidth))zn_expandWidth;

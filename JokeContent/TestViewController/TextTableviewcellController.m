@@ -30,6 +30,7 @@ ZNTextTableCellManagerDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = Big_background_Color();
     [self.view addSubview:self.tableview];
     [self setData];
     // Do any additional setup after loading the view.
@@ -44,7 +45,9 @@ ZNTextTableCellManagerDelegate
                         @{@"title":@"谁是傻逼?",
                           @"content":@"林苏霖1"},
                         @{@"title":@"谁是龟儿子?",
-                          @"content":@"林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2林苏霖2"},
+                          @"isShowArrow":@"NO",
+                          @"lineType":@"ZNTextTableViewCellLineTypeLeft",
+                          @"content":@[@"林苏霖",@"林苏霖1",@"林苏霖2",@"林苏霖3"]},
                         @{@"title":@"谁是渣渣?",
                           @"content":@"林苏霖3",
                           @"isShowArrow":@"NO"}
@@ -58,7 +61,7 @@ ZNTextTableCellManagerDelegate
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 10;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -74,6 +77,15 @@ ZNTextTableCellManagerDelegate
     return [tableView cellHeightForIndexPath:indexPath model:self.dataSource[indexPath.row] keyPath:@"model" cellClass:[ZNTextTableViewCell class] contentViewWidth:screenWidth];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * view = [UIView new];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return zn_AutoWidth(20);
+}
+
 #pragma mark - ZNTextTableCellManagerDelegate
 
 - (NSString *)tipsMessageWithModel:(ZNTextCellModel *)model{
@@ -85,6 +97,7 @@ ZNTextTableCellManagerDelegate
 - (UITableView *)tableview{
     if (!_tableview) {
         _tableview = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        _tableview.backgroundColor = [UIColor zn_colorWithHexString:@"#f0f0f0"];
         [_tableview registerClass:[ZNTextTableViewCell class] forCellReuseIdentifier:[ZNTextTableViewCell idString]];
         [_tableview registerClass:[ZNTextFieldTableViewCell class] forCellReuseIdentifier:[ZNTextFieldTableViewCell idString]];
         _tableview.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -98,6 +111,9 @@ ZNTextTableCellManagerDelegate
     if (!_manager) {
         _manager = [ZNTextTableCellManager new];
         _manager.znDelegate = self;
+        _manager.isShowArrow = NO;
+        _manager.lineType = ZNTextTableViewCellLineTypeNone;
+        _manager.contentType = ZNTextTableViewCellContentRightSpaceWithSuperView;
     }
     return _manager;
 }

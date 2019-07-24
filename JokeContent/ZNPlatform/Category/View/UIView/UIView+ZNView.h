@@ -10,17 +10,34 @@
 
 @interface UIView (ZNView)
 
-//位置大小获取设置
+/**
+ x轴坐标
+ */
 @property (assign , nonatomic) CGFloat zn_x;
 
+/**
+ y轴坐标
+ */
 @property (assign , nonatomic) CGFloat zn_y;
 
+/**
+ 控件宽度
+ */
 @property (assign , nonatomic) CGFloat zn_width;
 
+/**
+ 控件高度
+ */
 @property (assign , nonatomic) CGFloat zn_height;
 
+/**
+ 控件大小
+ */
 @property (assign , nonatomic) CGSize zn_size;
 
+/**
+ 控件的坐标
+ */
 @property (assign , nonatomic) CGPoint zn_ponit;
 
 /**

@@ -51,7 +51,7 @@
         .topSpaceToView(self.contentView, zn_AutoWidth(10))
         .leftSpaceToView(self.titleLabel, zn_AutoWidth(50))
         .autoHeightRatio(0);
-    
+        
         [self setupAutoHeightWithBottomView:self.contentLabel bottomMargin:zn_AutoWidth(8)];
     }
 }
@@ -93,6 +93,21 @@
         }
         self.isInitEnd = YES;
     }
+    
+    if (!model.isShowArrow) {
+        if(model.contentType == ZNTextTableViewCellContentRightSpaceWithSuperView){
+            self.contentLabel.sd_layout
+            .rightSpaceToView(self.contentView, zn_AutoWidth(15));
+        }else if (model.contentType == ZNTextTableViewCellContentRightSpaceWithArrow) {
+            self.contentLabel.sd_layout
+            .rightSpaceToView(self.contentView, zn_AutoWidth(30));
+        }
+    }else{
+        self.contentLabel.sd_layout
+        .rightSpaceToView(self.contentView, zn_AutoWidth(30));
+    }
+    
+    
     
     if (model.content && ![model.content isEqualToString:@""]) {
         [self setupAutoHeightWithBottomView:self.contentLabel bottomMargin:zn_AutoWidth(10)];

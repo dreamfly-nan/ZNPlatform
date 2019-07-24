@@ -12,19 +12,55 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIButton (ZNCreate)
 
+/**
+ 根据设置的标题返回一个UIButton
+ */
 + (UIButton * _Nonnull (^)(NSString * title,UIControlState state))zn_createTitle;
 
+/**
+ 设置标题
+ */
 - (UIButton * (^)(NSString * title,UIControlState state))zn_title;
 
+/**
+ 设置标题颜色
+ */
 - (UIButton * (^)(UIColor * color,UIControlState state))zn_titleColor;
 
+/**
+ 设置标题字体
+ */
 - (UIButton * (^)(UIFont * font))zn_font;
 
+/**
+ 设置背景图
+ */
 - (UIButton * (^)(UIImage * image,UIControlState state))zn_backgroundImage;
 
+/**
+ 设置图片
+ */
 - (UIButton * (^)(UIImage * image,UIControlState state))zn_image;
 
+/**
+ 设置图片的显示模式
+ */
 - (UIButton * (^)(UIViewContentMode mode))zn_ImageContentMode;
+
+/**
+ 设置图片是否跟主题颜色变动
+ */
+- (UIButton * (^)(BOOL autoImageTinkColor))zn_autoImageTinkColor;
+
+/**
+ 设置扩展的可点击区域
+ */
+- (UIButton * (^)(CGFloat expandWidth))zn_expandWidth;
+
+/**
+ 设置主题颜色
+ */
+- (UIButton * (^)(UIColor *tintColor))zn_tintColor;
 
 /**
  根据标题初始化,默认为UIControlStateNormal状态

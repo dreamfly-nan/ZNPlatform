@@ -36,6 +36,16 @@ typedef NS_ENUM(NSUInteger,ZNTextTableViewCellLineType) {
     ZNTextTableViewCellLineTypeNone
 };
 
+/**
+ 设置内容显示，靠右的样式
+ - ZNTextTableViewCellContentRightSpaceWithArrow: 紧靠着箭头
+ - ZNTextTableViewCellContentRightSpaceWithSuperView: 跟随父控件
+ */
+typedef NS_ENUM(NSUInteger,ZNTextTableViewCellContentRightSpace){
+    ZNTextTableViewCellContentRightSpaceWithArrow,
+    ZNTextTableViewCellContentRightSpaceWithSuperView
+};
+
 @interface ZNTextCellModel : NSObject
 
 /**
@@ -47,6 +57,16 @@ typedef NS_ENUM(NSUInteger,ZNTextTableViewCellLineType) {
  cell底部线条的类型
  */
 @property(nonatomic,assign) ZNTextTableViewCellLineType lineType;
+
+/**
+ cell内容的靠右类型
+ */
+@property(nonatomic,assign) ZNTextTableViewCellContentRightSpace contentType;
+
+/**
+ 是否有进行重设内容的显示类型
+ */
+@property(nonatomic,assign,readonly) BOOL isSetContentType;
 
 /**
  左边的标题

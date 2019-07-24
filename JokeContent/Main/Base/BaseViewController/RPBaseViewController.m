@@ -136,6 +136,9 @@
 - (UIButton *)backBtn{
     if (!_backBtn) {
         _backBtn = [[UIButton alloc] init];
+//        _backBtn.zn_title(@"返回",UIControlStateNormal).zn_titleColor([UIColor redColor],UIControlStateNormal);
+//        _backBtn.autoImageTinkColor = YES;
+//        [_backBtn setTintColor:[UIColor yellowColor]];
         [_backBtn setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
         _backBtn.bounds = CGRectMake(0, 0, zn_AutoWidth(22), zn_AutoWidth(22));
     }

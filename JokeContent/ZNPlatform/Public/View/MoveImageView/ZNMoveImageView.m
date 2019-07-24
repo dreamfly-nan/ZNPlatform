@@ -41,7 +41,7 @@
     
     CGFloat offSetX = currentPoint.x - prePoint.x;
     CGFloat offSetY = currentPoint.y - prePoint.y;
-    
+
     //平移
     self.transform = CGAffineTransformTranslate(self.transform, offSetX, offSetY);
 }

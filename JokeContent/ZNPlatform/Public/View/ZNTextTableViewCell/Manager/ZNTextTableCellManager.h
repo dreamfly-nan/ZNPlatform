@@ -44,6 +44,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) ZNTextTableViewCellLineType lineType;
 
 /**
+ 内容靠右的显示样式
+ */
+@property(nonatomic,assign) ZNTextTableViewCellContentRightSpace contentType;
+
+/**
  是否展示右边的箭头
  */
 @property(nonatomic,assign) BOOL isShowArrow;
