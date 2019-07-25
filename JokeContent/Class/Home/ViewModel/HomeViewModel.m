@@ -24,9 +24,6 @@ ZNTabBarContentViewDelegate>
     [self.controller.view addSubview:self.contentView];
     [self.controller.view addSubview:self.moreFunctionBtn];
     
-    [self.controller.view addSubview:self.moveImageView];
-    self.moveImageView.center = self.controller.view.center;
-    
     self.tableViewHeadView.sd_layout
     .topSpaceToView(self.controller.view, znStateHeight)
     .leftEqualToView(self.controller.view)
@@ -83,15 +80,6 @@ ZNTabBarContentViewDelegate>
 }
 
 #pragma mark ----------get-----------
-
-- (ZNMoveImageView *)moveImageView{
-    if (!_moveImageView) {
-        _moveImageView = [ZNMoveImageView new];
-        _moveImageView.frame = CGRectMake(200, 200, 100, 100);
-        _moveImageView.backgroundColor = Title_Color();
-    }
-    return _moveImageView;
-}
 
 - (UIButton *)searchBtn{
     if (!_searchBtn) {

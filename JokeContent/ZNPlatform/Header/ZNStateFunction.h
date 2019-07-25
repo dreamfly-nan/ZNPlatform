@@ -13,7 +13,6 @@
 
 /**
  屏幕宽度
-
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE CGFloat zn_screenWidth(){
@@ -22,7 +21,6 @@ UIKIT_STATIC_INLINE CGFloat zn_screenWidth(){
 
 /**
  屏幕高度
-
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE CGFloat zn_screenHeight(){
@@ -47,7 +45,6 @@ UIKIT_STATIC_INLINE BOOL isWSCatena(){
 
 /**
  是否是XR系列手机
-
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE BOOL isiphoneXR(){
@@ -56,7 +53,6 @@ UIKIT_STATIC_INLINE BOOL isiphoneXR(){
 
 /**
  是否是X
-
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE BOOL isiphoneX(){
@@ -65,7 +61,6 @@ UIKIT_STATIC_INLINE BOOL isiphoneX(){
 
 /**
  适配屏幕宽度
- 
  @param width <#width description#>
  @return <#return value description#>
  */
@@ -80,7 +75,6 @@ UIKIT_STATIC_INLINE CGFloat zn_AutoWidth(CGFloat width){
 
 /**
  适配屏幕高度
- 
  @param height <#height description#>
  @return <#return value description#>
  */
@@ -90,7 +84,6 @@ UIKIT_STATIC_INLINE CGFloat zn_AutoHeight(CGFloat height){
 
 /**
  根据颜色字符串来转化颜色
- 
  @param color <#color description#>
  @return <#return value description#>
  */
@@ -107,13 +100,24 @@ UIKIT_STATIC_INLINE UIFont * zn_font(CGFloat size){
     return font;
 }
 
-//加粗字体
-UIKIT_STATIC_INLINE UIFont * zn_Bold_font(CGFloat size){
+/**
+ 根据字体名字和字体大小返回字体
+
+ @param fontName 字体名字
+ @param size 字体大小
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE UIFont * zn_FontName(NSString * fontName,CGFloat size){
     if (!isWSCatena()) {
         size = zn_AutoWidth(size);
     }
-    UIFont * font = [UIFont fontWithName:@"AmericanTypewriter-Bold" size:size];
+    UIFont * font = [UIFont fontWithName:fontName size:size];
     return font;
+}
+
+//加粗字体
+UIKIT_STATIC_INLINE UIFont * zn_Bold_font(CGFloat size){
+    return zn_FontName(@"AmericanTypewriter-Bold", size);
 }
 
 //拼接iframe
@@ -151,6 +155,30 @@ UIKIT_STATIC_INLINE UIImage * zn_ImagePath(NSString * fileNme, NSString* type){
 //根据图片名字获取UIImage对象
 UIKIT_STATIC_INLINE UIImage * zn_imageName(NSString * name){
     return [UIImage imageNamed:name];
+}
+
+/**
+ 查看数值是否落在该区间（包括等于）
+ 
+ @param minVlause 最小值
+ @param maxVlause 最大值
+ @param vlause 比较的数值
+ @return 是否落在该区间
+ */
+UIKIT_STATIC_INLINE BOOL zn_betweenOrEuqal(CGFloat minVlause, CGFloat maxVlause, CGFloat vlause){
+    return vlause <= maxVlause && vlause >= minVlause;
+}
+
+/**
+ 查看数值是否落在该区间
+ 
+ @param minVlause 最小值
+ @param maxVlause 最大值
+ @param vlause 比较的数值
+ @return 是否落在该区间
+ */
+UIKIT_STATIC_INLINE BOOL zn_between(CGFloat minVlause, CGFloat maxVlause, CGFloat vlause){
+    return vlause < maxVlause && vlause > minVlause;
 }
 
 #endif /* ZNStateFunction_h */

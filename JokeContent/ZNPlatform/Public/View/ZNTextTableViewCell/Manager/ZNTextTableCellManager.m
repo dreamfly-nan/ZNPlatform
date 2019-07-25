@@ -21,6 +21,7 @@
         self.cellType = ZNTextTableViewCellTypeLabel;
         self.lineType = ZNTextTableViewCellLineTypeWithTitle;
         self.isShowArrow = YES;
+        self.contentType = ZNTextTableViewCellContentRightSpaceWithArrow;
     }
     return self;
 }

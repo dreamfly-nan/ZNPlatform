@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , weak) HomeViewController * controller;
 
-@property(nonatomic,strong) ZNMoveImageView * moveImageView;
-
 @property (nonatomic , strong) UIImageView * logoImageView;
 
 //个人中心

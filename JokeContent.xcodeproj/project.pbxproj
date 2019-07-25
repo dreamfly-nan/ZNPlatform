@@ -135,6 +135,7 @@
 		C1111AD4228D466A00389F17 /* CommentUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1111AD3228D466A00389F17 /* CommentUserViewController.m */; };
 		C1111AD7228D46F200389F17 /* CommentUserDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C1111AD6228D46F200389F17 /* CommentUserDataModel.m */; };
 		C1111ADF228D59DD00389F17 /* MyCommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C1111ADE228D59DD00389F17 /* MyCommentTableViewCell.m */; };
+		C115DBAA22E95A6500AFA307 /* ZNPlatformConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C115DBA922E95A6500AFA307 /* ZNPlatformConfig.m */; };
 		C117E789228E4B2F00BB79DD /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C117E788228E4B2F00BB79DD /* AboutUsViewController.m */; };
 		C117E78D228E52DF00BB79DD /* FeedBackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C117E78C228E52DF00BB79DD /* FeedBackModel.m */; };
 		C117E791228EAC0E00BB79DD /* ZNDialogPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C117E790228EAC0E00BB79DD /* ZNDialogPage.m */; };
@@ -485,6 +486,8 @@
 		C1111ADD228D59DD00389F17 /* MyCommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCommentTableViewCell.h; sourceTree = "<group>"; };
 		C1111ADE228D59DD00389F17 /* MyCommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCommentTableViewCell.m; sourceTree = "<group>"; };
 		C11427B522A0BE91006C59B2 /* JokeContent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JokeContent.entitlements; sourceTree = "<group>"; };
+		C115DBA822E95A6500AFA307 /* ZNPlatformConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNPlatformConfig.h; sourceTree = "<group>"; };
+		C115DBA922E95A6500AFA307 /* ZNPlatformConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNPlatformConfig.m; sourceTree = "<group>"; };
 		C117E787228E4B2F00BB79DD /* AboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		C117E788228E4B2F00BB79DD /* AboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		C117E78B228E52DF00BB79DD /* FeedBackModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedBackModel.h; sourceTree = "<group>"; };
@@ -1819,6 +1822,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C115DBA722E95A3700AFA307 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C115DBA822E95A6500AFA307 /* ZNPlatformConfig.h */,
+				C115DBA922E95A6500AFA307 /* ZNPlatformConfig.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		C117E786228E4B0E00BB79DD /* AboutUsViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1952,6 +1964,7 @@
 		C11B1745229FAA8C003D3720 /* ZNPlatform */ = {
 			isa = PBXGroup;
 			children = (
+				C115DBA722E95A3700AFA307 /* Config */,
 				C1180A3522AF402C005ED2FD /* Main */,
 				C11B43C522A76DDA00DB5A57 /* Thread */,
 				C11B1746229FAABF003D3720 /* Header */,
@@ -2695,6 +2708,7 @@
 				39D299E1226AC5A900FEB844 /* BmobObject+ZNObject.m in Sources */,
 				3986EDB3226EEE8900CAE082 /* InformationItemModel.m in Sources */,
 				C1310AD422CEE3BD0047247B /* NSMutableAttributedString+ZNTool.m in Sources */,
+				C115DBAA22E95A6500AFA307 /* ZNPlatformConfig.m in Sources */,
 				C11B43CB22A76DFE00DB5A57 /* WSLScanView.m in Sources */,
 				C17DA238228A6EA80091C23C /* RPMyCommentDataModel.m in Sources */,
 				C1111AC5228D024A00389F17 /* CXCustomTextView.m in Sources */,
