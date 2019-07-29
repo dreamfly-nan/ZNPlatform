@@ -38,9 +38,9 @@
 
 - (RACCommand *)commitCommand{
     if (!_commitCommand) {
-        znWeakSelf(self)
+//        znWeakSelf(self)
         _commitCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-            znStrongSelf
+//            znStrongSelf
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 CommentUserModel * model = input;
                 [model zn_addData:^(BOOL success, NSError * _Nonnull error) {

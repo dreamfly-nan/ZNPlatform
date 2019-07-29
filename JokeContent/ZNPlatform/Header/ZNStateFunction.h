@@ -12,6 +12,78 @@
 #import <UIKit/UIKit.h>
 
 /**
+ <#Description#>
+
+ @param floatValue <#floatValue description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE CGFloat zn_removeFloatMin(CGFloat floatValue) {
+    return floatValue == CGFLOAT_MIN ? 0 : floatValue;
+}
+
+/**
+ *  调整给定的某个 CGFloat 值的小数点精度，超过精度的部分按四舍五入处理。
+ *
+ *  例如 CGFloatToFixed(0.3333, 2) 会返回 0.33，而 CGFloatToFixed(0.6666, 2) 会返回 0.67
+ *
+ *  @warning 参数类型为 CGFloat，也即意味着不管传进来的是 float 还是 double 最终都会被强制转换成 CGFloat 再做计算
+ *  @warning 该方法无法解决浮点数精度运算的问题
+ */
+UIKIT_STATIC_INLINE CGFloat zn_floatToFixed(CGFloat value, NSUInteger precision) {
+    NSString *formatString = [NSString stringWithFormat:@"%%.%@f", @(precision)];
+    NSString *toString = [NSString stringWithFormat:formatString, value];
+#if CGFLOAT_IS_DOUBLE
+    CGFloat result = [toString doubleValue];
+#else
+    CGFloat result = [toString floatValue];
+#endif
+    return result;
+}
+
+/**
+ *  基于指定的倍数，对传进来的 floatValue 进行像素取整。若指定倍数为0，则表示以当前设备的屏幕倍数为准。
+ *
+ *  例如传进来 “2.1”，在 2x 倍数下会返回 2.5（0.5pt 对应 1px），在 3x 倍数下会返回 2.333（0.333pt 对应 1px）。
+ */
+UIKIT_STATIC_INLINE CGFloat zn_flatSpecificScale(CGFloat floatValue, CGFloat scale) {
+    floatValue = zn_removeFloatMin(floatValue);
+    scale = scale ?: screenScale;
+    CGFloat flattedValue = ceil(floatValue * scale) / scale;
+    return flattedValue;
+}
+
+/**
+ 对像素进行取整处理
+ 
+ @param valuse <#valuse description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE CGFloat zn_float(CGFloat valuse){
+    return zn_flatSpecificScale(valuse,0);
+}
+
+/**
+ 获取一个像素取整的size
+
+ @param width <#width description#>
+ @param height <#height description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE CGSize zn_sizeMakeFlat(CGFloat width, CGFloat height){
+    return CGSizeMake(zn_float(width), zn_float(height));
+}
+
+/**
+ 获取rect的中心点坐标
+
+ @param rect <#rect description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE CGPoint zn_rectCenterPoint(CGRect rect){
+    return CGPointMake(zn_float(CGRectGetMidX(rect)), zn_float(CGRectGetMidY(rect)));
+}
+
+/**
  屏幕宽度
  @return <#return value description#>
  */
@@ -66,11 +138,11 @@ UIKIT_STATIC_INLINE BOOL isiphoneX(){
  */
 UIKIT_STATIC_INLINE CGFloat zn_AutoWidth(CGFloat width){
     if (isiphoneX()) {
-        return (width / 375.0f) * zn_screenWidth() * 1.1;
+        return ceil((width / 375.0f) * zn_screenWidth() * 1.1);
     }else if(isiphoneXR()){
-        return (width / 375.0f) * zn_screenWidth() * 1.05;
+        return ceil((width / 375.0f) * zn_screenWidth() * 1.05);
     }
-    return (width / 375.0f) * zn_screenWidth();
+    return ceil((width / 375.0f) * zn_screenWidth());
 }
 
 /**
@@ -79,7 +151,7 @@ UIKIT_STATIC_INLINE CGFloat zn_AutoWidth(CGFloat width){
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE CGFloat zn_AutoHeight(CGFloat height){
-    return (height / 667.0f) * zn_screenHeight();
+    return ceil((height / 667.0f) * zn_screenHeight());
 }
 
 /**
@@ -179,6 +251,42 @@ UIKIT_STATIC_INLINE BOOL zn_betweenOrEuqal(CGFloat minVlause, CGFloat maxVlause,
  */
 UIKIT_STATIC_INLINE BOOL zn_between(CGFloat minVlause, CGFloat maxVlause, CGFloat vlause){
     return vlause < maxVlause && vlause > minVlause;
+}
+
+UIKIT_STATIC_INLINE CGRect zn_rectSetPoint(CGRect rect, CGFloat x, CGFloat y){
+    rect.origin.x = zn_float(x);
+    rect.origin.y = zn_float(y);
+    return rect;
+}
+
+UIKIT_STATIC_INLINE CGRect zn_rectSetHeight(CGRect rect , CGFloat height){
+    if (height < 0) {
+        return rect;
+    }
+    rect.size.height = height;
+    return rect;
+}
+
+UIKIT_STATIC_INLINE CGRect zn_rectSetWidth(CGRect rect , CGFloat width){
+    if (width < 0) {
+        return rect;
+    }
+    rect.size.width = width;
+    return rect;
+}
+
+/**
+ 查看outerRange 是否包含了 innerRange
+
+ @param outerRange <#outerRange description#>
+ @param innerRange <#innerRange description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE BOOL zn_containingRanges(NSRange outerRange, NSRange innerRange){
+    if (innerRange.location >= outerRange.location && outerRange.location + outerRange.length >= innerRange.location + innerRange.length) {
+        return YES;
+    }
+    return NO;
 }
 
 #endif /* ZNStateFunction_h */

@@ -38,9 +38,7 @@
 
 - (RACCommand *)commentCommand{
     if (!_commentCommand) {
-        znWeakSelf(self)
         _commentCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-            znStrongSelf
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 CommentArticleModel * model = input;
                 [CommentArticleModel zn_addData:^(BOOL success, NSError * _Nonnull error) {

@@ -38,7 +38,6 @@
         [self.navigationController.navigationBar setBackgroundImage:[UIImage zn_createImageWithColor:[UIColor whiteColor] size:CGSizeMake(10, 10)] forBarMetrics:UIBarMetricsDefaultPrompt];
         [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     }
-    
     [self.view addSubview:self.noNetView];
 }
 
@@ -55,7 +54,7 @@
  重新进行请求
  */
 - (void)reloadRequest{
-    
+    NSLog(@"reloadRequest");
 }
 
 /**
@@ -65,7 +64,7 @@
  */
 - (void)showError:(NSString*) error{
     if (error) {
-        [MBProgressHUD zn_showError:error];
+        [MBProgressHUD zn_showError:error toView:self.view];
     }
 }
 
@@ -76,16 +75,18 @@
  */
 - (void)showSuccess:(NSString*) message{
     if (message) {
-        [MBProgressHUD zn_showSuccess:message];
+        [MBProgressHUD zn_showSuccess:message toView:self.view];
     }
 }
 
 - (void)showNoNet{
     self.noNetView.hidden = NO;
+    [self.view bringSubviewToFront:self.noNetView];
 }
 
 - (void)hideNoNet{
     self.noNetView.hidden = YES;
+    [self.view sendSubviewToBack:self.noNetView];
 }
 
 /**
@@ -101,7 +102,6 @@
 - (void)hideLoading{
     [SVProgressHUD dismiss];
 }
-
 
 /**
  跳转到登录页面

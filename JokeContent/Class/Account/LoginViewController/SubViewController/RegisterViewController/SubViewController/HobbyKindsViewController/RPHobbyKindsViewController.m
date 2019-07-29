@@ -34,7 +34,7 @@
     znWeakSelf(self)
     //关注
     [self.datamodel.attentionKindsCommand.executionSignals.switchToLatest subscribeNext:^(id  _Nullable x) {
-       znStrongSelf
+//       znStrongSelf
         [MBProgressHUD zn_hideHUD];
         if ([x[0] boolValue]) {
             

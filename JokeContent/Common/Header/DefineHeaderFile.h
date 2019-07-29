@@ -9,24 +9,6 @@
 #ifndef DefineHeaderFile_h
 #define DefineHeaderFile_h
 
-//弱引用
-#define znWeakSelf(x) __weak typeof(x) weakObject = (x);
-#define znStrongSelf __strong typeof(weakObject) weakSelf = weakObject;
-
-//代码块
-#define znnBlockSelf(x) __block typeof(x) blockSelf = (x);
-
-//状态栏高度大小
-#define znStateSize [UIApplication sharedApplication].statusBarFrame.size
-#define znStateHeight znStateSize.height
-
-//屏幕高度大小
-#define screenBounds [UIScreen mainScreen].bounds
-#define screenHeight [UIScreen mainScreen].bounds.size.height
-#define screenWidth [UIScreen mainScreen].bounds.size.width
-
-#define znString(x) [NSString stringWithFormat:@"%@",x]
-
 //一次阅读产生的金币数量
 #define glodNumerWithOne 10
 
@@ -50,6 +32,7 @@
 
 //万维易源的应用id
 #define wwyyAppId @"91944"
+
 //万维易源的应用密钥
 #define wwyyAppKey @"efee5bcd18934179bcc1fb65713564d8"
 

@@ -103,7 +103,7 @@ typedef void(^BmobIndexAndProgressBlock)(NSUInteger index,CGFloat progress);
 
 typedef void(^BmobFileDownloadResultBlock)(BOOL isSuccessful,NSError *error,NSString *filepath);
 typedef BmobFileDownloadResultBlock BmobLocalImageResultBlock;
-typedef void (^BmobCompleteBlock)();
+typedef void (^BmobCompleteBlock)(void);
 typedef void(^BmobGetAccessUrlBlock)(BmobFile *file,NSError *error);
 typedef void(^BmobFileResultBlock)(BOOL isSuccessful,NSError *error,NSString *filename,NSString *url,BmobFile* file);
 

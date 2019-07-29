@@ -19,13 +19,13 @@
     // Do any additional setup after loading the view.
     
     //加载本地HTML
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
-    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    NSURL *url = [NSURL URLWithString:filePath];
-    NSArray * urls = [self componentsSeparatedFromString:@"<video " toString:@">" html:htmlString];
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"html"];
+//    NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+//    NSURL *url = [NSURL URLWithString:filePath];
+//    NSArray * urls = [self componentsSeparatedFromString:@"<video " toString:@">" html:htmlString];
     
-    NSArray * currentUrls = [self componentsSeparatedFromString:@"src=\"" toString:@"\"" html:urls[0]];
-    NSLog(@"");
+//    NSArray * currentUrls = [self componentsSeparatedFromString:@"src=\"" toString:@"\"" html:urls[0]];
+//    NSLog(@"");
 //    [self.webView loadHTMLString:htmlString baseURL:url];
 //    self.webView.navigationDelegate = self;
 //    [self sendDataToJSWithName: @"test" parameters:@[@"1",@"2"] block:^(id  _Nullable response, NSError * _Nonnull error) {

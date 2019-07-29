@@ -9,7 +9,12 @@
 #ifndef ZNPlatform_h
 #define ZNPlatform_h
 
+//网络请求
 #import "ZNNetManager.h"
+
+//宏定义
+#import "ZNDefineHeader.h"
+
 //类拓展
 #import "ZNCategory.h"
 

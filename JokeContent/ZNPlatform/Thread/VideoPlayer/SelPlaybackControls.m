@@ -264,31 +264,31 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.3f;
     }];
     
     [_fullScreenButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.bottom.equalTo(_bottomControlsBar);
+        make.right.bottom.equalTo(self->_bottomControlsBar);
         make.size.mas_equalTo(CGSizeMake(30, 30));
     }];
     
     [_playTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_bottomControlsBar).offset(5);
+        make.left.equalTo(self->_bottomControlsBar).offset(5);
         make.width.equalTo(@45);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+        make.centerY.equalTo(self->_bottomControlsBar.mas_centerY);
     }];
     
     [_totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_fullScreenButton.mas_left).offset(-5);
+        make.right.equalTo(self->_fullScreenButton.mas_left).offset(-5);
         make.width.equalTo(@45);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+        make.centerY.equalTo(self->_bottomControlsBar.mas_centerY);
     }];
     
     [_progress mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_playTimeLabel.mas_right).offset(5);
-        make.right.equalTo(_totalTimeLabel.mas_left).offset(-5);
+        make.left.equalTo(self->_playTimeLabel.mas_right).offset(5);
+        make.right.equalTo(self->_totalTimeLabel.mas_left).offset(-5);
         make.height.equalTo(@2);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+        make.centerY.equalTo(self->_bottomControlsBar.mas_centerY);
     }];
 
     [_videoSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_progress);
+        make.edges.equalTo(self->_progress);
     }];
 }
 

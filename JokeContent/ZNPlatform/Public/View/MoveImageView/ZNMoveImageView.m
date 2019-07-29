@@ -47,13 +47,13 @@
 }
 
 - (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self];
+//    UITouch *touch = [touches anyObject];
+//    CGPoint currentPoint = [touch locationInView:self];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self];
+//    UITouch *touch = [touches anyObject];
+//    CGPoint currentPoint = [touch locationInView:self];
     
 //    if (currentPoint.x > self.znScreentWidth / 2) {
 //        self.zn_x = self.znScreentWidth - self.width/2;

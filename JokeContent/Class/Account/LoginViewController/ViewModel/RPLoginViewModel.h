@@ -10,6 +10,7 @@
 #import "RPLoginViewController.h"
 #import "RPSearchTextField.h"
 #import "ZNTextField.h"
+#import "ZNUIButton.h"
 
 @interface RPLoginViewModel : RPBaseObject
 
@@ -21,7 +22,7 @@
 
 @property (nonatomic , strong) UILabel * titleLabel;
 
-@property (nonatomic , strong) UIButton * loginBtn;
+@property (nonatomic , strong) ZNUIButton * loginBtn;
 
 @property (nonatomic , strong) UIButton * registerBtn;
 

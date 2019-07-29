@@ -107,7 +107,7 @@
  */
 - (void)regisAccount{
     //验证码
-    NSString *code = self.viewmodel.codeText.text;
+//    NSString *code = self.viewmodel.codeText.text;
     if (![self isCondictionRegis]) {
         return;
     }

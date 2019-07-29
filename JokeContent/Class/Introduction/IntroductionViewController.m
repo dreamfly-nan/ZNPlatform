@@ -48,7 +48,7 @@ UICollectionViewDataSource>
     cell.imageUrl = self.imageArrs[indexPath.row];
     if (indexPath.row == self.imageArrs.count - 1) {
         cell.functionBtn.hidden = NO;
-        znWeakSelf(self)
+//        znWeakSelf(self)
         cell.btnBlock = ^(UIButton * _Nonnull btn) {
             [UIApplication sharedApplication].delegate.window.rootViewController = [[RPNavigationController alloc] initWithRootViewController:[RPBaceTabBarController new]];
         };

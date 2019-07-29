@@ -192,12 +192,15 @@
     return _forgetBtn;
 }
 
-- (UIButton *)loginBtn{
+- (ZNUIButton *)loginBtn{
     if (!_loginBtn) {
-        _loginBtn = [UIButton new];
+        _loginBtn = [ZNUIButton new];
         _loginBtn.backgroundColor = Main_Color();
         [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_loginBtn setTitle:@"登  陆" forState:UIControlStateNormal];
+        _loginBtn.zn_image(zn_imageName(@"weixin"),UIControlStateNormal);
+        _loginBtn.imageSpace = zn_AutoWidth(10);
+        _loginBtn.positionType = UIButtonImagePositionTypeLeft;
         _loginBtn.titleLabel.font = zn_font(18);
     }
     return _loginBtn;

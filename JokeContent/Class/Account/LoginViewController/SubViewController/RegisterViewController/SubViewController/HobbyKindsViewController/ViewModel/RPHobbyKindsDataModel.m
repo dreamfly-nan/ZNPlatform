@@ -21,7 +21,7 @@
 
 - (RACCommand *)kindsCommand{
     if (!_kindsCommand) {
-        znWeakSelf(self)
+//        znWeakSelf(self)
         _kindsCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
                 
@@ -34,10 +34,10 @@
 
 - (RACCommand *)attentionKindsCommand{
     if (!_attentionKindsCommand) {
-        znWeakSelf(self)
+//        znWeakSelf(self)
         _attentionKindsCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             return [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-                znStrongSelf
+//                znStrongSelf
                 
                 return nil;
             }];

@@ -53,21 +53,21 @@ typedef void(^QZNetRequestProgress)(CGFloat progress);
 @interface ZNNetRequest : AFHTTPSessionManager
 
 //所有的网络请求
-@property (nonatomic , strong) NSMutableArray <NSURLSessionDataTask *> * allSessionDataTasks;
+@property (nonatomic , strong) NSMutableArray <NSURLSessionDataTask *> * _Nullable allSessionDataTasks;
 
 //请求头的数据设置的代码块
-@property (nonatomic , copy) NSDictionary * _Nonnull(^requestHeadBlock)(void);
+@property (nonatomic , copy) NSDictionary * _Nonnull(^_Nonnull requestHeadBlock)(void);
 
 //请求头的数据设置的代码块
-@property (nonatomic , copy) NSDictionary * _Nonnull(^requestParameterBlock)(NSDictionary * _Nullable parameter);
+@property (nonatomic , copy) NSDictionary * _Nonnull(^_Nonnull requestParameterBlock)(NSDictionary * _Nullable parameter);
 
 /*
  统一配置请求成功后执行的代码块
  */
-@property (nonatomic , copy) ZNResponseMessage * (^requestSuccess)(id _Nonnull responseObject);
+@property (nonatomic , copy) ZNResponseMessage * _Nonnull (^_Nonnull requestSuccess)(id _Nonnull responseObject);
 
 //统一配置请求失败后的代码块
-@property (nonatomic , copy) void (^requestFail)(NSError * _Nonnull error);
+@property (nonatomic , copy) void (^_Nonnull requestFail)(NSError * _Nonnull error);
 
 //请求超时的时间设置
 @property (nonatomic , assign) CGFloat requestTimeOut;

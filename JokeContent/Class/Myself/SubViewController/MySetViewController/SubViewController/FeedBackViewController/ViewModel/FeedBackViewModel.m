@@ -67,7 +67,7 @@
         _textView.backgroundColor = [UIColor whiteColor];
         _textView.tintColor = Content_Color();
         
-        znWeakSelf(self)
+//        znWeakSelf(self)
         //文字改变
         _textView.textDidChangeHandlerBlock = ^(UITextView *textView) {
 //            znStrongSelf

@@ -17,7 +17,7 @@
 /******************************************************************
  检测网络
  ******************************************************************/
-+(void)networkReachabilityStart:(void (^)(AFNetworkReachabilityStatus status)) statusChangeBlock;
++(void)networkReachabilityStart:(void (^_Nullable)(AFNetworkReachabilityStatus status)) statusChangeBlock;
 
 /*********************************************************************************************/
 /*                                       配置项目                                              */
@@ -38,8 +38,8 @@
  @param success <#success description#>
  @param fail <#fail description#>
  */
-+ (void)setConfigRequestSuccessBlock:(ZNResponseMessage * (^)(id _Nonnull responseObject)) success
-                                fail:(void (^)(NSError * _Nonnull error))fail;
++ (void)setConfigRequestSuccessBlock:(ZNResponseMessage * _Nonnull (^_Nullable)(id _Nonnull responseObject)) success
+                                fail:(void (^_Nullable)(NSError * _Nonnull error))fail;
 
 //请求超时设置
 + (void)setRequestTimeOut:(CGFloat)timeOut;

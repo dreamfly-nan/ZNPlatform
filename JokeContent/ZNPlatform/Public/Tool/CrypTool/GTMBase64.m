@@ -399,7 +399,7 @@ GTM_INLINE NSUInteger GuessDecodedLength(NSUInteger srcLen) {
 #pragma mark - base64
 + (NSString *) md5_base64: (NSString *) inPutText
 {
-    const char *cStr = [inPutText UTF8String];
+//    const char *cStr = [inPutText UTF8String];
     unsigned char digest[16];
 //    CC_MD5( cStr, strlen(cStr), digest );
     

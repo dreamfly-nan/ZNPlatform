@@ -20,6 +20,12 @@
 {
     if (view == nil)
         view = [[UIApplication sharedApplication].windows lastObject];
+    
+    if (view == nil) {
+        NSLog(@"view most no be nil");
+        return;
+    }
+    
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = text;

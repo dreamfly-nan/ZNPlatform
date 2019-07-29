@@ -41,7 +41,7 @@ NewsKindsChooseControllerDelegate>
     [self.viewModel setUpInitUI];
     [self setBingding];
     [self isFristOpenDialog];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setKinds) name:homeKindsChange object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateKinds) name:homeKindsChange object:nil];
 }
 
 - (void)dealloc{
@@ -108,6 +108,12 @@ NewsKindsChooseControllerDelegate>
             [self.view addSubview:dialog];
             [RPConfig setFristOpen];
     }
+}
+
+- (void)updateKinds{
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self setKinds];
+    });
 }
 
 - (void)setKinds{
