@@ -130,7 +130,7 @@
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
-        _titleLabel.textColor = Title_Color();
+        _titleLabel.textColor = TITLE_COLOR;
         _titleLabel.font = zn_font(14);
         _titleLabel.textAlignment = NSTextAlignmentLeft;
     }
@@ -140,7 +140,7 @@
 - (UILabel *)contentLabel{
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
-        _contentLabel.textColor = Title_Color();
+        _contentLabel.textColor = TITLE_COLOR;
         _contentLabel.font = zn_font(14);
         _contentLabel.textAlignment = NSTextAlignmentRight;
     }
@@ -149,7 +149,7 @@
 
 - (UIView *)lineView{
     if (!_lineView) {
-        _lineView = [UIView zn_getLineViewWithColor:Line_Color()];
+        _lineView = [UIView zn_getLineViewWithColor:LINE_COlOR];
     }
     return _lineView;
 }

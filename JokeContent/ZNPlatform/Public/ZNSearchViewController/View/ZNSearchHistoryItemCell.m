@@ -50,9 +50,9 @@
     if (!_contentLabel) {
         _contentLabel = [UILabel new];
         _contentLabel.zn_font(zn_font(12))
-        .zn_textColor(Title_Color())
+        .zn_textColor(TITLE_COLOR)
         .zn_alignment(NSTextAlignmentCenter)
-        .zn_backgroundColor(Line_Color());
+        .zn_backgroundColor(LINE_COlOR);
     }
     return _contentLabel;
 }

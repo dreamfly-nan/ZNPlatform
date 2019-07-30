@@ -70,7 +70,7 @@
     if (!_titleLabel) {
         _titleLabel = UILabel.zn_create
         .zn_font(zn_font(12))
-        .zn_textColor(Title_Color())
+        .zn_textColor(TITLE_COLOR)
         .zn_alignment(NSTextAlignmentCenter);
     }
     return _titleLabel;

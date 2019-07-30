@@ -52,7 +52,7 @@
         _historyLabel = [UILabel new];
         _historyLabel.zn_text(@"历史记录")
         .zn_font(zn_font(12))
-        .zn_textColor(Introduction_Color())
+        .zn_textColor(PLACE_COLOR)
         .zn_alignment(NSTextAlignmentLeft);
     }
     return _historyLabel;
@@ -62,7 +62,7 @@
     if (!_deleteBtn) {
         _deleteBtn = [UIButton new];
         _deleteBtn.zn_title(@"清空",UIControlStateNormal)
-        .zn_titleColor(Introduction_Color(),UIControlStateNormal)
+        .zn_titleColor(PLACE_COLOR,UIControlStateNormal)
         .zn_font(zn_font(12));
     }
     return _deleteBtn;
@@ -76,7 +76,7 @@
         _searchBarView.searchText.imageSize = CGSizeMake(zn_AutoWidth(15), zn_AutoWidth(15));
         _searchBarView.searchText.inset = UIEdgeInsetsMake(0, zn_AutoWidth(10), 0, 0);
         _searchBarView.searchText.textField.zn_font(zn_font(13));
-        _searchBarView.searchText.zn_borderWidth(1).zn_borderColor(Introduction_Color()).zn_cornerRadius(3);
+        _searchBarView.searchText.zn_borderWidth(1).zn_borderColor(PLACE_COLOR).zn_cornerRadius(3);
     }
     return _searchBarView;
 }

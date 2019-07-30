@@ -44,7 +44,7 @@
 #warning 若控制位置不正确根据实际情况微调 这里有的不是自动布局
 
 - (void)baseSetting{
-    self.view.backgroundColor = Big_background_Color();
+    self.view.backgroundColor = BACKGROUND_COLOR;
     [self.navigationController.view addSubview:self.searchBar];
     _searchVM = [[SearchViewModel alloc]init];
     [self.view addSubview:self.searchView];

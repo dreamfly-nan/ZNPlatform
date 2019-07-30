@@ -74,7 +74,7 @@
 - (UIButton *)backBtn{
     if (!_backBtn) {
         _backBtn = UIButton.zn_create
-        .zn_titleColor(Title_Color(),UIControlStateNormal)
+        .zn_titleColor(TITLE_COLOR,UIControlStateNormal)
         .zn_font(zn_font(13))
         .zn_image(zn_ImagePath(@"zn_search_back", @".png"),UIControlStateNormal)
         .zn_ImageContentMode(UIViewContentModeScaleAspectFit);

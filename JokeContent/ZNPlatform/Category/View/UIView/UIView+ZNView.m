@@ -159,7 +159,7 @@
  @param edge <#edge description#>
  */
 - (void)zn_setBottomLineWithDistance:(UIEdgeInsets)edge{
-    [self zn_setBottomLineWithColor:Line_Color() distance:edge];
+    [self zn_setBottomLineWithColor:LINE_COlOR distance:edge];
 }
 
 /**
@@ -177,7 +177,7 @@
  @param bottom <#edge description#>
  */
 - (void)zn_setBottomLineWithBottom:(CGFloat) bottom{
-    [self zn_setBottomLineWithColor:Line_Color() distance:UIEdgeInsetsMake(0, 0, bottom, 0)];
+    [self zn_setBottomLineWithColor:LINE_COlOR distance:UIEdgeInsetsMake(0, 0, bottom, 0)];
 }
 
 @end

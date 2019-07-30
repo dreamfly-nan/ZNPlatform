@@ -30,7 +30,7 @@ ZNTextTableCellManagerDelegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = Big_background_Color();
+    self.view.backgroundColor = BACKGROUND_COLOR;
     [self.view addSubview:self.tableview];
     [self setData];
     // Do any additional setup after loading the view.

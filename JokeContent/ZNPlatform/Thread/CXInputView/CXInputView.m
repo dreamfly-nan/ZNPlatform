@@ -149,7 +149,7 @@
 - (CXTextView *)textView{
     if (!_textView) {
         _textView = [[CXTextView alloc] initWithFrame:CGRectMake(0, 0, self.width, zn_AutoWidth(100))];
-        _textView.textView.backgroundColor = Big_background_Color();
+        _textView.textView.backgroundColor = BACKGROUND_COLOR;
         _textView.textView.layer.cornerRadius = 5;
         _textView.initiLine = 2;
         _textView.maxLine = 4;
@@ -158,7 +158,7 @@
         _textView.maxLength = 100;
         _textView.placeholder = @"说点什么吧";
         _textView.backgroundColor = [UIColor whiteColor];
-        _textView.textView.tintColor = Content_Color();
+        _textView.textView.tintColor = CONTENT_COLOR;
         _customTextViewHeight = ceil(_textView.font.lineHeight * _textView.initiLine) + 2*_textView.v_margin;
         //高度改变
         __weak __typeof(self)weakSelf = self;

@@ -71,7 +71,7 @@
     if (!_refreshBtn) {
         _refreshBtn = [UIButton new];
         [_refreshBtn setTitle:@"刷新一下" forState:UIControlStateNormal];
-        [_refreshBtn setTitleColor:Main_Color() forState:UIControlStateNormal];
+        [_refreshBtn setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
         _refreshBtn.titleLabel.font = zn_font(15);
     }
     return _refreshBtn;
@@ -89,7 +89,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.font = zn_font(15);
-        _titleLabel.textColor = Title_Color();
+        _titleLabel.textColor = TITLE_COLOR;
         _titleLabel.text = @"数据跑丢拉？？";
         _titleLabel.textAlignment = NSTextAlignmentCenter;
     }

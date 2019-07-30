@@ -60,13 +60,13 @@
 
 - (void)baseSetting{
     /*! 边框处理 */
-    _textField.layer.borderColor = Line_Color().CGColor;
+    _textField.layer.borderColor = LINE_COlOR.CGColor;
     _textField.layer.borderWidth = 1;
     _textField.layer.cornerRadius = zn_AutoHeight(13);
     _textField.layer.masksToBounds = YES;
     /*! 字体其他 */
     _textField.font = zn_font(14);
-    _textField.tintColor = Line_Color();
+    _textField.tintColor = LINE_COlOR;
     _textField.keyboardType = UIKeyboardTypeDefault;
     _textField.delegate =self;
     /*! 设置键盘return样式为搜索样式 */
@@ -94,7 +94,7 @@
     if (!_placeholderLabel) {
         _placeholderLabel = [[UILabel alloc]initWithFrame:CGRectZero];
         _placeholderLabel.text = @"请输入关键词";
-        _placeholderLabel.textColor = AuOrDate_Color();
+        _placeholderLabel.textColor = PLACE_COLOR;
         _placeholderLabel.font = zn_font(13);
     }
     return _placeholderLabel;
@@ -112,7 +112,7 @@
     if (!_cancelButton) {
         _cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
-        [_cancelButton setTitleColor:Main_Color() forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:MAIN_COLOR forState:UIControlStateNormal];
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         _cancelButton.titleLabel.font = [UIFont systemFontOfSize:14];
     }

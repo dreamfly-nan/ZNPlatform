@@ -72,7 +72,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.font = zn_font(15);
-        _titleLabel.textColor = Title_Color();
+        _titleLabel.textColor = TITLE_COLOR;
         _titleLabel.text = @"哎呀，数据跑丢了！";
     }
     return _titleLabel;
@@ -91,7 +91,7 @@
         _reloadBtn = [UIButton new];
         [_reloadBtn setTitle:@"重新加载" forState:UIControlStateNormal];
         _reloadBtn.titleLabel.font = zn_font(15);
-        _reloadBtn.backgroundColor = Main_Color();
+        _reloadBtn.backgroundColor = MAIN_COLOR;
     }
     return _reloadBtn;
 }

@@ -24,7 +24,7 @@ static NSString *cellID = @"searchID";
         self.dataSource =self;
         self.scrollEnabled = NO;
         _dataArray = [dataArray mutableCopy];
-        self.backgroundColor = Big_background_Color();
+        self.backgroundColor = BACKGROUND_COLOR;
         [self registerClass:[SearchCollectionViewCell class] forCellWithReuseIdentifier:cellID];
     }
     return self;

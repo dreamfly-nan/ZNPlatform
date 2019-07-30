@@ -27,4 +27,10 @@
 //基础类
 #import "ZNBaseCollectionViewCell.h"
 
+//配置菜单
+#import "ZNPlatformConfig.h"
+
+//第三方头文件
+#import "ThreeHeadFile.h"
+
 #endif /* ZNPlatform_h */

@@ -30,7 +30,7 @@
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = text;
     
-    hud.label.textColor = Title_Color();
+    hud.label.textColor = TITLE_COLOR;
     //hud.bezelView.style = MBProgressHUDBackgroundStyleSolidCo;
     hud.label.font = [UIFont systemFontOfSize:17.0];
     hud.userInteractionEnabled= NO;

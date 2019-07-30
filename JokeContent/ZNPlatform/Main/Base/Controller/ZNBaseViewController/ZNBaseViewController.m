@@ -22,10 +22,10 @@
 }
 
 - (void)setInitUI{
-    self.view.backgroundColor = Big_background_Color();
+    self.view.backgroundColor = BACKGROUND_COLOR;
     if (self.navigationController) {
         [self.navigationController.navigationBar setTitleTextAttributes:@{NSFontAttributeName:zn_font(15),
-                                                                          NSForegroundColorAttributeName:Main_Color()}];
+                                                                          NSForegroundColorAttributeName:MAIN_COLOR}];
         [self.navigationController.navigationBar setBackgroundImage:[UIImage zn_createImageWithColor:[UIColor whiteColor] size:CGSizeMake(10, 10)] forBarMetrics:UIBarMetricsDefaultPrompt];
         [self.navigationController.navigationBar setShadowImage:[UIImage new]];
         

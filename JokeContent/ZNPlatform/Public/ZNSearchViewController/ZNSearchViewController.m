@@ -24,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = Big_background_Color();
+    self.view.backgroundColor = BACKGROUND_COLOR;
     [self.viewModel setInitUI];
     [self setBangding];
     // Do any additional setup after loading the view.

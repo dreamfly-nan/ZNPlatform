@@ -82,7 +82,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,strong) UIFont * navigationFont;
 
-
 /**
  获取单例
 
