@@ -36,4 +36,42 @@
     return [[self class] sharedSingleton];
 }
 
+
+#pragma mark - get
+
+- (UIColor *)mainColor{
+    if (!_mainColor) {
+        return zn_colorString(@"#56B5D5");
+    }
+    return _mainColor;
+}
+
+- (UIColor *)backgroundColor{
+    if (!_backgroundColor) {
+        return zn_colorString(@"#F97856");
+    }
+    return _backgroundColor;
+}
+
+- (UIColor *)titleColor{
+    if (!_titleColor) {
+        return zn_colorString(@"#545556");
+    }
+    return _titleColor;
+}
+
+- (UIColor *)contentColor{
+    if (!_contentColor) {
+        return zn_colorString(@"#636161");
+    }
+    return _contentColor;
+}
+
+- (UIColor *)lineColor{
+    if (!_lineColor) {
+        zn_colorString(@"#cdcdcd");
+    }
+    return _lineColor;
+}
+
 @end
