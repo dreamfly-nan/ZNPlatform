@@ -39,6 +39,13 @@
 
 #pragma mark - get
 
+- (UIColor *)dateColor{
+    if (!_dateColor) {
+        return zn_colorString(@"#BFBFBF");
+    }
+    return _dateColor;
+}
+
 - (UIColor *)mainColor{
     if (!_mainColor) {
         return zn_colorString(@"#56B5D5");
@@ -69,9 +76,16 @@
 
 - (UIColor *)lineColor{
     if (!_lineColor) {
-        zn_colorString(@"#cdcdcd");
+      return zn_colorString(@"#cdcdcd");
     }
     return _lineColor;
+}
+
+- (UIColor *)introductionColor{
+    if (!_introductionColor) {
+        return zn_colorString(@"#ABACAD");
+    }
+    return _introductionColor;
 }
 
 @end

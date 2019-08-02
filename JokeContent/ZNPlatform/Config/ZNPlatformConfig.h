@@ -30,16 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIColor * lineColor;
 
 /**
- 选项卡未选中颜色
- */
-@property(nonatomic,strong) UIColor * tabNoSelectColor;
-
-/**
- 选项卡选中时颜色
- */
-@property(nonatomic,strong) UIColor * tabSelectColor;
-
-/**
  标题颜色
  */
 @property(nonatomic,strong) UIColor * titleColor;
@@ -64,7 +54,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,strong) UIColor * introductionColor;
 
-
 /************************************************   字体配置   **********************************************/
 
 /**
@@ -81,6 +70,18 @@ NS_ASSUME_NONNULL_BEGIN
  导航栏字体
  */
 @property(nonatomic,strong) UIFont * navigationFont;
+
+/************************************************   常用高度配置   **********************************************/
+
+/**
+ 导航栏高度
+ */
+@property(nonatomic,assign) CGFloat navigationHeight;
+
+/**
+ 选项卡高度
+ */
+@property(nonatomic,assign) CGFloat tabBarHeight;
 
 /**
  获取单例

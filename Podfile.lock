@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - AvoidCrash (2.5.2)
   - BmobSDK (2.3.1)
+  - HXPhotoPicker (2.3.1)
   - IQKeyboardManager (6.4.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
@@ -27,11 +28,9 @@ PODS:
     - RTRootNavigationController/Core (= 0.7.1)
   - RTRootNavigationController/Core (0.7.1)
   - SDAutoLayout (2.2.1)
-  - SDCycleScrollView (1.75):
-    - SDWebImage (>= 4.0.0)
-  - SDWebImage (4.4.7):
-    - SDWebImage/Core (= 4.4.7)
-  - SDWebImage/Core (4.4.7)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
   - SVProgressHUD (2.2.5)
   - TZImagePickerController (3.2.1)
   - YLGIFImage (0.11)
@@ -40,6 +39,7 @@ DEPENDENCIES:
   - AFNetworking
   - AvoidCrash
   - BmobSDK
+  - HXPhotoPicker
   - IQKeyboardManager
   - Masonry
   - MBProgressHUD
@@ -49,8 +49,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - RTRootNavigationController
   - SDAutoLayout
-  - SDCycleScrollView
-  - SDWebImage (~> 4.4.6)
+  - SDWebImage (~> 5.0)
   - SVProgressHUD
   - TZImagePickerController
   - YLGIFImage
@@ -60,6 +59,7 @@ SPEC REPOS:
     - AFNetworking
     - AvoidCrash
     - BmobSDK
+    - HXPhotoPicker
     - IQKeyboardManager
     - Masonry
     - MBProgressHUD
@@ -69,7 +69,6 @@ SPEC REPOS:
     - ReactiveObjC
     - RTRootNavigationController
     - SDAutoLayout
-    - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
     - TZImagePickerController
@@ -79,6 +78,7 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   AvoidCrash: 28c6916fe19bd2b84126b8dec7cbe61c9a12741d
   BmobSDK: e0f9e4b451233a80af63a8ae4f2d239474bf567b
+  HXPhotoPicker: 3845637c6a6e98ebf5bfad5ed67bcab8ce3786c2
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
@@ -88,12 +88,11 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
-  SDCycleScrollView: 884b88f0266dd4708a0e1934975c69cb971707b1
-  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
   YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
 
-PODFILE CHECKSUM: e61ffe8a14c7d487615fcf095191794007d3577b
+PODFILE CHECKSUM: 3a4988d472a248cb25c5bb57ae85f5d432e31f90
 
 COCOAPODS: 1.6.1

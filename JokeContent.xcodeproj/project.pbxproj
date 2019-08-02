@@ -148,6 +148,9 @@
 		C1180A4A22AFA830005ED2FD /* ZNMoveImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C1180A4922AFA830005ED2FD /* ZNMoveImageView.m */; };
 		C11867EE22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */; };
 		C11867F222E16E26009C3A32 /* zn_search_back.png in Resources */ = {isa = PBXBuildFile; fileRef = C11867F122E16E26009C3A32 /* zn_search_back.png */; };
+		C119D18222F425B100ECF10B /* AppDelegate+ZNException.m in Sources */ = {isa = PBXBuildFile; fileRef = C119D18122F425B100ECF10B /* AppDelegate+ZNException.m */; };
+		C119D18622F4294900ECF10B /* TestVideoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C119D18522F4294900ECF10B /* TestVideoTableViewCell.m */; };
+		C119D18922F4316C00ECF10B /* VedioCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C119D18822F4316C00ECF10B /* VedioCellModel.m */; };
 		C11A2DCD22BCA3DD00F3282A /* AppDelegate+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = C11A2DCC22BCA3DD00F3282A /* AppDelegate+Crash.m */; };
 		C11AE66F22A4CCF600289610 /* CommentUserHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = C11AE66E22A4CCF600289610 /* CommentUserHeadView.m */; };
 		C11AE67222A4D08C00289610 /* CommentUserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C11AE67122A4D08C00289610 /* CommentUserViewModel.m */; };
@@ -511,6 +514,12 @@
 		C11867EC22E15E28009C3A32 /* ZNCollectionViewFlowlayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZNCollectionViewFlowlayout.h; sourceTree = "<group>"; };
 		C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZNCollectionViewFlowlayout.m; sourceTree = "<group>"; };
 		C11867F122E16E26009C3A32 /* zn_search_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zn_search_back.png; sourceTree = "<group>"; };
+		C119D18022F425B100ECF10B /* AppDelegate+ZNException.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ZNException.h"; sourceTree = "<group>"; };
+		C119D18122F425B100ECF10B /* AppDelegate+ZNException.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ZNException.m"; sourceTree = "<group>"; };
+		C119D18422F4294900ECF10B /* TestVideoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVideoTableViewCell.h; sourceTree = "<group>"; };
+		C119D18522F4294900ECF10B /* TestVideoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVideoTableViewCell.m; sourceTree = "<group>"; };
+		C119D18722F4316C00ECF10B /* VedioCellModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VedioCellModel.h; sourceTree = "<group>"; };
+		C119D18822F4316C00ECF10B /* VedioCellModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VedioCellModel.m; sourceTree = "<group>"; };
 		C11A2DCB22BCA3DD00F3282A /* AppDelegate+Crash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Crash.h"; sourceTree = "<group>"; };
 		C11A2DCC22BCA3DD00F3282A /* AppDelegate+Crash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Crash.m"; sourceTree = "<group>"; };
 		C11AE66D22A4CCF600289610 /* CommentUserHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentUserHeadView.h; sourceTree = "<group>"; };
@@ -1270,17 +1279,9 @@
 			isa = PBXGroup;
 			children = (
 				394B79C92266D3A40030FBB7 /* RPNavigationController.m */,
-				394B79CA2266D3A40030FBB7 /* FDFullscreenPopGesture */,
 				394B79CB2266D3A40030FBB7 /* RPNavigationController.h */,
 			);
 			path = BaseNavigationController;
-			sourceTree = "<group>";
-		};
-		394B79CA2266D3A40030FBB7 /* FDFullscreenPopGesture */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
 		394B79CC2266D3A40030FBB7 /* BaseTabBarController */ = {
@@ -1900,6 +1901,7 @@
 		C1180A3522AF402C005ED2FD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				C119D17F22F4255B00ECF10B /* Appdelegate */,
 				C11DCA6522C9B5EE009E454F /* Base */,
 			);
 			path = Main;
@@ -1965,6 +1967,26 @@
 				C11867ED22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m */,
 			);
 			path = ZNCollectionViewFlowlayout;
+			sourceTree = "<group>";
+		};
+		C119D17F22F4255B00ECF10B /* Appdelegate */ = {
+			isa = PBXGroup;
+			children = (
+				C119D18022F425B100ECF10B /* AppDelegate+ZNException.h */,
+				C119D18122F425B100ECF10B /* AppDelegate+ZNException.m */,
+			);
+			path = Appdelegate;
+			sourceTree = "<group>";
+		};
+		C119D18322F4292200ECF10B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C119D18422F4294900ECF10B /* TestVideoTableViewCell.h */,
+				C119D18522F4294900ECF10B /* TestVideoTableViewCell.m */,
+				C119D18722F4316C00ECF10B /* VedioCellModel.h */,
+				C119D18822F4316C00ECF10B /* VedioCellModel.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C11B1745229FAA8C003D3720 /* ZNPlatform */ = {
@@ -2241,6 +2263,7 @@
 		C12548B422C0A86800AFC5AD /* TestViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C119D18322F4292200ECF10B /* Cell */,
 				C11DED2222C4961300B42FED /* index.html */,
 				C12548B522C0A88E00AFC5AD /* SelVideoViewController.h */,
 				C12548B622C0A88E00AFC5AD /* SelVideoViewController.m */,
@@ -2507,7 +2530,6 @@
 				39D8B1242268B98900BF1A77 /* View */,
 				C18C9DEA225F1A570088FE13 /* SubViewController */,
 				C18C9DE9225F1A500088FE13 /* ViewModel */,
-				C18C9DE8225F1A490088FE13 /* Model */,
 				C18C9DEB225F1A770088FE13 /* HomeViewController.h */,
 				C18C9DEC225F1A770088FE13 /* HomeViewController.m */,
 			);
@@ -2525,13 +2547,6 @@
 				393ED31B226D92BE00F8F17F /* ViewModel */,
 			);
 			path = Myself;
-			sourceTree = "<group>";
-		};
-		C18C9DE8225F1A490088FE13 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		C18C9DE9225F1A500088FE13 /* ViewModel */ = {
@@ -2690,6 +2705,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JokeContent/Pods-JokeContent-resources.sh",
+				"${PODS_ROOT}/HXPhotoPicker/照片选择器/HXPhotoPicker/Resource/HXPhotoPicker.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
@@ -2699,6 +2715,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/HXPhotoPicker.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
@@ -2755,6 +2772,7 @@
 				C11DCA6422C9AF94009E454F /* TextTableviewcellController.m in Sources */,
 				C1111ACC228D029300389F17 /* CXInputView.m in Sources */,
 				394B79D72266D48B0030FBB7 /* RPConfig.m in Sources */,
+				C119D18622F4294900ECF10B /* TestVideoTableViewCell.m in Sources */,
 				C12548B722C0A88E00AFC5AD /* SelVideoViewController.m in Sources */,
 				393ED33F226D9CA700F8F17F /* RPMyInformationViewModel.m in Sources */,
 				C117E794228EACE000BB79DD /* ZNTabView.m in Sources */,
@@ -2865,6 +2883,7 @@
 				C127B2F422B0E38C0016546C /* UIBarButtonItem+ZN.m in Sources */,
 				C14323C822C34CEC00FD0992 /* ZNAlertDialogTool.m in Sources */,
 				C12548B322C0A7AD00AFC5AD /* SelVideoSlider.m in Sources */,
+				C119D18222F425B100ECF10B /* AppDelegate+ZNException.m in Sources */,
 				C11A2DCD22BCA3DD00F3282A /* AppDelegate+Crash.m in Sources */,
 				39C04D512268951E00EDFC00 /* OneTypeTableViewCell.m in Sources */,
 				394B79272266B8160030FBB7 /* BaseObject.m in Sources */,
@@ -2873,6 +2892,7 @@
 				C1180A3D22AF4098005ED2FD /* ZNBaseCollectionViewCell.m in Sources */,
 				C11867EE22E15E28009C3A32 /* ZNCollectionViewFlowlayout.m in Sources */,
 				C124275722CD9453009D874D /* ZNSystemTool.m in Sources */,
+				C119D18922F4316C00ECF10B /* VedioCellModel.m in Sources */,
 				394B7A052266F9840030FBB7 /* JokeListViewController.m in Sources */,
 				C11DC5FE22C31CA500FA4453 /* ZNBaseViewController.m in Sources */,
 				3986EDB0226EE9D500CAE082 /* ItemTableViewCell.m in Sources */,

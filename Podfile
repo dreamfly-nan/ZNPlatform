@@ -5,7 +5,7 @@ target 'JokeContent' do
  pod 'SVProgressHUD'
  pod 'YLGIFImage'
  pod 'AFNetworking'
- pod 'SDWebImage','~>4.4.6'
+ pod 'SDWebImage','~>5.0'
  pod 'IQKeyboardManager'
  pod 'MJRefresh'
  pod 'MJExtension'
@@ -13,6 +13,8 @@ target 'JokeContent' do
  pod 'MBProgressHUD'
  pod 'RTRootNavigationController'
  pod 'TZImagePickerController'
+ 
+ pod 'HXPhotoPicker'
  
  #气泡弹窗
  pod 'Popover.OC'
@@ -27,8 +29,8 @@ target 'JokeContent' do
  #pod 'AMapNavi'
  
  #轮播图
- pod 'SDCycleScrollView'
- 
+# pod 'SDCycleScrollView'
+
  #防崩
  pod 'AvoidCrash'
 end
