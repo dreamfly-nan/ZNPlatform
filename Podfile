@@ -5,7 +5,6 @@ target 'JokeContent' do
  pod 'SVProgressHUD'
  pod 'YLGIFImage'
  pod 'AFNetworking'
- pod 'SDWebImage','~>5.0'
  pod 'IQKeyboardManager'
  pod 'MJRefresh'
  pod 'MJExtension'
@@ -29,7 +28,7 @@ target 'JokeContent' do
  #pod 'AMapNavi'
  
  #轮播图
-# pod 'SDCycleScrollView'
+ pod 'SDCycleScrollView'
 
  #防崩
  pod 'AvoidCrash'

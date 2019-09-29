@@ -28,9 +28,11 @@ PODS:
     - RTRootNavigationController/Core (= 0.7.1)
   - RTRootNavigationController/Core (0.7.1)
   - SDAutoLayout (2.2.1)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDCycleScrollView (1.80):
+    - SDWebImage (>= 5.0.0)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
   - SVProgressHUD (2.2.5)
   - TZImagePickerController (3.2.1)
   - YLGIFImage (0.11)
@@ -49,7 +51,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - RTRootNavigationController
   - SDAutoLayout
-  - SDWebImage (~> 5.0)
+  - SDCycleScrollView
   - SVProgressHUD
   - TZImagePickerController
   - YLGIFImage
@@ -69,6 +71,7 @@ SPEC REPOS:
     - ReactiveObjC
     - RTRootNavigationController
     - SDAutoLayout
+    - SDCycleScrollView
     - SDWebImage
     - SVProgressHUD
     - TZImagePickerController
@@ -88,11 +91,12 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDCycleScrollView: b3c9a5ed840c771c4938978174c7c9d9feefeb96
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TZImagePickerController: bf4c57b98d8707fce41ea6be872414a71c7a8c9d
   YLGIFImage: c0ae132fe80e5282b2762a97d14e23ba71a748ae
 
-PODFILE CHECKSUM: 3a4988d472a248cb25c5bb57ae85f5d432e31f90
+PODFILE CHECKSUM: a74d42fc9b988606be6be5fd9cebdf42121e0c9d
 
 COCOAPODS: 1.6.1

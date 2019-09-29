@@ -166,7 +166,7 @@
         _themUpBtn.hidden = YES;
         [_themUpBtn setTitleColor:Introduction_Color() forState:UIControlStateNormal];
         [_themUpBtn setImage:[UIImage imageNamed:@"thum_up"] forState:UIControlStateNormal];
-        znnBlockSelf(self)
+        znBlockSelf(self)
         [[_themUpBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             if (blockSelf.znDelegate && [blockSelf.znDelegate respondsToSelector:@selector(thumUpBtnAction:)]) {
                 [blockSelf.znDelegate thumUpBtnAction:blockSelf.model];
@@ -182,7 +182,7 @@
         _msgBtn.hidden = YES;
         [_msgBtn setImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
         [_msgBtn setTitleColor:Introduction_Color() forState:UIControlStateNormal];
-        znnBlockSelf(self)
+        znBlockSelf(self)
         [[_msgBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             if (blockSelf.znDelegate && [blockSelf.znDelegate respondsToSelector:@selector(messageBtnAction:)]) {
                 [blockSelf.znDelegate messageBtnAction:blockSelf.model];

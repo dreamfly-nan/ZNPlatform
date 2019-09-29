@@ -104,7 +104,7 @@
         _authorLabel = [UILabel new];
         _authorLabel.textAlignment = NSTextAlignmentRight;
         _authorLabel.font = zn_font(11);
-        _authorLabel.textColor = zn_colorString(@"#BFBFBF");
+        _authorLabel.textColor = TITLE_COLOR;
     }
     return _authorLabel;
 }

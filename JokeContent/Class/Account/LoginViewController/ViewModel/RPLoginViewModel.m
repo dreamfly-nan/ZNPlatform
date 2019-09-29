@@ -134,7 +134,7 @@
         _titleLabel = [UILabel new];
         _titleLabel.font = zn_font(25);
         _titleLabel.text = @"栗子新闻";
-        _titleLabel.textColor = Title_Color();
+        _titleLabel.textColor = TITLE_COLOR;
     }
     return _titleLabel;
 }
@@ -146,7 +146,7 @@
         _accountText.textField.font = zn_font(15);
         _accountText.textField.placeholder = @"请输入账号";
         _accountText.textField.text = @"15005934304";
-        _accountText.textField.textColor = Content_Color();
+        _accountText.textField.textColor = CONTENT_COLOR;
         _accountText.isLeftView = YES;
         _accountText.imageSpace = zn_AutoWidth(5);
         _accountText.leftImage = [UIImage imageNamed:@"account_select"];
@@ -160,7 +160,7 @@
         _passworldText = [ZNTextField new];
         _passworldText.inset = UIEdgeInsetsMake(0, zn_AutoWidth(5), 0, 0);
         _passworldText.textField.font = zn_font(15);
-        _passworldText.textField.textColor = Content_Color();
+        _passworldText.textField.textColor = CONTENT_COLOR;
         _passworldText.textField.placeholder = @"请输入密码";
         _passworldText.textField.text = @"123456";
         _passworldText.textField.secureTextEntry = YES;
@@ -195,13 +195,10 @@
 - (ZNUIButton *)loginBtn{
     if (!_loginBtn) {
         _loginBtn = [ZNUIButton new];
-        _loginBtn.backgroundColor = Main_Color();
-        [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_loginBtn setTitle:@"登  陆" forState:UIControlStateNormal];
-        _loginBtn.zn_image(zn_imageName(@"weixin"),UIControlStateNormal);
-        _loginBtn.imageSpace = zn_AutoWidth(10);
-        _loginBtn.positionType = UIButtonImagePositionTypeLeft;
-        _loginBtn.titleLabel.font = zn_font(18);
+        _loginBtn.zn_title(@"登  陆",UIControlStateNormal)
+        .zn_titleColor([UIColor whiteColor],UIControlStateNormal)
+        .zn_font(zn_font(18))
+        .zn_backgroundColor(MAIN_COLOR);
     }
     return _loginBtn;
 }
