@@ -31,8 +31,8 @@
     self.contentLabel.sd_layout
     .topEqualToView(self.contentView)
     .bottomEqualToView(self.contentView)
-    .leftEqualToView(self.contentView)
-    .rightEqualToView(self.contentView);
+    .leftSpaceToView(self.contentView,0)
+    .rightSpaceToView(self.contentView,0);
     
     [self.contentLabel setSd_cornerRadius:@5];
 }
@@ -51,8 +51,7 @@
         _contentLabel = [UILabel new];
         _contentLabel.zn_font(zn_font(12))
         .zn_textColor(TITLE_COLOR)
-        .zn_alignment(NSTextAlignmentCenter)
-        .zn_backgroundColor(LINE_COlOR);
+        .zn_alignment(NSTextAlignmentCenter);
     }
     return _contentLabel;
 }

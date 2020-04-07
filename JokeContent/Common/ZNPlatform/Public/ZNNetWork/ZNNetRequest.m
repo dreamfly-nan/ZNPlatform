@@ -167,7 +167,9 @@ static AFURLSessionManager *urlSessionManager;
         success:(QZNetRequestSuccess)success
            fail:(QZNetRequestFail)fail{
     
-    //请求参数处理代码块
+    NSLog(@"paramters = %@",[paramters mj_JSONString]);
+    NSLog(@"%@",urlStr);
+    
     if (self.requestParameterBlock) {
         paramters = self.requestParameterBlock(paramters);
     }
@@ -296,7 +298,7 @@ static AFURLSessionManager *urlSessionManager;
     
     //手动通知超时时间改变
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = self.requestTimeOut > 0 ? self.requestTimeOut : 30;
+    manager.requestSerializer.timeoutInterval = self.requestTimeOut > 0 ? self.requestTimeOut : 30.f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
 }
 

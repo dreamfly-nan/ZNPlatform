@@ -18,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
  @param currentVersion 当前版本号
  @param storeVersion 商店版本号
  @param openUrl 跳转到商店的地址
+ @param description 更新描述
  @param isUpdate 是否为最新版本
  */
-typedef void(^UpdateBlock)(NSString *currentVersion,NSString *storeVersion, NSString *openUrl,BOOL isUpdate);
+typedef void(^UpdateBlock)(NSString *currentVersion,NSString *storeVersion, NSString *openUrl,NSString * description,BOOL isUpdate);
 
 /**
  失败回调

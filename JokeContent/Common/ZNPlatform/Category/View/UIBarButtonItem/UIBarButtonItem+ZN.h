@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 +(UIBarButtonItem*) zn_obtainWithImage:(UIImage * ) image
                                  block:(void (^)(void)) block;
 
++(UIBarButtonItem *)itemWithTitle:(NSString *)title hightTitle:(NSString *)highttitle target:(id)target action:(SEL)action;
+
++(UIBarButtonItem *)itemWithIcon:(NSString *)icon HightIcon:(NSString *)highticon target:(id)target action:(SEL)action;
 @end
 
 NS_ASSUME_NONNULL_END

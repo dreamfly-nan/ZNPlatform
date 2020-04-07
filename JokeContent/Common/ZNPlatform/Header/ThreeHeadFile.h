@@ -18,7 +18,6 @@
 #import <UIImageView+WebCache.h>
 #import <MJRefresh.h>
 #import <Masonry.h>
-#import <PopoverView.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>

@@ -29,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic,strong) UIColor * lineColor;
 
+/// 线条颜色等级一
+@property (nonatomic , strong) UIColor * lineColorLevel1;
+
 /**
  选项卡未选中颜色
  */

@@ -92,7 +92,7 @@
         znStrongSelf
         if (weakSelf.pickerBlick) {
             if (!weakSelf.dateStr || [weakSelf.dateStr isEqualToString:@""]) {
-                weakSelf.dateStr = [ZNTimeTool getCurrentTimesWithFormatter:@"YYYY-MM-dd"];
+                weakSelf.dateStr = [ZNTimeTool getCurrentTimesWithFormatter:@"yyyy-MM-dd"];
             }
             weakSelf.pickerBlick(weakSelf.dateStr);
         }
@@ -115,7 +115,7 @@
     NSDate *date =_datePicker.date;
     NSDateFormatter *dateForm = [[NSDateFormatter alloc]init];
     //设定转换格式
-    dateForm.dateFormat =@"YYYY-MM-dd";
+    dateForm.dateFormat =@"yyyy-MM-dd";
     //由当前获取的NSDate数据，转换为日期字符串，显示在私有成员变量_textField上
     NSString * dateStr = [dateForm stringFromDate:date];
     self.dateStr = dateStr;

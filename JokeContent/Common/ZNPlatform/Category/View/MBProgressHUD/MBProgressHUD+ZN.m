@@ -19,7 +19,7 @@
 + (void)zn_show:(NSString *)text icon:(NSString *)icon view:(UIView *)view
 {
     if (view == nil)
-        view = [[UIApplication sharedApplication].windows lastObject];
+        view = [UIApplication sharedApplication].keyWindow;
     
     if (view == nil) {
         NSLog(@"view most no be nil");
@@ -28,11 +28,12 @@
     
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = text;
+//    hud.label.text = text;
+    hud.detailsLabel.text = text;
     
-    hud.label.textColor = TITLE_COLOR;
-    //hud.bezelView.style = MBProgressHUDBackgroundStyleSolidCo;
-    hud.label.font = [UIFont systemFontOfSize:17.0];
+    hud.detailsLabel.textColor = TITLE_COLOR;
+//    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidCo;
+    hud.detailsLabel.font = zn_font(15);
     hud.userInteractionEnabled= NO;
     
     // 设置图片
@@ -79,7 +80,7 @@
 /**
  *  显示提示 + 菊花
  *  @param message 信息内容
- *  @return 直接返回一个MBProgressHUD， 需要手动关闭(  ?
+ *  @return 直接返回一个MBProgressHUD， 需要手动关闭(
  */
 + (MBProgressHUD *)zn_showMessage:(NSString *)message
 {
@@ -97,6 +98,7 @@
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.label.text = message;
+    hud.label.font = zn_font(15);
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
     // YES代表需要蒙版效果

@@ -41,6 +41,7 @@
  */
 - (void)zn_setFontAndColorWithArrayStr:(NSArray<NSString*> *) arrayStr
                                 font:(UIFont *)font
-                               color:(UIColor *)color;
-
+                                 color:(UIColor *)color;
+/// 设置中划线
+- (void)zn_setCenterLine;
 @end

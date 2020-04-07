@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZNSearchDataModel : NSObject
@@ -25,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deleteHistory:(NSString *)text;
 /*! 历史搜索显示的行数 */
 - (NSInteger)rowForCollection :(NSArray *)array;
+
+/// 检索历史倒序
+- (void)dataBefore;
 
 @end
 

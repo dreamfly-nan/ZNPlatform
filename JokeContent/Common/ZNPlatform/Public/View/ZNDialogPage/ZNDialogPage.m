@@ -59,7 +59,7 @@
     [self addSubview:self.closeBtn];
     
     self.pageControl.sd_layout
-    .topSpaceToView(self, zn_AutoHeight(79))
+    .topSpaceToView(self, zn_AutoHeight(79) + zn_stateHeight())
     .leftEqualToView(self)
     .rightEqualToView(self)
     .heightIs(zn_AutoHeight(36));
@@ -71,10 +71,10 @@
     .heightIs(self.contentSize.height);
 
     self.closeBtn.sd_layout
-    .topSpaceToView(self.contentView, zn_AutoHeight(41))
+    .topSpaceToView(self.contentView,0)
     .centerXEqualToView(self)
-    .widthIs(zn_AutoWidth(40))
-    .heightIs(zn_AutoWidth(40));
+    .widthIs(zn_AutoWidth(30))
+    .heightIs(zn_AutoWidth(60));
 }
 
 - (void)setContentSize:(CGSize) contentSize{
@@ -139,7 +139,7 @@
 - (UIButton *)closeBtn{
     if (!_closeBtn) {
         _closeBtn = [[UIButton alloc] init];
-        [_closeBtn setImage:[UIImage imageNamed:@"dialog_close"] forState:UIControlStateNormal];
+        [_closeBtn setImage:[UIImage imageNamed:@"upgrade_close"] forState:UIControlStateNormal];
         znWeakSelf(self)
         [[_closeBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             znStrongSelf

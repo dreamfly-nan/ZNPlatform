@@ -158,6 +158,8 @@
                 model.lineType = ZNTextTableViewCellLineTypeWithTitle;
             }else if([cellType isEqualToString:@"ZNTextTableViewCellLineTypeNone"]){
                 model.lineType = ZNTextTableViewCellLineTypeNone;
+            }else if([cellType isEqualToString:@"ZNTextTableViewCellLineTypeAll"]){
+                model.lineType = ZNTextTableViewCellLineTypeAll;
             }
         }
         

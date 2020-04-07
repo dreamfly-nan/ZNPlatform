@@ -34,13 +34,13 @@
 - (void)setInitUI{
     self.backBtn.sd_layout
     .centerYEqualToView(self)
-    .leftSpaceToView(self,0)
+    .leftSpaceToView(self,zn_AutoWidth(15))
     .heightIs(zn_AutoWidth(20))
     .widthIs(zn_AutoWidth(40));
     
     self.searchText.sd_layout
     .centerYEqualToView(self)
-    .heightIs(zn_AutoWidth(25))
+    .heightIs(zn_AutoWidth(30))
     .leftSpaceToView(self.backBtn, self.leftSpace)
     .rightSpaceToView(self, zn_AutoWidth(20));
 }
@@ -66,7 +66,10 @@
     if (!_searchText) {
         _searchText = [[ZNTextField alloc] init];
         _searchText.textField.delegate = self;
+        _searchText.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _searchText.zn_font(zn_font(13));
+        _searchText.imageSize = CGSizeMake(zn_AutoWidth(18), zn_AutoWidth(18));
+        _searchText.backgroundColor = zn_colorString(@"#f2f2f2");
     }
     return _searchText;
 }
@@ -76,7 +79,7 @@
         _backBtn = UIButton.zn_create
         .zn_titleColor(TITLE_COLOR,UIControlStateNormal)
         .zn_font(zn_font(13))
-        .zn_image(zn_ImagePath(@"zn_search_back", @".png"),UIControlStateNormal)
+        .zn_image(zn_imageName(@"public_left"),UIControlStateNormal)
         .zn_ImageContentMode(UIViewContentModeScaleAspectFit);
         znWeakSelf(self)
        [[_backBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {

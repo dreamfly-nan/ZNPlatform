@@ -10,6 +10,13 @@
 
 @implementation ZNBaseCollectionViewCell
 
+- (instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
+
 + (NSString *)idString{
     return NSStringFromClass([self class]);
 }

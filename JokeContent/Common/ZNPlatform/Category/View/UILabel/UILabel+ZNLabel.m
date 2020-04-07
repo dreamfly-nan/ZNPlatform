@@ -10,6 +10,21 @@
 
 @implementation UILabel (ZNLabel)
 
+//+ (void)load{
+//    Method originalThodText = class_getInstanceMethod([self class], @selector(setText:));
+//    Method newThodText = class_getInstanceMethod([self class], @selector(reSetText:));
+//     method_exchangeImplementations(originalThodText, newThodText);
+//}
+//
+///// 屏蔽 nil的设置存在
+///// @param text <#text description#>
+//- (void)reSetText:(NSString*) text{
+//    if (text == nil) {
+//        text = @"";
+//    }
+//    [self reSetText:text];
+//}
+
 /**
  根据位置进行设置字体以及文字的颜色
  
@@ -53,6 +68,17 @@
                                  color:(UIColor *)color{
     for (NSString * str in arrayStr) {
         [self zn_setFontAndColorWithString:str font:font color:color];
+    }
+}
+
+/// 设置中划线
+- (void)zn_setCenterLine{
+    if (self.text) {
+        //中划线
+        NSDictionary *attribtDic = @{NSStrikethroughStyleAttributeName: [NSNumber numberWithInteger:NSUnderlineStyleSingle]};
+        NSMutableAttributedString *attribtStr = [[NSMutableAttributedString alloc]initWithString:self.text attributes:attribtDic];
+        // 赋值
+        self.attributedText = attribtStr;
     }
 }
 

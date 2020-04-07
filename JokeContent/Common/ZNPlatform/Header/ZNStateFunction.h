@@ -11,6 +11,26 @@
 
 #import <UIKit/UIKit.h>
 
+/// json转字典
+/// @param json <#json description#>
+UIKIT_STATIC_INLINE NSDictionary * zn_objectWithJson(NSString * json){
+    if (json == nil || [json isEqualToString:@""]) {
+        return nil;
+    }
+    
+    NSData *jsonData = [json dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    if(err)
+    {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
+
 /**
  <#Description#>
 
@@ -47,9 +67,19 @@ UIKIT_STATIC_INLINE CGFloat zn_floatToFixed(CGFloat value, NSUInteger precision)
  */
 UIKIT_STATIC_INLINE CGFloat zn_flatSpecificScale(CGFloat floatValue, CGFloat scale) {
     floatValue = zn_removeFloatMin(floatValue);
-    scale = scale ?: screenScale;
+    scale = scale ?: znScreenScale;
     CGFloat flattedValue = ceil(floatValue * scale) / scale;
     return flattedValue;
+}
+
+/// 导航栏高度
+UIKIT_STATIC_INLINE CGFloat zn_stateHeight(){
+    if (@available(iOS 13.0, *)) {
+//        [UIWindowScene ]
+        return znStateSize.height;
+    } else {
+        return znStateSize.height;
+    }
 }
 
 /**
@@ -115,6 +145,11 @@ UIKIT_STATIC_INLINE BOOL isWSCatena(){
     return zn_screenWidth() >= 320;
 }
 
+/// 是不是6
+UIKIT_STATIC_INLINE BOOL is6iphone(){
+    return zn_screenWidth() >= 375;
+}
+
 /**
  是否是XR系列手机
  @return <#return value description#>
@@ -137,12 +172,12 @@ UIKIT_STATIC_INLINE BOOL isiphoneX(){
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE CGFloat zn_AutoWidth(CGFloat width){
-    if (isiphoneX()) {
-        return ceil((width / 375.0f) * zn_screenWidth() * 1.1);
-    }else if(isiphoneXR()){
-        return ceil((width / 375.0f) * zn_screenWidth() * 1.05);
-    }
-    return ceil((width / 375.0f) * zn_screenWidth());
+//    if (isiphoneX()) {
+//        return (int)ceil((width / 375.0f) * zn_screenWidth() * 1.1);
+//    }else if(isiphoneXR()){
+//        return (int)ceil((width / 375.0f) * zn_screenWidth() * 1.05);
+//    }
+    return (int)ceil((width / 375.0f) * screenWidth);
 }
 
 /**
@@ -151,7 +186,12 @@ UIKIT_STATIC_INLINE CGFloat zn_AutoWidth(CGFloat width){
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE CGFloat zn_AutoHeight(CGFloat height){
-    return ceil((height / 667.0f) * zn_screenHeight());
+    return zn_AutoWidth(height);
+}
+
+/// 高的比例换算值
+UIKIT_STATIC_INLINE CGFloat zn_height(CGFloat height){
+    return (height / 677) * screenHeight;
 }
 
 /**
@@ -160,15 +200,32 @@ UIKIT_STATIC_INLINE CGFloat zn_AutoHeight(CGFloat height){
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE UIColor * zn_colorString(NSString * color){
-    return [UIColor zn_colorWithHexString:color];
+    UIColor * znColor = [UIColor zn_colorWithHexString:color];
+    
+//    if (@available(iOS 13.0, *)) {
+//       znColor = [znColor initWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
+//           if ([traitCollection userInterfaceStyle] == UIUserInterfaceStyleDark) {
+//               return [UIColor zn_colorWithHexString:color];
+//           }else{
+//               return [UIColor zn_colorWithHexString:color];
+//           }
+//        }];
+//    }
+    return znColor;
 }
 
 //字体适配
 UIKIT_STATIC_INLINE UIFont * zn_font(CGFloat size){
-    if (!isWSCatena()) {
-        size = zn_AutoWidth(size);
-    }
-    UIFont *font = [UIFont systemFontOfSize:size];
+//    if (isiphoneX()) {
+//        size = ceil((size / 375.0f) * zn_screenWidth() * 1.03);
+//    }else if(isiphoneXR()){
+//        size = ceil((size / 375.0f) * zn_screenWidth() * 1);
+//    }else if(is6iphone()){
+//        size = ceil((size / 375.0f) * zn_screenWidth());
+//    }else{
+//        size = ceil((size / 375.0f) * zn_screenWidth() * 0.9);
+//    }
+    UIFont *font = [UIFont systemFontOfSize:(int)zn_AutoWidth(size)];
     return font;
 }
 
@@ -180,16 +237,42 @@ UIKIT_STATIC_INLINE UIFont * zn_font(CGFloat size){
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE UIFont * zn_FontName(NSString * fontName,CGFloat size){
-    if (!isWSCatena()) {
-        size = zn_AutoWidth(size);
+    if (isiphoneX()) {
+        size = ceil((size / 375.0f) * zn_screenWidth() * 1.1);
+    }else if(isiphoneXR()){
+        size = ceil((size / 375.0f) * zn_screenWidth() * 1);
+    }else if(is6iphone()){
+        size = ceil((size / 375.0f) * zn_screenWidth());
+    }else{
+        size = ceil((size / 375.0f) * zn_screenWidth() * 0.9);
     }
-    UIFont * font = [UIFont fontWithName:fontName size:size];
+    UIFont * font = [UIFont fontWithName:fontName size:(int)size];
     return font;
 }
 
 //加粗字体
 UIKIT_STATIC_INLINE UIFont * zn_Bold_font(CGFloat size){
-    return zn_FontName(@"AmericanTypewriter-Bold", size);
+    return zn_FontName(@"PingFangSC-Semibold", size);
+}
+
+/// 是否是刘海屏
+UIKIT_STATIC_INLINE BOOL zn_isLiuHai(){
+    // 根据安全区域判断
+    if (@available(iOS 11.0, *)) {
+        CGFloat height = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+        return (height > 0);
+    } else {
+        return NO;
+    }
+}
+
+UIKIT_STATIC_INLINE CGFloat zn_safeBottom(){
+    if (@available(iOS 11.0, *)) {
+        CGFloat height = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+        return height;
+    } else {
+        return 0;
+    }
 }
 
 //拼接iframe
@@ -227,6 +310,11 @@ UIKIT_STATIC_INLINE UIImage * zn_ImagePath(NSString * fileNme, NSString* type){
 //根据图片名字获取UIImage对象
 UIKIT_STATIC_INLINE UIImage * zn_imageName(NSString * name){
     return [UIImage imageNamed:name];
+}
+
+//使用原图
+UIKIT_STATIC_INLINE UIImage * zn_originalImageName(NSString * name){
+   return [[UIImage imageNamed:name] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 }
 
 //使用base64的字符转化为UIImage
@@ -357,6 +445,19 @@ UIKIT_STATIC_INLINE CGFloat zn_navHeight(UIViewController * controller){
 }
 
 /**
+ 获取tabBar的高度
+
+ @param controller <#controller description#>
+ @return <#return value description#>
+ */
+UIKIT_STATIC_INLINE CGFloat zn_tabHeight(UIViewController * controller){
+    if (controller.tabBarController) {
+        return controller.tabBarController.tabBar.zn_height;
+    }
+    return 0;
+}
+
+/**
  获取版本号
 
  @return <#return value description#>
@@ -368,13 +469,73 @@ UIKIT_STATIC_INLINE NSString * zn_version(){
 }
 
 /**
- 是否是nil
+ 是否是nil，为null则返回空字符
 
  @param string <#string description#>
  @return <#return value description#>
  */
 UIKIT_STATIC_INLINE NSString * zn_isEmpty(NSString * string){
     return string == nil ? @"":string;
+}
+
+/// 判断是否为null
+/// @param object <#object description#>
+UIKIT_STATIC_INLINE BOOL zn_isNSNull(id object){
+    return [object isKindOfClass:[NSNull class]];
+}
+
+/// 浮点数转字符串，省略尾部多余的0
+/// @param number <#number description#>
+UIKIT_STATIC_INLINE NSString * zn_floatString(CGFloat number){
+    number = zn_floatToFixed(number, 2);
+    return [NSString stringWithFormat:@"%0.2f",number];
+}
+
+/// 浮点数转字符串保留两位小数
+/// @param number <#number description#>
+UIKIT_STATIC_INLINE NSString * zn_2floatString(double number){
+    return [NSString stringWithFormat:@"%0.2f",number];
+}
+
+UIKIT_STATIC_INLINE NSArray<UIImage*> * zn_imageWithName(NSArray * imageNames){
+    NSMutableArray * images = [NSMutableArray new];
+    for (NSString * name in imageNames) {
+        [images addObject:zn_imageName(name)];
+    }
+    return [images copy];
+}
+
+/// 获取当前的window
+UIKIT_STATIC_INLINE UIWindow * zn_window(){
+    UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    return window;
+}
+
+//是否有网络
+UIKIT_STATIC_INLINE BOOL zn_isHaveNet(){
+    
+    NSString * netWorkState = [[AFNetworkReachabilityManager sharedManager] localizedNetworkReachabilityStatusString];
+
+    /*
+
+     AFNetworkReachabilityStatusUnknown          = -1,
+
+     AFNetworkReachabilityStatusNotReachable     = 0,
+
+     AFNetworkReachabilityStatusReachableViaWWAN = 1,
+
+     AFNetworkReachabilityStatusReachableViaWiFi = 2,
+
+     */
+
+    NSLog(@"NewWorkState --- %@", netWorkState);
+
+    if ([netWorkState isEqualToString:@"Unknow"] || [netWorkState isEqualToString:@"Not Reachable"]) {// 未知 或 无网络
+        return NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 #endif /* ZNStateFunction_h */

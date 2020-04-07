@@ -30,11 +30,13 @@ typedef NS_ENUM(NSUInteger,ZNTextTableViewCellType){
 
  - ZNTextTableViewCellLineTypeLeft:         固定距离左边
  - ZNTextTableViewCellLineTypeWithTitle:    跟随左边的标题
+ - ZNTextTableViewCellLineTypeAll               充满整个屏幕
  - ZNTextTableViewCellLineTypeNone:         不显示线条
  */
 typedef NS_ENUM(NSUInteger,ZNTextTableViewCellLineType) {
     ZNTextTableViewCellLineTypeLeft,
     ZNTextTableViewCellLineTypeWithTitle,
+    ZNTextTableViewCellLineTypeAll,
     ZNTextTableViewCellLineTypeNone
 };
 

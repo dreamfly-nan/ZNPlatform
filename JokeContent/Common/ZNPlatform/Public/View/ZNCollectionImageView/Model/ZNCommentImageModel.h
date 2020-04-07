@@ -30,6 +30,12 @@ typedef NS_ENUM(NSUInteger,ZNCommentImageCellResource) {
 
 @property(nonatomic,strong) UIImage * image;
 
+//用户自定义的添加图片
+@property (nonatomic , copy) NSString * addImageName;
+
+/// 用户自定义的加载失败的图片
+@property (nonatomic , copy) NSString * loadFeilImageName;
+
 + (instancetype)initWithImage:(UIImage*) image;
 
 + (instancetype)initWithImageUrl:(NSString*) imageUrl;

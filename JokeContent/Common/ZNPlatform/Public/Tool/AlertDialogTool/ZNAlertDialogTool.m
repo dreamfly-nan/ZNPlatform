@@ -68,6 +68,8 @@
         }
     }];
     
+    [sureAction setValue:zn_colorString(@"#f10000") forKey:@"titleTextColor"];
+    [cancelAction setValue:zn_colorString(@"#f10000") forKey:@"titleTextColor"];
     [alertController addAction:sureAction];
     [alertController addAction:cancelAction];
     
@@ -83,7 +85,19 @@
 + (void)zn_showController:(UIViewController *)controller
               arrayStr:(NSArray<NSString*> *) arrayStr
                  block:(void (^)(int index)) block{
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [self zn_showController:controller title:nil arrayStr:arrayStr block:block];
+}
+
+/// <#Description#>
+/// @param controller <#controller description#>
+/// @param title 标题
+/// @param arrayStr <#arrayStr description#>
+/// @param block <#block description#>
++ (void)zn_showController:(UIViewController *)controller
+                    title:(NSString*) title
+                 arrayStr:(NSArray<NSString*> *) arrayStr
+                    block:(void (^)(int index)) block{
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     for (int index = 0; index < arrayStr.count ; index ++) {
         UIAlertAction * action = [UIAlertAction actionWithTitle:arrayStr[index] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (block) {
@@ -105,7 +119,26 @@
                  arrayStr:(NSArray<NSString*> *) arrayStr
                    cancel:(NSString *) cancel
                     block:(void (^)(int index)) block{
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [self zn_showController:controller
+                      title:nil
+                   arrayStr:arrayStr
+                     cancel:cancel
+                      block:block];
+}
+
+ /**
+  底部展示选项对话框,index 从 0 开始
+ @param controller <#controller description#>
+ @param arrayStr <#arrayStr description#>
+ @param block <#block description#>
+ */
++ (void)zn_showController:(UIViewController *)controller
+                    title:(NSString*) title
+                 arrayStr:(NSArray<NSString*> *) arrayStr
+                   cancel:(NSString *) cancel
+                    block:(void (^)(int index)) block{
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     for (int index = 0; index < arrayStr.count ; index ++) {
         UIAlertAction * action = [UIAlertAction actionWithTitle:arrayStr[index] style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (block) {
@@ -116,6 +149,7 @@
     }
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:cancel style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:cancelAction];
+    
     [controller presentViewController:alertController animated:YES completion:nil];
 }
 

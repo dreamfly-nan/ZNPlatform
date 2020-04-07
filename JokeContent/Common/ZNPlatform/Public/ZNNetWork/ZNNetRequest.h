@@ -46,7 +46,7 @@ typedef NSURL * _Nonnull(^QZNetRequestDestination)(NSURL * _Nonnull targetPath, 
 
 typedef void(^QZNetRequestSuccess)(NSDictionary * _Nullable responseObject, NSInteger code);
 
-typedef void(^QZNetRequestFail)(NSString * _Nonnull message ,NSInteger code);
+typedef void(^QZNetRequestFail)(NSString * _Nonnull message ,int code);
 
 typedef void(^QZNetRequestProgress)(CGFloat progress);
 

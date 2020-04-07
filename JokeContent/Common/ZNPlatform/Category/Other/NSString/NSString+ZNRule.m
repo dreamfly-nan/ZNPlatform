@@ -27,7 +27,7 @@
  @return <#return value description#>
  */
 - (BOOL)zn_isPassworld{
-    NSString *passWordRegex = @"^[a-zA-Z0-9]{6,20}+$";
+    NSString *passWordRegex = @"^[a-zA-Z0-9]{6,16}+$";
     NSPredicate *passWordPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",passWordRegex];
     return [passWordPredicate evaluateWithObject:self];
 }

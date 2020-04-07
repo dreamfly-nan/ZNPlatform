@@ -13,18 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol ZNJSManagerDelegate <NSObject>
 
 @required
-/**
- 前置数据的提取对象名
- @return <#return value description#>
- */
-- (NSString *) beforDateToWebViewClassName;
-
-/**
- 设置webview的前置数据,如果要设置前置数据，则需要进行设置web的configuration对象，
- 则是使用 initWithFrame: configuration: 这个函数进行实例化
- @return <#return value description#>
- */
-- (NSString*) beforeDateToWebView;
 
 /**
  js推送过来的消息接收
@@ -40,6 +28,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,weak) id<ZNJSManagerDelegate> znDelegate;
 
 + (instancetype)initWithWebView:(WKWebView*) webView controller:(UIViewController*) controller;
+
+/// 注入方法
+/// @param funcationName <#funcationName description#>
+- (void)insertFuncation:(NSString *) funcationName;
+
+/// 设置前置数据
+/// @param name <#name description#>
+/// @param dataStr <#dataStr description#>
+- (void)insertBeforeDataWithClassName:(NSString *) name
+                                 data:(NSString*) dataStr;
 
 @end
 

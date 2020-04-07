@@ -52,6 +52,16 @@ NS_ASSUME_NONNULL_BEGIN
               arrayStr:(NSArray<NSString*> *) arrayStr
                  block:(void (^)(int index)) block;
 
+/// <#Description#>
+/// @param controller <#controller description#>
+/// @param title 标题
+/// @param arrayStr <#arrayStr description#>
+/// @param block <#block description#>
++ (void)zn_showController:(UIViewController *)controller
+                    title:(NSString*) title
+                 arrayStr:(NSArray<NSString*> *) arrayStr
+                    block:(void (^)(int index)) block;
+
 /**
  底部展示选项对话框,index 从 0 开始
  @param controller <#controller description#>
@@ -59,6 +69,18 @@ NS_ASSUME_NONNULL_BEGIN
  @param block <#block description#>
  */
 + (void)zn_showController:(UIViewController *)controller
+                 arrayStr:(NSArray<NSString*> *) arrayStr
+                   cancel:(NSString *) cancel
+                    block:(void (^)(int index)) block;
+
+ /**
+  底部展示选项对话框,index 从 0 开始
+ @param controller <#controller description#>
+ @param arrayStr <#arrayStr description#>
+ @param block <#block description#>
+ */
++ (void)zn_showController:(UIViewController *)controller
+                    title:(NSString*) title
                  arrayStr:(NSArray<NSString*> *) arrayStr
                    cancel:(NSString *) cancel
                     block:(void (^)(int index)) block;

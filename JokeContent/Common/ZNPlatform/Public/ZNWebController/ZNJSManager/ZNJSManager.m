@@ -27,20 +27,30 @@
     return manager;
 }
 
-#pragma mark - set
+/// 注入方法
+/// @param funcationName <#funcationName description#>
+- (void)insertFuncation:(NSString *) funcationName{
+    [self.webView.configuration.userContentController addScriptMessageHandler:self name:funcationName];
+}
 
-- (void)setZnDelegate:(id<ZNJSManagerDelegate>)znDelegate{
-    _znDelegate = znDelegate;
-    if (znDelegate && [znDelegate respondsToSelector:@selector(beforDateToWebViewClassName)]) {
-        NSString * className = znDelegate.beforDateToWebViewClassName;
-        if (znDelegate && [znDelegate respondsToSelector:@selector(beforeDateToWebView)]) {
-            NSString * dataStr = znDelegate.beforeDateToWebView;
-            NSString * jsStr = [NSString stringWithFormat:@"window.%@ = %@",className,dataStr];
-            WKUserScript *script = [[WKUserScript alloc] initWithSource:jsStr injectionTime:(WKUserScriptInjectionTimeAtDocumentStart) forMainFrameOnly:YES];
-            if (self.webView.configuration) {
-                [self.webView.configuration.userContentController addUserScript:script];
-            }
-        }
+/// 设置前置数据
+/// @param name <#name description#>
+/// @param dataStr <#dataStr description#>
+- (void)insertBeforeDataWithClassName:(NSString *) name
+                                 data:(NSString*) dataStr{
+    if ([name isEqualToString:@""] || name == nil) {
+        NSLog(@"类名不能为空");
+        return;
+    }
+    if ([dataStr isEqualToString:@""] || dataStr == nil) {
+        NSLog(@"数据不能为空");
+        return;
+    }
+    
+    NSString * jsStr = [NSString stringWithFormat:@"window.%@ = %@",name,dataStr];
+    WKUserScript *script = [[WKUserScript alloc] initWithSource:jsStr injectionTime:(WKUserScriptInjectionTimeAtDocumentStart) forMainFrameOnly:YES];
+    if (self.webView.configuration) {
+        [self.webView.configuration.userContentController addUserScript:script];
     }
 }
 
@@ -48,13 +58,13 @@
 
 #pragma mark - WKScriptMessageHandler
 
-#pragma mark - WKNavigationDelegate
-
 - (void)userContentController:(nonnull WKUserContentController *)userContentController didReceiveScriptMessage:(nonnull WKScriptMessage *)message {
     //接受js发送的消息
     if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(userContentController:didReceiveScriptMessage:data:)]) {
         [self.znDelegate userContentController:userContentController didReceiveScriptMessage:message data:message.body];
     }
 }
+
+#pragma mark - WKNavigationDelegate
 
 @end

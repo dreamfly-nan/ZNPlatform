@@ -36,6 +36,10 @@
 //选中项
 @property (nonatomic , assign) int chooseIndex;
 
+//角标
+@property (nonatomic, strong) UIView * CountView;
+
+
 @end
 
 @implementation ZNTextTabBarView
@@ -56,7 +60,7 @@
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    if (self.width > 0) {
+    if (self.width > 0 && self.chooseIndex <= 0) {
         [self setUIWithTitle];
     }
 }
@@ -138,8 +142,11 @@
         title.model = self.titles[i];
         [self.labelArray addObject:title];
         [self setLabelPositionWithIndex:i label:title];
-        width += (self.titles[i].width + self.interval);
-        
+        if (self.lineType == ZNTextTabBarViewLineStypeWithText) {
+            width += (self.titles[i].width + self.interval);
+        }else{
+            width = self.width  / self.titleNumber;
+        }
         objc_setAssociatedObject(title, labelIndex, @(i), OBJC_ASSOCIATION_ASSIGN);
     }
     [self setScrollViewWithWidth:width];
@@ -176,11 +183,9 @@
 - (void)setLabelPositionWithIndex:(int)index label:(ZNTitleLabel*)label{
     CGFloat itemWidth;
     ZNTitleModel *model = self.titles[index];
-    
     if (_lineType ==  ZNTextTabBarViewLineStypeLong) {
         itemWidth = self.width  / self.titleNumber;
         label.frame =CGRectMake(index * itemWidth, 0, itemWidth, self.height);
-        
     }else if(_lineType ==  ZNTextTabBarViewLineStypeWithText){
         itemWidth = [model widthWithHeight:self.height] + self.interval;
         CGSize size = self.scrollView.contentSize;
@@ -327,5 +332,6 @@
     }
     return _lineView;
 }
+
 
 @end

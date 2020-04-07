@@ -89,6 +89,12 @@
                 .leftEqualToView(self.titleLabel)
                 .rightSpaceToView(self.contentView, zn_AutoWidth(15))
                 .heightIs(0.5);
+            }else if(model.lineType == ZNTextTableViewCellLineTypeAll){
+                self.lineView.sd_layout
+                .bottomEqualToView(self.contentView)
+                .leftEqualToView(self.contentView)
+                .rightEqualToView(self.contentView)
+                .heightIs(0.5);
             }
         }
         self.isInitEnd = YES;

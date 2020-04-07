@@ -10,7 +10,7 @@
 #import "ZNImageLookModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZNImageLookViewController : UIViewController
+@interface ZNImageLookViewController : ZNBaseViewController
 
 - (void)setImages:(NSArray<UIImage*> *) images;
 

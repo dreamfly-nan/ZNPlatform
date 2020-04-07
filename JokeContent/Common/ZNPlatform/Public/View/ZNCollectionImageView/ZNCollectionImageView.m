@@ -19,11 +19,11 @@ ZNCImageCollectionViewCellDelegate,
 UINavigationControllerDelegate,
 UIImagePickerControllerDelegate>
 
+@property(nonatomic,strong) ZNCommtentImageManager * manager;
+
 @property(nonatomic,strong) UICollectionView * imageCollectView;
 
 @property(nonatomic,strong) UICollectionViewFlowLayout *imageLayout;
-
-
 
 //移动到删除的按键上进行删除
 @property(nonatomic,strong) UIButton * deleteBtn;
@@ -49,6 +49,12 @@ UIImagePickerControllerDelegate>
 //图片集合，可能是url，可能是image
 @property(nonatomic,strong) NSArray * imageResourceArr;
 
+//是否有自定义大小
+@property (nonatomic , assign) BOOL isCusItemSize;
+
+/// 是否是首次进行加载 - 用来排除首次加载的时候计算高度，排除首次进行调用代理返回高度
+@property (nonatomic , assign) BOOL isFrishLoad;
+
 @end
 
 @implementation ZNCollectionImageView
@@ -56,12 +62,25 @@ UIImagePickerControllerDelegate>
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         [self setConfig];
-        [self setInitUI];
+        [self addSubview:self.imageCollectView];
     }
     return self;
 }
 
+- (instancetype)init{
+    return [self initWithFrame:CGRectZero];
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    [self setInitUI];
+}
+
 - (void)setConfig{
+    self.isFrishLoad = YES;
+    self.number = 4;
+    self.maxNum = -1;
+    self.isCusItemSize = NO;
     self.manager.onlyLook = NO;
     self.leftSpace = zn_AutoWidth(30);
     self.rightSpace = zn_AutoWidth(30);
@@ -70,17 +89,14 @@ UIImagePickerControllerDelegate>
 }
 
 - (void)upUIItemSize{
-    CGFloat width = (screenWidth - self.leftSpace - self.rightSpace - zn_AutoWidth(3 * 3) - 1)/4;
-    self.itemSize = CGSizeMake(width, width);
+    if(!self.isCusItemSize){
+        CGFloat width = (screenWidth - self.leftSpace - self.rightSpace - zn_AutoWidth(3 * 3) - 1)/4;
+        self.itemSize = CGSizeMake(width, width);
+    }
 }
 
 - (void)setInitUI{
-    [self addSubview:self.imageCollectView];
-    self.imageCollectView.sd_layout
-    .topSpaceToView(self, self.topSpace)
-    .leftSpaceToView(self, self.leftSpace)
-    .rightSpaceToView(self, self.rightSpace)
-    .heightIs(self.itemSize.height);
+    [self updateUI];
 }
 
 #pragma mark - public
@@ -117,7 +133,9 @@ UIImagePickerControllerDelegate>
  更新UI界面展示
  */
 - (void)updateUI{
-    CGFloat number = ceil(1.0f * self.manager.imageModels.count/(4.0f));
+    //检查最大图片数
+    [self.manager checkMaxNum];
+    CGFloat number = ceil(1.0f * self.manager.imageModels.count*1.0f/(self.number));
     CGFloat lineHeght = self.imageLayout.minimumLineSpacing;
     
     CGFloat height = self.itemSize.height * number + lineHeght * ( number - 1 );
@@ -133,9 +151,14 @@ UIImagePickerControllerDelegate>
     .rightSpaceToView(self, self.rightSpace)
     .heightIs(height);
     
-    if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(upDataUIHeight:)]) {
-        CGFloat selfHeight = [self obtainDataHeight];
-        [self.znDelegate upDataUIHeight:selfHeight];
+    //排除首次实例化时进行调用
+    if (self.isFrishLoad) {
+        self.isFrishLoad = NO;
+    }else{
+        if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(upDataUIHeight:)]) {
+            CGFloat selfHeight = [self obtainDataHeight];
+            [self.znDelegate upDataUIHeight:selfHeight];
+        }
     }
 }
 
@@ -154,8 +177,10 @@ UIImagePickerControllerDelegate>
 - (NSArray<UIImage *> *)obtainImages{
     NSMutableArray * images = [NSMutableArray new];
     for (ZNCommentImageModel * model in self.manager.imageModels) {
-        if (model.image) {
-            [images addObject:model.image];
+        if (model.cellType == ZNCommentImageCellTypeImage) {
+            if (model.image) {
+                [images addObject:model.image];
+            }
         }
     }
     return [images copy];
@@ -269,9 +294,11 @@ UIImagePickerControllerDelegate>
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (self.znDelegate && [self.znDelegate respondsToSelector:@selector(addImageWithImage:)]) {
+        [self.znDelegate addImageWithImage:image];
+    }
     //图片在这里压缩一下
-    [self.manager.imageModels insertObject:[ZNCommentImageModel initWithImage:image] atIndex:self.manager.imageModels.count-1];
-    [self.manager.newAddImages addObject:image];
+    [self.manager addImage:image];
     [self updateUI];
     [self.imageCollectView reloadData];
     [picker dismissViewControllerAnimated:YES completion:nil];
@@ -284,7 +311,6 @@ UIImagePickerControllerDelegate>
     if (model.cellType == ZNCommentImageCellTypeAddImage) {
         //这个是添加图片
         znWeakSelf(self)
-        
         [ZNAlertDialogTool zn_showController:[self zn_obtainController]  arrayStr:@[@"拍照",@"相册",@"取消"] block:^(int index) {
             znStrongSelf
             switch (index) {
@@ -357,6 +383,7 @@ UIImagePickerControllerDelegate>
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     ZNCImageCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:[ZNCImageCollectionViewCell idString] forIndexPath:indexPath];
     cell.model = self.manager.imageModels[indexPath.row];
+    
     cell.znDelegate = self;
     return cell;
 }
@@ -370,9 +397,19 @@ UIImagePickerControllerDelegate>
 
 #pragma mark - set
 
+- (void)setMaxNum:(int)maxNum{
+    _maxNum = maxNum;
+    self.manager.maxNum = maxNum;
+}
+
 - (void)setOnlyLook:(BOOL)onlyLook{
     _onlyLook = onlyLook;
     self.manager.onlyLook = onlyLook;
+}
+
+- (void)setItemSize:(CGSize)itemSize{
+    _itemSize = itemSize;
+    self.isCusItemSize = YES;
 }
 
 #pragma mark - get
@@ -412,6 +449,8 @@ UIImagePickerControllerDelegate>
 - (ZNCommtentImageManager *)manager{
     if (!_manager) {
         _manager = [ZNCommtentImageManager new];
+        _manager.addImageName = self.addImageName;
+        _manager.loadFieldImageName = self.loadFieldImageName;
     }
     return _manager;
 }

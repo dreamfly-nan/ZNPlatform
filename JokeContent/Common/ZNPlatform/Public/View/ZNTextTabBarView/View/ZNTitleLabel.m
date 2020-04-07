@@ -54,13 +54,17 @@
         self.text = model.title;
     }
     if (self.model.isSelect) {
+        UIFont * selectFont = model.titleFont;
+        if (model.selectTitleFont) {
+            selectFont = model.selectTitleFont;
+        }
         if (!self.model.selectColor) {
             self.model.selectColor = [UIColor redColor];
         }
         [UIView animateWithDuration:0.2 animations:^{
             if (self.model.title.length > 0) {
                 [self zn_setFontAndColorWithString:model.title
-                                           font:[self obtainSelectFont:model.titleFont]
+                                           font:[self obtainSelectFont:selectFont]
                                           color:model.selectColor];
             }
             

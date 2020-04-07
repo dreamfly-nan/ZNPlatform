@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (copy , nonatomic) NSString * imageUrl;
 
+//类型标识
+@property (nonatomic , assign) int type;
+
 //是否是url
 @property(nonatomic,assign) BOOL isUrl;
 

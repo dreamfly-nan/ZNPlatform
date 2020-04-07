@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol ZNSearchViewDelegate <NSObject>
-
+@optional
 /**
  开始检索
 
@@ -29,12 +29,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface ZNSearchViewController : UIViewController
+@interface ZNSearchViewController : ZNBaseViewController
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic,weak) id<ZNSearchViewDelegate> znDelegate;
+
+//推荐
+@property (nonatomic , strong) NSArray<NSString *> * recommends;
+
+/// 检索历史记录默认为八个
+@property (nonatomic , assign) int history;
 
 @end
 

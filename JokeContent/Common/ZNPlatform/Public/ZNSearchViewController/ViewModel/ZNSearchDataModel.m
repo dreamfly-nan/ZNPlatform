@@ -69,6 +69,13 @@
     return row>4?4:row;
 }
 
+/// 检索历史倒序
+- (void)dataBefore{
+    NSArray * array = [self.history copy];
+    [self.history removeAllObjects];
+    [self.history addObjectsFromArray:[[array reverseObjectEnumerator] allObjects]];
+}
+
 #pragma mark - get
 
 - (NSMutableArray *)history{

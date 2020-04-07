@@ -26,8 +26,11 @@
 
 //基础类
 #import "ZNBaseCollectionViewCell.h"
+#import "ZNBaseTableViewCell.h"
 #import "ZNBaseViewController.h"
 #import "ZNBaseTabBarController.h"
+#import "ZNBaseObject.h"
+#import "ZNBaseView.h"
 
 //配置菜单
 #import "ZNPlatformConfig.h"

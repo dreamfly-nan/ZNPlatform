@@ -26,4 +26,23 @@
     return barBtn;
 }
 
++(UIBarButtonItem *)itemWithTitle:(NSString *)title hightTitle:(NSString *)highttitle target:(id)target action:(SEL)action{
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 25)];
+    [button setTitle:title forState:(UIControlStateNormal)];
+    [button setTitle:highttitle forState:(UIControlStateHighlighted)];
+    [button addTarget:target action:action forControlEvents:(UIControlEventTouchUpInside)];
+    [button setTitleColor:UIColorMakeWithRGBA(102, 102, 102, 1) forState:(UIControlStateNormal)];
+    button.titleLabel.font = zn_font(14);
+    return [[UIBarButtonItem alloc]initWithCustomView:button];
+}
+
++(UIBarButtonItem *)itemWithIcon:(NSString *)icon HightIcon:(NSString *)highticon target:(id)target action:(SEL)action{
+    UIButton * button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 25, 50)];
+    [button setImage:[UIImage imageNamed:icon] forState:(UIControlStateNormal)];
+    [button setImage:[UIImage imageNamed:highticon] forState:(UIControlStateHighlighted)];
+    [button sizeToFit];
+    [button addTarget:target action:action forControlEvents:(UIControlEventTouchUpInside)];
+    return [[UIBarButtonItem alloc]initWithCustomView:button];
+}
+
 @end

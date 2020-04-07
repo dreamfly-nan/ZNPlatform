@@ -280,5 +280,4 @@
          destination:(QZNetRequestDestination _Nonnull)destination
    completionHandler:(QZNetRequestDownCompletionHandler _Nonnull)completionHandler;
 
-
 @end

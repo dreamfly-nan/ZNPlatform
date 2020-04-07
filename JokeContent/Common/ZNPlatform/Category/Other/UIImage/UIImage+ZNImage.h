@@ -125,4 +125,9 @@
  */
 - (UIImage *)zn_catRound;
 
+/// 根据URL获取图片
+/// @param url <#url description#>
++ (void)zn_obtainImageWithUrl:(NSString*) url
+                        block:(void (^)(UIImage * image)) block;
+
 @end

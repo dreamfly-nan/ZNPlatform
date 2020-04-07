@@ -87,15 +87,26 @@
         UIImage * placeholderImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"znImageloadFail" ofType:@".png"]];
         if (model.resourceType == ZNCommentImageCellResourceImage) {
             if (model.image == nil) {
-                self.znImageView.image = placeholderImage;
+                if (model.loadFeilImageName) {
+                    self.znImageView.image = zn_imageName(model.loadFeilImageName);
+                }else{
+                    self.znImageView.image = placeholderImage;
+                }
             }else{
                 self.znImageView.image = model.image;
             }
             
         }else if(model.resourceType == ZNCommentImageCellResourceURL){
-            [self.znImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:placeholderImage];
+            if (model.loadFeilImageName) {
+                [self.znImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:zn_imageName(model.loadFeilImageName)];
+            }else{
+                [self.znImageView sd_setImageWithURL:[NSURL URLWithString:model.imageUrl] placeholderImage:placeholderImage];
+            }
         }
     }else if(model.cellType == ZNCommentImageCellTypeAddImage){
+        if (self.model.addImageName) {
+            self.addImageView.image = zn_imageName(self.model.addImageName);
+        }
         self.znImageView.hidden = YES;
         self.addImageView.hidden = NO;
     }
@@ -107,7 +118,8 @@
     if (!_addImageView) {
         _addImageView = [UIImageView new];
         _addImageView.contentMode = UIViewContentModeScaleToFill;
-        [_addImageView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"znImageAdd" ofType:@".png"]]];
+//        [_addImageView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"myself_orderreturn_add5" ofType:@".png"]]];
+        [_addImageView setImage:[UIImage imageNamed:@"myself_orderreturn_add5"]];
     }
     return _addImageView;
 }

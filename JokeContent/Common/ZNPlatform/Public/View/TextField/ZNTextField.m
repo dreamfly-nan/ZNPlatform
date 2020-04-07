@@ -71,8 +71,8 @@
         self.imageView.sd_layout
         .leftSpaceToView(self, self.inset.left)
         .centerYEqualToView(self)
-        .widthIs(self.imageSize.width)
-        .heightIs(self.imageSize.height);
+        .widthIs(zn_AutoWidth(18))
+        .heightIs(zn_AutoWidth(18));
         
         self.textField.sd_layout
         .leftSpaceToView(self.imageView, self.imageSpace)

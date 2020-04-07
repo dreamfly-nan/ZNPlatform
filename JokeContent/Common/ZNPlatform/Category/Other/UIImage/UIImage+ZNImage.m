@@ -610,4 +610,19 @@
     return [self zn_catRoundWithPoint:CGPointMake(corcon, corcon) corcon:corcon];
 }
 
+/// 根据URL获取图片
+/// @param url <#url description#>
++ (void)zn_obtainImageWithUrl:(NSString*) url
+                        block:(void (^)(UIImage * image)) block{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        UIImage *image = [UIImage imageWithData:data]; // 取得图片
+        if (block) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                block(image);
+            });
+        }
+    });
+}
+
 @end

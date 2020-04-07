@@ -7,6 +7,7 @@
 //
 
 #import "ZNBaseObject.h"
+#import <objc/runtime.h>
 
 @interface ZNBaseObject()
 

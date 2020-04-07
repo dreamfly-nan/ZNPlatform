@@ -41,7 +41,7 @@
 +(UIImage*)zn_originImage:(UIImage*) image;
 
 /**
- 
+
  @param image  要进行缩放，并裁剪的图片
  @param size  要裁剪的大小
  @return  返回裁剪并缩小后的图片

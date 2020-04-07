@@ -18,4 +18,7 @@
 #import "ZNEncryptTool.h"
 #import "ZNAlertDialogTool.h"
 
+//文字 行距 间距
+#import "UILable+ChangeStringSpace.h"
+
 #endif /* ZNTool_h */

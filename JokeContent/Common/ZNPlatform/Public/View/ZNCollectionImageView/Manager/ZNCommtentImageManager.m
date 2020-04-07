@@ -40,6 +40,7 @@
     [self.imageModels removeAllObjects];
     for (NSString * url in urls) {
         ZNCommentImageModel * model = [ZNCommentImageModel initWithImageUrl:url];
+        model.loadFeilImageName = self.loadFieldImageName;
         [self.imageModels addObject:model];
     }
     
@@ -53,11 +54,35 @@
     [self.imageModels removeAllObjects];
     for (UIImage * image in images) {
         ZNCommentImageModel * model = [ZNCommentImageModel initWithImage:image];
+        model.loadFeilImageName = self.loadFieldImageName;
         [self.imageModels addObject:model];
     }
     if (!self.onlyLook) {
         [self.imageModels addObject:self.addModel];
     }
+}
+
+- (void)checkMaxNum{
+    if (!self.onlyLook) {
+        if ([self.imageModels containsObject:self.addModel]) {
+            if (self.maxNum != -1 && self.maxNum < self.imageModels.count) {
+                [self.imageModels removeObject:self.addModel];
+            }
+        }else{
+            if (self.maxNum != -1 && self.maxNum > self.imageModels.count) {
+                [self.imageModels addObject:self.addModel];
+            }
+        }
+        
+    }
+}
+
+/// 添加图片
+/// @param image <#image description#>
+- (void)addImage:(UIImage*) image{
+    ZNCommentImageModel * model = [ZNCommentImageModel initWithImage:image];
+    model.loadFeilImageName = self.loadFieldImageName;
+    [self.imageModels insertObject:model atIndex:self.imageModels.count-1];
 }
 
 #pragma mark - set
@@ -80,15 +105,9 @@
 - (ZNCommentImageModel *)addModel{
     if (!_addModel) {
         _addModel = [ZNCommentImageModel initWithAddType:ZNCommentImageCellTypeAddImage];
+        _addModel.addImageName = self.addImageName;
     }
     return _addModel;
-}
-
-- (NSMutableArray<UIImage *> *)newAddImages{
-    if (!_newAddImages) {
-        _newAddImages = [NSMutableArray new];
-    }
-    return _newAddImages;
 }
 
 - (NSMutableArray<ZNCommentImageModel *> *)imageModels{

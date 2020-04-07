@@ -33,7 +33,10 @@
 /**
  父标题字体
  */
-@property (nonatomic , strong) UIFont *titleFont;
+@property (nonatomic , strong) UIFont * titleFont;
+
+/// 选中时的字体
+@property (nonatomic , strong) UIFont * selectTitleFont;
 
 /**
  子标题的字体

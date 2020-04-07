@@ -15,6 +15,10 @@
 
 @interface UITableView()
 
+@property (nonatomic , strong) MJRefreshHeader * tableViewHeader;
+
+@property (nonatomic , strong) MJRefreshFooter * tableViewFooter;
+
 @end
 
 @implementation UITableView (ZNExtendTableView)
@@ -31,7 +35,6 @@
 
 - (void)zn_reloadData{
     [self zn_reloadData];
-    
     if (![self fristLoadData]) {
         [self setZn_SeparatorStyle:self.separatorStyle];
         [self setFristLoadData:YES];
@@ -88,7 +91,15 @@
                 self.backgroundView = nodataView;
             }
         }
+        
+        if(self.mj_footer){
+            self.tableViewFooter = self.mj_footer;
+            self.mj_footer.hidden = YES;
+        }
     }else{
+        if (self.tableViewFooter) {
+            self.mj_footer.hidden = NO;
+        }
         self.separatorStyle = [self getZn_SeparatorStyle];
     }
     [self.backgroundView setHidden:isHaveData];
@@ -98,6 +109,26 @@
 
 - (UITableViewCell *)zn_dequeueReusableCellWithIdentifier:(Class) className{
     return [self dequeueReusableCellWithIdentifier:NSStringFromClass(className)];
+}
+
+#pragma mark - get
+
+- (MJRefreshFooter *)tableViewFooter{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (MJRefreshHeader *)tableViewHeader{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+#pragma mark - set
+
+- (void)setTableViewFooter:(MJRefreshFooter *)tableViewFooter{
+    objc_setAssociatedObject(self, @selector(tableViewFooter), tableViewFooter, OBJC_ASSOCIATION_RETAIN);
+}
+
+- (void)setTableViewHeader:(MJRefreshHeader *)tableViewHeader{
+    objc_setAssociatedObject(self, @selector(tableViewHeader), tableViewHeader, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end

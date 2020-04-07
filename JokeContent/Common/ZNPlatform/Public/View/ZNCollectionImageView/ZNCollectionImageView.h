@@ -27,6 +27,10 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)upDataUIHeight:(CGFloat) height;
 
+/// 添加图片时进行回调
+/// @param image <#image description#>
+- (void)addImageWithImage:(UIImage*) image;
+
 @end
 
 @interface ZNCollectionImageView : UIView
@@ -34,8 +38,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,strong) UIColor * collectViewBackColor;
 
 @property(nonatomic,weak) id<ZNCollectionImageViewDelegate> znDelegate;
-
-@property(nonatomic,strong) ZNCommtentImageManager * manager;
 
 //点击图片的时候是否进行展示
 @property(nonatomic,assign) BOOL isShowImage;
@@ -50,18 +52,29 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic,assign) CGFloat topSpace;
 
 @property(nonatomic,assign) CGSize itemSize;
+/// 一行几个，该属性需要配合itemSize进行使用 ，默认按四个算
+@property (nonatomic , assign) int number;
+
+//最大图片数量 -1为不限制图片数量
+@property (nonatomic , assign) int maxNum;
 
 /**
  查看模式
  */
 @property(nonatomic,assign) BOOL onlyLook;
 
+/// 添加的cell展示的图片
+@property (nonatomic , copy) NSString * addImageName;
+
+/// 加载失败图展示图
+@property (nonatomic , copy) NSString * loadFieldImageName;
+
 - (void)setImageUrls:(NSArray<NSString*> *) urls;
 
 - (void)setImages:(NSArray<UIImage*> *) images;
 
 /**
- 更新没一项图片的大小
+ 更新每一项图片的大小
  */
 - (void)upUIItemSize;
 

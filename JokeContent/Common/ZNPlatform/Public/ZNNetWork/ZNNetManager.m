@@ -15,6 +15,7 @@
 /*********************************************************************************************/
 +(void)networkReachabilityStart:(void (^)(AFNetworkReachabilityStatus status)) statusChangeBlock{
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         
         if (statusChangeBlock) {
