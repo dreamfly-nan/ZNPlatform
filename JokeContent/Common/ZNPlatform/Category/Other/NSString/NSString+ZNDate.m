@@ -10,6 +10,41 @@
 
 @implementation NSString (ZNDate)
 
+- (NSInteger)year{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.year;
+}
+
+- (NSInteger)month{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.month;
+}
+
+- (NSInteger)day{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.day;
+}
+
+- (NSInteger)hour{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.hour;
+}
+
+- (NSInteger)minute{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.minute;
+}
+
+- (NSInteger)seconds{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.seconds;
+}
+
+- (NSInteger)weekday{
+    NSDate *date = [NSDate zn_dateWithDateString:self];
+    return date.weekday;
+}
+
 -(NSString *)zn_formatNianYueRi
 {
     NSDate *date = [NSDate zn_dateWithDateString:self];

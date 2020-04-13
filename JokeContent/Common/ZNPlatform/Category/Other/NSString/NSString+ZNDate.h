@@ -11,6 +11,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (ZNDate)
 
+@property(nonatomic,assign,readonly)NSInteger year;
+@property(nonatomic,assign,readonly)NSInteger month;
+@property(nonatomic,assign,readonly)NSInteger day;
+@property(nonatomic,assign,readonly)NSInteger hour;
+@property(nonatomic,assign,readonly)NSInteger minute;
+@property(nonatomic,assign,readonly)NSInteger seconds;
+@property (nonatomic,assign,readonly)NSInteger weekday;
+
 #pragma mark -年月日
 
 /**
@@ -87,8 +95,6 @@ NS_ASSUME_NONNULL_BEGIN
 * yyyy-MM-dd HH: mm
 */
 @property (nonatomic , copy,readonly) NSString * zn_format_y_M_d_H_m;
-
-
 /**
     转换为星期几
 */

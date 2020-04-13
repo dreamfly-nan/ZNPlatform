@@ -67,7 +67,7 @@
                     
                     [subscriber sendNext:@[@(YES)]];
                     [subscriber sendCompleted];
-                } fail:^(NSString *message, NSInteger code) {
+                } fail:^(NSString * _Nonnull message, int code) {
                     [subscriber sendNext:@[@(NO),message]];
                     [subscriber sendCompleted];
                 }];

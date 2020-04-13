@@ -559,7 +559,6 @@
 
 /**
  裁剪图片，按图片的中心点进行裁剪，裁剪出来的是矩形的
- 
  @param size 裁剪出来的图片大小
  @return <#return value description#>
  */
@@ -567,7 +566,6 @@
     CGFloat width = size.width;
     CGFloat height = size.height;
     CGSize imageSize = self.size;
-    
     return [self zn_catImageWithRect:CGRectMake(imageSize.width/2 - width, imageSize.height/2 - height, width, height)];
 }
 
