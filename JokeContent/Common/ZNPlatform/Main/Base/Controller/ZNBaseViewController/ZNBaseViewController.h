@@ -30,11 +30,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong) UIButton * backBtn;
 
 /**
- 请求的失败后，点击重新加载执行的代码块
- */
-@property (nonatomic , copy) void (^reloadBlock)(void);
-
-/**
  导航栏高度
  */
 @property(nonatomic,assign) CGFloat navigationHeight;
@@ -58,6 +53,9 @@ NS_ASSUME_NONNULL_BEGIN
  隐藏网络请求出错视图
  */
 - (void)hideNoNet;
+
+/// 网络出错重载
+- (void)netErrorReload;
 
 /**
  提示错误信息

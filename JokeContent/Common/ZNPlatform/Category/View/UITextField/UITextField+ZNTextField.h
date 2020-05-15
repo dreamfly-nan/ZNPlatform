@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UITextField (ZNTextField)
 
+/// 设置最大字符，有监听中文的使用这个
+/// @param textField <#textField description#>
+/// @param number <#number description#>
+/// @param tips <#tips description#>
++ (void)zn_setMacNumber:(UITextField *) textField number:(int) number tips:(NSString*) tips;
+
 /// 设置最大输入字符长度
 /// @param number <#number description#>
 - (void)zn_setMaxNumber:(int) number

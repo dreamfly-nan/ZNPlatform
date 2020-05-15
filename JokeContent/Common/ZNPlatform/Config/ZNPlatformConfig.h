@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+//网络监听
+#define netRefreshData @"netRefreshData"
+//无网络的通知
+#define netErrorNotification @"netErrorNotification"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZNPlatformConfig : NSObject

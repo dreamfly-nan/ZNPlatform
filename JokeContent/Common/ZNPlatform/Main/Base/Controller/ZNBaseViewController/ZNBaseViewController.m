@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setBaseInitUI];
+    [self setBangding];
 }
 
 - (void)setBaseInitUI{
@@ -39,12 +40,31 @@
     [self.view addSubview:self.noNetWorkView];
 }
 
+- (void)setBangding{
+    znWeakSelf(self)
+    //网络恢复重载
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:netRefreshData object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(NSNotification * _Nullable x) {
+        znStrongSelf
+        [weakSelf hideNoNet];
+        [weakSelf netErrorReload];
+    }];
+
+    //显示网络出错页面
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:netErrorNotification object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(NSNotification * _Nullable x) {
+        znStrongSelf
+        [weakSelf showNoNet];
+    }];
+}
+
 - (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action{
     [self.backBtn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return self.backBtnItem;
 }
 
 #pragma mark - public
+
+- (void)netErrorReload{
+}
 
 /**
  提示错误信息
@@ -104,13 +124,6 @@
     [ZNAlertDialogTool zn_showController:self title:nil message:message sureStr:btnTitle block:block];
 }
 
-#pragma mark - set
-
-- (void)setReloadBlock:(void (^)(void))reloadBlock{
-    _reloadBlock = reloadBlock;
-    self.noNetWorkView.reloadBlock = reloadBlock;
-}
-
 #pragma mark - get
 
 - (UIBarButtonItem *)backBtnItem{
@@ -140,9 +153,11 @@
     if (!_noNetWorkView) {
         _noNetWorkView = [ZNNoNetWorkView createRPNoNetView];
         _noNetWorkView.hidden = YES;
-        if (self.reloadBlock) {
-            _noNetWorkView.reloadBlock = self.reloadBlock;
-        }
+        znWeakSelf(self)
+        _noNetWorkView.reloadBlock = ^{
+            znStrongSelf
+            [weakSelf netErrorReload];
+        };
     }
     return _noNetWorkView;
 }

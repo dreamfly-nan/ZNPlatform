@@ -8,6 +8,13 @@
 
 #import "ZNPlatformConfig.h"
 
+@interface ZNPlatformConfig()
+
+/// 是否有网络
+@property (nonatomic , assign) BOOL haveNet;
+
+@end
+
 @implementation ZNPlatformConfig
 
 + (instancetype)sharedSingleton {
@@ -17,6 +24,7 @@
         //不能再使用alloc方法
         //因为已经重写了allocWithZone方法，所以这里要调用父类的分配空间的方法
         _sharedSingleton = [[super allocWithZone:NULL] init];
+        [_sharedSingleton netState];
     });
     return _sharedSingleton;
 }
@@ -34,6 +42,31 @@
 // 防止外部调用mutableCopy
 - (id)mutableCopyWithZone:(nullable NSZone *)zone {
     return [[self class] sharedSingleton];
+}
+
+- (void)netState{
+    self.haveNet = YES;
+    znWeakSelf(self)
+    [ZNNetManager networkReachabilityStart:^(AFNetworkReachabilityStatus status) {
+        znStrongSelf
+        // 在每次网络状态发生改变的时候会执行一次
+        // 这里可以重复一两次进行关闭和打开移动、Wi-Fi就知道了
+            if (status == AFNetworkReachabilityStatusReachableViaWWAN || status == AFNetworkReachabilityStatusReachableViaWiFi) {
+                // 也就是每次恢复有网络的状态下都会执行一遍
+                // 当然如果觉得这样不太好也可以自己做一些条件限制
+                if (!weakSelf.haveNet) {
+                    weakSelf.haveNet = YES;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:netRefreshData object:nil];
+                }
+            }else if(status == AFNetworkReachabilityStatusNotReachable || status == AFNetworkReachabilityStatusUnknown){
+                if (weakSelf.haveNet) {
+                    weakSelf.haveNet = NO;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:netErrorNotification object:nil];
+                }
+            }else{
+                
+            }
+    }];
 }
 
 #pragma mark - get

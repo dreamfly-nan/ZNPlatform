@@ -33,6 +33,8 @@
 #import "UILabel+ZNCreate.h"
 #import "UITextField+ZNCreate.h"
 #import "UITextField+ZNTextField.h"
+#import "UITextView+ZNUITextView.h"
+#import "UITextView+ZNCreate.h"
 #import "UIView+ZNView.h"
 #import "UIView+ZNCreate.h"
 #import "UIButton+ZNCreate.h"
